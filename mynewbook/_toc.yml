@@ -3,9 +3,10 @@
 
 
 # pip install -U jupyter-book
-# jupyter-book build e-book/book
+# jupyter-book build /workspaces/DipFin/mynewbook
 # pip install ghp-import
 # ghp-import -n -p -f _build/html
+
 #/home/codespace/.local/lib/python3.10/site-packages/ghp-import -n -p -f _build/html
 # export PATH=$PATH:/home/codespace/.local/lib/python3.10/site-packages/ghp-import
 
