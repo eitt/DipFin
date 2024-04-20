@@ -1,0 +1,1399 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>18. Diplomado en ciencia de datos para toma de decisiones financieras &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DipFin Sesion 1.4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="24. Diplomado en ciencia de datos para toma de decisiones financieras" href="DipFin%20Sesion%201.5.html" />
+    <link rel="prev" title="11. Diplomado en ciencia de datos para toma de decisiones financieras" href="DipFin%20Sesion%201.3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos de Python y Estadística Básica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.1.html">1. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">7. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">11. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">24. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDipFin Sesion 1.4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/DipFin Sesion 1.4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diplomado en ciencia de datos para toma de decisiones financieras</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18. Diplomado en ciencia de datos para toma de decisiones financieras</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ltalero-unab-edu-co">18.1. ltalero@unab.edu.co</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">18.2. <strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-del-curso">19. Índice del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-adquisicion-de-datos">20. 1. Introducción a la Adquisición de Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-teoricos">20.1. Fundamentos Teóricos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-financieros">20.2. Tipos de Datos Financieros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos">20.3. Fuentes de Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-python">20.4. Ejemplo en Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-datos-de-apis">21. 2. Importación de Datos de APIs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">21.1. Importación de Datos de APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-de-apis">21.1.1. Teoría de APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#funcionamiento-de-las-apis-en-finanzas">21.1.1.1. Funcionamiento de las APIs en Finanzas:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-para-utilizar-alpha-vantage-en-python">21.1.2. Pasos para Utilizar Alpha Vantage en Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">21.1.3. Consideraciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-practico">21.1.4. Ejercicio Práctico</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-datos-de-archivos-csv">22. 3. Importación de Datos de Archivos CSV</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-archivos-csv-en-python">22.1. Manejo de Archivos CSV en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leer-un-archivo-csv">22.1.1. Leer un archivo CSV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico">22.2. Ejemplo Práctico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-importar-y-manipular-estos-datos">22.2.1. Cómo importar y manipular estos datos:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">22.3. Ejercicio Práctico</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables-relevantes">23. 4. Selección de Variables Relevantes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-sobre-la-seleccion-de-caracteristicas">23.1. Teoría sobre la Selección de Características</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-la-seleccion-de-caracteristicas">23.1.1. Importancia de la selección de características:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comunes-de-seleccion-de-caracteristicas">23.1.2. Métodos comunes de selección de características:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnicas-de-seleccion-de-variables-en-python">23.2. Técnicas de Selección de Variables en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-componentes-principales-pca">23.2.1. Análisis de Componentes Principales (PCA):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-caracteristicas-en-modelos-de-arboles">23.2.2. Importancia de características en modelos de árboles:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-y-ejercicio-practico">23.3. Ejemplo y Ejercicio Práctico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">23.3.1. Ejercicio práctico</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="diplomado-en-ciencia-de-datos-para-toma-de-decisiones-financieras">
+<h1><span class="section-number">18. </span>Diplomado en ciencia de datos para toma de decisiones financieras<a class="headerlink" href="#diplomado-en-ciencia-de-datos-para-toma-de-decisiones-financieras" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p><strong>Leonardo H. Talero-Sarmiento</strong></p>
+<section id="ltalero-unab-edu-co">
+<h2><span class="section-number">18.1. </span><a class="reference external" href="mailto:ltalero&#37;&#52;&#48;unab&#46;edu&#46;co">ltalero<span>&#64;</span>unab<span>&#46;</span>edu<span>&#46;</span>co</a><a class="headerlink" href="#ltalero-unab-edu-co" title="Link to this heading">#</a></h2>
+</section>
+<section id="modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">
+<h2><span class="section-number">18.2. </span><strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong><a class="headerlink" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Introducción a Python para Finanzas</strong>: Configuración del entorno, sintaxis básica, estructuras de datos. (4 horas)</p></li>
+<li><p><strong>Programación en Python</strong>: Funciones, bucles, manejo de errores. (4 horas)</p></li>
+<li><p><strong>Estadística Básica en Python</strong>: Medidas de tendencia central y dispersión, probabilidad. (4 horas)</p></li>
+<li><p><strong>Adquisición y Selección de Datos Financieros</strong>: Importación de datos (APIs, CSV), selección de variables relevantes. (4 horas)</p></li>
+<li><p><strong>Limpieza y Preparación de Datos</strong>: Manejo de valores faltantes, transformación de variables. (4 horas)</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="indice-del-curso">
+<h1><span class="section-number">19. </span>Índice del Curso<a class="headerlink" href="#indice-del-curso" title="Link to this heading">#</a></h1>
+<p>Para estructurar un curso de cuatro horas sobre “Adquisición y Selección de Datos Financieros” enfocado en la importación de datos desde diversas fuentes como APIs y archivos CSV, así como en la selección de variables relevantes, aquí te ofrezco un plan detallado que incluye segmentos teóricos y prácticos con ejemplos y ejercicios en Python:</p>
+<ol class="arabic simple">
+<li><p><strong>Introducción a la Adquisición de Datos</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Objetivos del curso</strong>: Explicar la importancia de los datos en las decisiones financieras y cómo la calidad de los datos influye en el análisis financiero.</p></li>
+<li><p><strong>Tipos de datos financieros</strong>: Descripción general de los tipos de datos (precios de acciones, indicadores económicos, datos de mercado, etc.).</p></li>
+<li><p><strong>Fuentes de datos</strong>: Revisión de fuentes comunes de datos financieros como Bloomberg, Yahoo Finance, APIs públicas, entre otros.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Importación de Datos de APIs</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Teoría de APIs</strong>: Explicación sobre qué es una API y cómo se utiliza para obtener datos en tiempo real o históricos.</p></li>
+<li><p><strong>Ejemplo práctico con Python</strong>: Uso de la biblioteca <code class="docutils literal notranslate"><span class="pre">requests</span></code> para acceder a la API de Yahoo Finance o Alpha Vantage.</p>
+<ul>
+<li><p>Instalación de la librería: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">requests</span></code></p></li>
+<li><p>Demostración de cómo obtener datos de precios de acciones, volúmenes y metadatos.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejercicio práctico</strong>: Los estudiantes deberán escribir un script para obtener datos de una acción específica usando una API.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Importación de Datos de Archivos CSV</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Manejo de archivos CSV en Python</strong>: Uso de pandas para leer y escribir datos en formato CSV.</p>
+<ul>
+<li><p>Instalación de pandas: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p></li>
+<li><p>Lectura de un archivo CSV: <code class="docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></p></li>
+<li><p>Manipulación básica de datos: selección de columnas, filtrado de filas.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejemplo práctico</strong>: Importación de un archivo CSV con datos históricos de precios de divisas.</p></li>
+<li><p><strong>Ejercicio práctico</strong>: Los estudiantes importarán datos de precios de bonos de un archivo CSV y realizarán un análisis preliminar.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><strong>Selección de Variables Relevantes</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Teoría sobre la selección de características</strong>: Importancia de elegir las variables correctas para el análisis y modelado financiero.</p></li>
+<li><p><strong>Técnicas de selección de variables</strong>: Métodos estadísticos y de aprendizaje automático para la selección de características.</p>
+<ul>
+<li><p>Correlación, análisis de componentes principales (PCA), importancia de características en modelos de árboles de decisión.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejemplo práctico con Python</strong>: Uso de <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> para la selección de características.</p>
+<ul>
+<li><p>Instalación de scikit-learn: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">scikit-learn</span></code></p></li>
+<li><p>Aplicación de técnicas de reducción de dimensiones a un conjunto de datos financieros.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejercicio práctico</strong>: Los estudiantes aplicarán métodos de selección de variables a un conjunto de datos de mercado para identificar los predictores más significativos del rendimiento del activo.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-adquisicion-de-datos">
+<h1><span class="section-number">20. </span>1. Introducción a la Adquisición de Datos<a class="headerlink" href="#introduccion-a-la-adquisicion-de-datos" title="Link to this heading">#</a></h1>
+<p>La adquisición de datos financieros es una piedra angular en el mundo de las finanzas modernas. Los analistas, traders y gestores de fondos dependen de datos precisos y oportunos para tomar decisiones informadas. Esta sección introduce los fundamentos de la adquisición de datos, los tipos de datos en finanzas y cómo acceder a ellos mediante programación en Python.</p>
+<section id="fundamentos-teoricos">
+<h2><span class="section-number">20.1. </span>Fundamentos Teóricos<a class="headerlink" href="#fundamentos-teoricos" title="Link to this heading">#</a></h2>
+<p><strong>¿Por qué son cruciales los datos en las decisiones financieras?</strong>
+Los datos son esenciales en finanzas por varias razones:</p>
+<ul class="simple">
+<li><p><strong>Toma de decisiones basada en evidencia</strong>: Los datos proporcionan una base objetiva para tomar decisiones de inversión, crédito y financiamiento.</p></li>
+<li><p><strong>Análisis de riesgo</strong>: Ayudan a identificar, medir y monitorizar riesgos financieros.</p></li>
+<li><p><strong>Cumplimiento y reporte</strong>: Son fundamentales para cumplir con regulaciones y preparar informes financieros.</p></li>
+<li><p><strong>Desarrollo de modelos</strong>: Son la base para el desarrollo de modelos financieros y algoritmos de trading.</p></li>
+</ul>
+<p><strong>Impacto de la calidad de los datos</strong>:
+La calidad de los datos afecta directamente la precisión de los análisis financieros. Datos incorrectos o desactualizados pueden llevar a malas decisiones y pérdidas financieras. Por lo tanto, es crucial asegurar que los datos sean precisos, completos y actualizados.</p>
+</section>
+<section id="tipos-de-datos-financieros">
+<h2><span class="section-number">20.2. </span>Tipos de Datos Financieros<a class="headerlink" href="#tipos-de-datos-financieros" title="Link to this heading">#</a></h2>
+<p>Los datos financieros pueden clasificarse en varias categorías, incluyendo:</p>
+<ul class="simple">
+<li><p><strong>Datos de mercado</strong>: Incluyen precios de acciones, bonos, commodities, tipos de cambio, etc.</p></li>
+<li><p><strong>Datos económicos</strong>: Comprenden indicadores como el PIB, tasas de desempleo, inflación y otros datos macroeconómicos.</p></li>
+<li><p><strong>Datos de transacciones</strong>: Relacionados con el historial de transacciones de un activo o instrumento financiero.</p></li>
+<li><p><strong>Datos fundamentales</strong>: Involucran información sobre la salud financiera de las empresas, como balances, estados de resultados y flujos de efectivo.</p></li>
+</ul>
+</section>
+<section id="fuentes-de-datos">
+<h2><span class="section-number">20.3. </span>Fuentes de Datos<a class="headerlink" href="#fuentes-de-datos" title="Link to this heading">#</a></h2>
+<p>Las fuentes de datos financieros varían desde bases de datos internas de una empresa hasta fuentes externas públicas y comerciales:</p>
+<ul class="simple">
+<li><p><strong>Yahoo Finance</strong>: Ofrece datos de mercado amplios y gratuitos, accesibles mediante API.</p></li>
+<li><p><strong>Bloomberg y Reuters</strong>: Proporcionan datos exhaustivos y en tiempo real, utilizados ampliamente por profesionales financieros.</p></li>
+<li><p><strong>APIs públicas</strong>: Como Alpha Vantage o Quandl, que ofrecen diversas métricas financieras mediante interfaces de programación.</p></li>
+<li><p><strong>Datos gubernamentales</strong>: Provenientes de bancos centrales y oficinas de estadísticas, útiles para análisis económicos.</p></li>
+</ul>
+</section>
+<section id="ejemplo-en-python">
+<h2><span class="section-number">20.4. </span>Ejemplo en Python<a class="headerlink" href="#ejemplo-en-python" title="Link to this heading">#</a></h2>
+<p>A continuación, se muestra un ejemplo simple de cómo acceder a datos de mercado en tiempo real utilizando Python con la API de Yahoo Finance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">yfinance</span>
+<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+
+<span class="c1"># Definir el ticker del activo y el período de consulta</span>
+<span class="n">ticker</span> <span class="o">=</span> <span class="s2">&quot;AAPL&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+
+<span class="c1"># Obtener datos históricos de precios</span>
+<span class="n">historical_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="s2">&quot;1mo&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar los últimos 5 registros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">historical_data</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Para ejecutar este ejemplo, necesitarás instalar el paquete <code class="docutils literal notranslate"><span class="pre">yfinance</span></code> usando <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">yfinance</span></code>. Este script obtiene y muestra los datos históricos del precio de las acciones de Apple (AAPL) del último mes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>yfinance
+<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+
+<span class="c1"># Definir el ticker del activo y el período de consulta</span>
+<span class="n">ticker</span> <span class="o">=</span> <span class="s2">&quot;AAPL&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+
+<span class="c1"># Obtener datos históricos de precios</span>
+<span class="n">historical_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="s2">&quot;1mo&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar los últimos 5 registros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">historical_data</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting yfinance
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading yfinance-0.2.38-py2.py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: pandas&gt;=1.3.0 in /home/codespace/.local/lib/python3.10/site-packages (from yfinance) (2.2.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.16.5 in /home/codespace/.local/lib/python3.10/site-packages (from yfinance) (1.26.4)
+Requirement already satisfied: requests&gt;=2.31 in /home/codespace/.local/lib/python3.10/site-packages (from yfinance) (2.31.0)
+Collecting multitasking&gt;=0.0.7 (from yfinance)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading multitasking-0.0.11-py3-none-any.whl.metadata (5.5 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting lxml&gt;=4.9.1 (from yfinance)
+  Downloading lxml-5.2.1-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (3.4 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting appdirs&gt;=1.4.4 (from yfinance)
+  Downloading appdirs-1.4.4-py2.py3-none-any.whl.metadata (9.0 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2022.5 in /home/codespace/.local/lib/python3.10/site-packages (from yfinance) (2024.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting frozendict&gt;=2.3.4 (from yfinance)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading frozendict-2.4.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (23 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting peewee&gt;=3.16.2 (from yfinance)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading peewee-3.17.3.tar.gz (3.0 MB)
+?25l     <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/3.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">2.9/3.0 MB</span> <span class=" -Color -Color-Red">90.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">2.9/3.0 MB</span> <span class=" -Color -Color-Red">90.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">33.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Preparing metadata (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: beautifulsoup4&gt;=4.11.1 in /home/codespace/.local/lib/python3.10/site-packages (from yfinance) (4.12.3)
+Collecting html5lib&gt;=1.1 (from yfinance)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading html5lib-1.1-py2.py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: soupsieve&gt;1.2 in /home/codespace/.local/lib/python3.10/site-packages (from beautifulsoup4&gt;=4.11.1-&gt;yfinance) (2.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.9 in /home/codespace/.local/lib/python3.10/site-packages (from html5lib&gt;=1.1-&gt;yfinance) (1.16.0)
+Requirement already satisfied: webencodings in /home/codespace/.local/lib/python3.10/site-packages (from html5lib&gt;=1.1-&gt;yfinance) (0.5.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.10/site-packages (from pandas&gt;=1.3.0-&gt;yfinance) (2.9.0.post0)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.10/site-packages (from pandas&gt;=1.3.0-&gt;yfinance) (2024.1)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/codespace/.local/lib/python3.10/site-packages (from requests&gt;=2.31-&gt;yfinance) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/python3.10/site-packages (from requests&gt;=2.31-&gt;yfinance) (3.6)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/python/3.10.13/lib/python3.10/site-packages (from requests&gt;=2.31-&gt;yfinance) (2.0.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/codespace/.local/lib/python3.10/site-packages (from requests&gt;=2.31-&gt;yfinance) (2024.2.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading yfinance-0.2.38-py2.py3-none-any.whl (72 kB)
+?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/73.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">73.0/73.0 kB</span> <span class=" -Color -Color-Red">2.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading appdirs-1.4.4-py2.py3-none-any.whl (9.6 kB)
+Downloading frozendict-2.4.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (116 kB)
+?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/116.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">116.8/116.8 kB</span> <span class=" -Color -Color-Red">3.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading html5lib-1.1-py2.py3-none-any.whl (112 kB)
+?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/112.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">112.2/112.2 kB</span> <span class=" -Color -Color-Red">3.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading lxml-5.2.1-cp310-cp310-manylinux_2_28_x86_64.whl (5.0 MB)
+?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/5.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">5.0/5.0 MB</span> <span class=" -Color -Color-Red">250.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">5.0/5.0 MB</span> <span class=" -Color -Color-Red">250.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5.0/5.0 MB</span> <span class=" -Color -Color-Red">61.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading multitasking-0.0.11-py3-none-any.whl (8.5 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: peewee
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for peewee (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25h  Created wheel for peewee: filename=peewee-3.17.3-cp310-cp310-linux_x86_64.whl size=854122 sha256=a7b05fb4820f5a6a3ce056e4e1d31aeccae4504db25ed777bcb1106199176dce
+  Stored in directory: /home/codespace/.cache/pip/wheels/0d/32/b7/cad9f818b37cf97df4c87a8308da86a433af81651d98f8d8aa
+Successfully built peewee
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: peewee, multitasking, appdirs, lxml, html5lib, frozendict, yfinance
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed appdirs-1.4.4 frozendict-2.4.2 html5lib-1.1 lxml-5.2.1 multitasking-0.0.11 peewee-3.17.3 yfinance-0.2.38
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 Open        High         Low       Close  \
+Date                                                                        
+2024-04-15 00:00:00-04:00  175.360001  176.630005  172.500000  172.690002   
+2024-04-16 00:00:00-04:00  171.750000  173.759995  168.270004  169.380005   
+2024-04-17 00:00:00-04:00  169.610001  170.649994  168.000000  168.000000   
+2024-04-18 00:00:00-04:00  168.029999  168.639999  166.550003  167.039993   
+2024-04-19 00:00:00-04:00  166.210007  166.399994  164.080002  165.000000   
+
+                             Volume  Dividends  Stock Splits  
+Date                                                          
+2024-04-15 00:00:00-04:00  73531800        0.0           0.0  
+2024-04-16 00:00:00-04:00  73711200        0.0           0.0  
+2024-04-17 00:00:00-04:00  50901200        0.0           0.0  
+2024-04-18 00:00:00-04:00  43122900        0.0           0.0  
+2024-04-19 00:00:00-04:00  67772100        0.0           0.0  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">historical_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Volume</th>
+      <th>Dividends</th>
+      <th>Stock Splits</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2024-03-20 00:00:00-04:00</th>
+      <td>175.720001</td>
+      <td>178.669998</td>
+      <td>175.089996</td>
+      <td>178.669998</td>
+      <td>53423100</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-03-21 00:00:00-04:00</th>
+      <td>177.050003</td>
+      <td>177.490005</td>
+      <td>170.839996</td>
+      <td>171.369995</td>
+      <td>106181300</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-03-22 00:00:00-04:00</th>
+      <td>171.759995</td>
+      <td>173.050003</td>
+      <td>170.059998</td>
+      <td>172.279999</td>
+      <td>71106600</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-03-25 00:00:00-04:00</th>
+      <td>170.570007</td>
+      <td>171.940002</td>
+      <td>169.449997</td>
+      <td>170.850006</td>
+      <td>54288300</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-03-26 00:00:00-04:00</th>
+      <td>170.000000</td>
+      <td>171.419998</td>
+      <td>169.580002</td>
+      <td>169.710007</td>
+      <td>57388400</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="importacion-de-datos-de-apis">
+<h1><span class="section-number">21. </span>2. Importación de Datos de APIs<a class="headerlink" href="#importacion-de-datos-de-apis" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2><span class="section-number">21.1. </span>Importación de Datos de APIs<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>En el ámbito financiero, la capacidad de acceder y manipular datos en tiempo real es esencial para el análisis de mercados, la toma de decisiones y la evaluación de riesgos. Las APIs, o Interfaces de Programación de Aplicaciones, son herramientas fundamentales para facilitar este acceso.</p>
+<section id="teoria-de-apis">
+<h3><span class="section-number">21.1.1. </span>Teoría de APIs<a class="headerlink" href="#teoria-de-apis" title="Link to this heading">#</a></h3>
+<p>Una <strong>API</strong> (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y especificaciones que las aplicaciones pueden seguir para comunicarse entre ellas. Las APIs permiten que su software extraiga información de un servicio o envíe información a un servicio de manera coherente y segura. En el contexto de datos financieros, las APIs suelen proporcionar formas programáticas de acceder a datos de mercado en tiempo real, datos históricos, indicadores económicos y más, todo sin necesidad de intervención manual o scraping web.</p>
+<section id="funcionamiento-de-las-apis-en-finanzas">
+<h4><span class="section-number">21.1.1.1. </span>Funcionamiento de las APIs en Finanzas:<a class="headerlink" href="#funcionamiento-de-las-apis-en-finanzas" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Autenticación</strong>: Muchas APIs financieras requieren un proceso de autenticación, generalmente a través de una clave API, para controlar el acceso y monitorear el uso.</p></li>
+<li><p><strong>Solicitudes y Respuestas</strong>: Las APIs utilizan solicitudes HTTP para recibir comandos y enviar respuestas, empleando formatos estándar como JSON o XML para los datos.</p></li>
+<li><p><strong>Límites de Tasa</strong>: Para garantizar un uso justo y evitar sobrecargas, las APIs financieras a menudo limitan la cantidad de solicitudes que los usuarios pueden realizar en un período de tiempo.</p></li>
+</ul>
+<p>Si buscas usar una API actualizada para obtener datos financieros, una excelente opción puede ser utilizar la API de Google Finance a través de Google Sheets, que permite acceder a información financiera actualizada. Sin embargo, para propósitos de programación y uso directo de una API en scripts Python, Google no proporciona una API financiera pública específica como Yahoo Finance o Alpha Vantage lo hacen.</p>
+<p>En lugar de eso, podemos utilizar Alpha Vantage, que es una popular API financiera que proporciona datos gratuitos de acciones, divisas (Forex), y criptomonedas a través de una interfaz API muy accesible. Proporcionaré un ejemplo de cómo usar Alpha Vantage para obtener datos históricos de acciones utilizando Python. Primero, necesitarás obtener una clave API gratuita registrándote en su sitio web.</p>
+</section>
+</section>
+<section id="pasos-para-utilizar-alpha-vantage-en-python">
+<h3><span class="section-number">21.1.2. </span>Pasos para Utilizar Alpha Vantage en Python<a class="headerlink" href="#pasos-para-utilizar-alpha-vantage-en-python" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Regístrate para obtener una clave API gratuita</strong> en <a class="reference external" href="https://www.alphavantage.co/support/#api-key">Alpha Vantage</a>.</p></li>
+<li><p><strong>Instala la biblioteca <code class="docutils literal notranslate"><span class="pre">alpha_vantage</span></code></strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>alpha_vantage
+</pre></div>
+</div>
+</li>
+<li><p><strong>Ejemplo de Script para Obtener Datos de Acciones</strong>:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alpha_vantage.timeseries</span> <span class="kn">import</span> <span class="n">TimeSeries</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Tu clave API de Alpha Vantage</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="s1">&#39;YOUR_API_KEY&#39;</span>
+
+<span class="c1"># Inicializar TimeSeries con tu clave API</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;pandas&#39;</span><span class="p">)</span>
+
+<span class="c1"># Obtener datos históricos de las acciones</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">meta_data</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">get_daily</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="n">outputsize</span><span class="o">=</span><span class="s1">&#39;compact&#39;</span><span class="p">)</span>
+
+<span class="c1"># Imprimir los datos</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Opcional: visualizar los datos</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;4. close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Daily Closing Price for Apple (AAPL)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Este script hará una solicitud a Alpha Vantage para obtener los precios diarios de cierre de las acciones de Apple (AAPL) y los imprimirá. Además, incluye un ejemplo de cómo visualizar estos datos usando <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+</section>
+<section id="consideraciones">
+<h3><span class="section-number">21.1.3. </span>Consideraciones<a class="headerlink" href="#consideraciones" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Límites de API</strong>: Alpha Vantage tiene límites en la cantidad de solicitudes que puedes hacer (5 solicitudes por minuto, 500 solicitudes por día en el plan gratuito).</p></li>
+<li><p><strong>Latencia y Tiempo Real</strong>: Aunque Alpha Vantage proporciona datos actualizados, puede haber una pequeña latencia en comparación con un sistema de trading en tiempo real. Para aplicaciones críticas de tiempo, considera sus opciones premium o servicios alternativos.</p></li>
+</ul>
+<p>Este enfoque te permitirá integrar datos financieros en tus aplicaciones Python, adecuado para análisis, aplicaciones educativas, o incluso para prototipos de estrategias de inversión.</p>
+</section>
+<section id="ejercicio-practico">
+<h3><span class="section-number">21.1.4. </span>Ejercicio Práctico<a class="headerlink" href="#ejercicio-practico" title="Link to this heading">#</a></h3>
+<p><strong>Objetivo</strong>: Obtener datos históricos de precios de acciones usando una API.</p>
+<p><strong>Instrucciones</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Selecciona una API financiera</strong> que ofrezca datos históricos de acciones. Puedes elegir Yahoo Finance, Alpha Vantage, o cualquier otra que prefieras.</p></li>
+<li><p><strong>Regístrate para obtener una clave API</strong> si es necesario.</p></li>
+<li><p><strong>Utiliza la biblioteca <code class="docutils literal notranslate"><span class="pre">requests</span></code></strong> para realizar una solicitud a la API y obtener datos de un año para una acción de tu elección.</p></li>
+<li><p><strong>Guarda los datos recibidos en un archivo CSV</strong>.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="importacion-de-datos-de-archivos-csv">
+<h1><span class="section-number">22. </span>3. Importación de Datos de Archivos CSV<a class="headerlink" href="#importacion-de-datos-de-archivos-csv" title="Link to this heading">#</a></h1>
+<p>La habilidad para manejar y analizar datos desde archivos CSV es una competencia esencial en el ámbito de las finanzas, donde frecuentemente se requiere procesar y analizar grandes volúmenes de datos tabulares. Python, junto con la biblioteca <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, ofrece herramientas poderosas y flexibles para esta tarea.</p>
+<section id="manejo-de-archivos-csv-en-python">
+<h2><span class="section-number">22.1. </span>Manejo de Archivos CSV en Python<a class="headerlink" href="#manejo-de-archivos-csv-en-python" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> es una biblioteca de Python que proporciona estructuras de datos de alto rendimiento y fácil uso, ideales para el manejo de datos tabulares. Para trabajar con archivos CSV, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> ofrece la función <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>, que permite cargar datos de un archivo CSV directamente a un DataFrame, la estructura de datos central de <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<section id="leer-un-archivo-csv">
+<h3><span class="section-number">22.1.1. </span>Leer un archivo CSV<a class="headerlink" href="#leer-un-archivo-csv" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar datos desde un archivo CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ruta/del/archivo.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar las primeras cinco filas del DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ejemplo-practico">
+<h2><span class="section-number">22.2. </span>Ejemplo Práctico<a class="headerlink" href="#ejemplo-practico" title="Link to this heading">#</a></h2>
+<p>Supongamos que tienes un archivo CSV con datos de precios de divisas. El archivo contiene columnas para la fecha, el tipo de cambio y otros indicadores económicos asociados.</p>
+<section id="como-importar-y-manipular-estos-datos">
+<h3><span class="section-number">22.2.1. </span>Cómo importar y manipular estos datos:<a class="headerlink" href="#como-importar-y-manipular-estos-datos" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar datos de divisas desde un archivo CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;precios_divisas.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ver las primeras filas del DataFrame para entender su estructura</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Supongamos que queremos convertir la columna de fechas a un tipo datetime</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">])</span>
+
+<span class="c1"># Supongamos que queremos filtrar los datos para mostrar solo aquellos después de una fecha específica</span>
+<span class="n">df_filtrado</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2020-01-01&#39;</span><span class="p">]</span>
+
+<span class="c1"># Mostrar los resultados filtrados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_filtrado</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2><span class="section-number">22.3. </span>Ejercicio Práctico<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo</strong>: Cargar datos de precios de bonos desde un archivo CSV y realizar un análisis básico.</p>
+<p><strong>Datos</strong>: El archivo <code class="docutils literal notranslate"><span class="pre">precios_bonos.csv</span></code> contiene columnas para <code class="docutils literal notranslate"><span class="pre">Fecha</span></code>, <code class="docutils literal notranslate"><span class="pre">Precio</span> <span class="pre">de</span> <span class="pre">Cierre</span></code> y <code class="docutils literal notranslate"><span class="pre">Volumen</span></code>.</p>
+<p><strong>Tareas</strong>:</p>
+<ol class="arabic simple">
+<li><p>Carga el archivo CSV <code class="docutils literal notranslate"><span class="pre">precios_bonos.csv</span></code> en un DataFrame.</p></li>
+<li><p>Convierte la columna <code class="docutils literal notranslate"><span class="pre">Fecha</span></code> a tipo datetime.</p></li>
+<li><p>Calcula el precio promedio de cierre de los bonos.</p></li>
+<li><p>Encuentra el día con el volumen más alto de trading.</p></li>
+<li><p>Crea una nueva columna que calcule la variación diaria del precio de cierre y muestra los resultados.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar el archivo CSV</span>
+<span class="n">bonos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;precios_bonos.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convertir la columna &#39;Fecha&#39;</span>
+<span class="n">bonos</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">bonos</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">])</span>
+
+<span class="c1"># Calcular el precio promedio de cierre</span>
+<span class="n">precio_promedio</span> <span class="o">=</span> <span class="n">bonos</span><span class="p">[</span><span class="s1">&#39;Precio de Cierre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precio promedio de cierre:&quot;</span><span class="p">,</span> <span class="n">precio_promedio</span><span class="p">)</span>
+
+<span class="c1"># Encontrar el día con el mayor volumen</span>
+<span class="n">max_volumen</span> <span class="o">=</span> <span class="n">bonos</span><span class="p">[</span><span class="n">bonos</span><span class="p">[</span><span class="s1">&#39;Volumen&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">bonos</span><span class="p">[</span><span class="s1">&#39;Volumen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Día con mayor volumen:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">max_volumen</span><span class="p">)</span>
+
+<span class="c1"># Calcular la variación diaria del precio de cierre</span>
+<span class="n">bonos</span><span class="p">[</span><span class="s1">&#39;Variación Diaria&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bonos</span><span class="p">[</span><span class="s1">&#39;Precio de Cierre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datos con la nueva columna de variación diaria:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">bonos</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="seleccion-de-variables-relevantes">
+<h1><span class="section-number">23. </span>4. Selección de Variables Relevantes<a class="headerlink" href="#seleccion-de-variables-relevantes" title="Link to this heading">#</a></h1>
+<p>En el análisis financiero, la selección de variables, también conocida como selección de características, es un paso crucial para desarrollar modelos predictivos eficientes y precisos. Este proceso no solo mejora la precisión de los modelos, sino que también reduce la complejidad computacional y mejora la interpretabilidad de los resultados.</p>
+<section id="teoria-sobre-la-seleccion-de-caracteristicas">
+<h2><span class="section-number">23.1. </span>Teoría sobre la Selección de Características<a class="headerlink" href="#teoria-sobre-la-seleccion-de-caracteristicas" title="Link to this heading">#</a></h2>
+<p>La selección de características implica identificar las variables más relevantes para usar en modelos predictivos. Esto es especialmente importante en finanzas, donde modelos sobrecargados con datos irrelevantes pueden llevar a conclusiones erróneas y aumentar el riesgo de decisiones financieras subóptimas.</p>
+<section id="importancia-de-la-seleccion-de-caracteristicas">
+<h3><span class="section-number">23.1.1. </span>Importancia de la selección de características:<a class="headerlink" href="#importancia-de-la-seleccion-de-caracteristicas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Reducción de la dimensionalidad</strong>: Menos datos implican menos complejidad computacional.</p></li>
+<li><p><strong>Mejora del rendimiento del modelo</strong>: Eliminar datos ruidosos o irrelevantes puede mejorar la precisión del modelo.</p></li>
+<li><p><strong>Prevención del sobreajuste</strong>: Menos variables reducen el riesgo de ajustar el modelo excesivamente a los datos de muestra.</p></li>
+<li><p><strong>Costos reducidos</strong>: Menos datos pueden significar menores costos de almacenamiento y procesamiento.</p></li>
+</ul>
+</section>
+<section id="metodos-comunes-de-seleccion-de-caracteristicas">
+<h3><span class="section-number">23.1.2. </span>Métodos comunes de selección de características:<a class="headerlink" href="#metodos-comunes-de-seleccion-de-caracteristicas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Filtros</strong>: Evalúan cada característica individualmente antes del proceso de modelado. Ejemplos incluyen correlación y pruebas chi-cuadrado.</p></li>
+<li><p><strong>Métodos envolventes</strong>: Evalúan múltiples subconjuntos de características, optimizando la selección para maximizar el rendimiento del modelo. Ejemplos son la eliminación recursiva de características.</p></li>
+<li><p><strong>Métodos intrínsecos</strong>: Realizan la selección de características como parte del proceso de modelado. Un ejemplo es la regularización L1, que puede anular algunos coeficientes de características.</p></li>
+</ul>
+</section>
+</section>
+<section id="tecnicas-de-seleccion-de-variables-en-python">
+<h2><span class="section-number">23.2. </span>Técnicas de Selección de Variables en Python<a class="headerlink" href="#tecnicas-de-seleccion-de-variables-en-python" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> ofrece varias herramientas para la selección de características. Vamos a explorar dos técnicas ampliamente utilizadas: Análisis de Componentes Principales (PCA) y la Importancia de Características en modelos basados en árboles.</p>
+<section id="analisis-de-componentes-principales-pca">
+<h3><span class="section-number">23.2.1. </span>Análisis de Componentes Principales (PCA):<a class="headerlink" href="#analisis-de-componentes-principales-pca" title="Link to this heading">#</a></h3>
+<p>PCA es una técnica de reducción de dimensionalidad que transforma las variables originales en un nuevo conjunto de variables, que son combinaciones lineales de las originales y capturan la máxima varianza posible.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Estandarizar los datos</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># Suponiendo que X es tu dataset</span>
+
+<span class="c1"># Aplicar PCA</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Reducir a dos componentes</span>
+<span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="importancia-de-caracteristicas-en-modelos-de-arboles">
+<h3><span class="section-number">23.2.2. </span>Importancia de características en modelos de árboles:<a class="headerlink" href="#importancia-de-caracteristicas-en-modelos-de-arboles" title="Link to this heading">#</a></h3>
+<p>Los modelos basados en árboles, como los árboles de decisión y las ensamblajes, pueden proporcionar la importancia de las características directamente como parte de su entrenamiento.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="c1"># Suponiendo que X e y son tus datos y etiquetas</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">importances</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ejemplo-y-ejercicio-practico">
+<h2><span class="section-number">23.3. </span>Ejemplo y Ejercicio Práctico<a class="headerlink" href="#ejemplo-y-ejercicio-practico" title="Link to this heading">#</a></h2>
+<p><strong>Ejemplo práctico</strong>:
+Supongamos que tenemos un conjunto de datos financieros con múltiples indicadores técnicos y queremos identificar cuáles son los más importantes para predecir el precio de cierre de las acciones.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">f_classif</span>
+
+<span class="c1"># Cargar datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datos_financieros.csv&#39;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Precio_Cierre&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Precio_Cierre&#39;</span><span class="p">]</span>
+
+<span class="c1"># Seleccionar las 5 mejores características</span>
+<span class="n">selector</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Ver las características seleccionadas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">selector</span><span class="o">.</span><span class="n">get_support</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+</pre></div>
+</div>
+<section id="id3">
+<h3><span class="section-number">23.3.1. </span>Ejercicio práctico<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Los estudiantes deberán utilizar un conjunto de datos de bonos con varias características económicas y aplicar tanto PCA como la Importancia de Características para determinar cuáles son los predictores más relevantes.</p>
+<ul class="simple">
+<li><p><strong>Objetivo</strong>: Analizar la importancia de diferentes variables económicas en la predicción de los precios de los bonos.</p></li>
+<li><p><strong>Tarea</strong>: Aplicar PCA y RandomForest para seleccion</p></li>
+</ul>
+<p>ar las características más relevantes.</p>
+<ul class="simple">
+<li><p><strong>Entregable</strong>: Un informe que detalle las características seleccionadas y su posible impacto en la predicción de precios.</p></li>
+</ul>
+<p>Este enfoque práctico asegura que los estudiantes no solo aprendan la teoría detrás de la selección de variables, sino que también adquieran habilidades prácticas aplicándolas en contextos financieros reales utilizando Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Establecer una semilla para reproducibilidad</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Crear un DataFrame con 1000 entradas</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2021-01-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span>
+
+<span class="c1"># Simular diferentes características</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Volumen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Promedio_Movil_10&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">+</span> <span class="mi">50</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;RSI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>  <span class="c1"># Índice de fuerza relativa simulado</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;MACD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>  <span class="c1"># Convergencia/divergencia de la media móvil</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Precio_Cierre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>  <span class="c1"># Precio de cierre</span>
+
+<span class="c1"># Introducir un poco de ruido</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Ruido&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+
+<span class="c1"># Guardar el DataFrame como un archivo CSV</span>
+<span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;datos_financieros.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar las primeras filas del DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            Volumen  Promedio_Movil_10        RSI      MACD  Precio_Cierre  \
+2021-01-01    25795         146.815215  46.961692  0.667456      76.660450   
+2021-01-02    10860         243.624645  65.681048 -0.595222     204.601647   
+2021-01-03    86820         349.059476  44.739220 -0.180249     293.725196   
+2021-01-04    64886         459.408685  49.859805  2.046771     396.725419   
+2021-01-05    16265         537.327620  51.016443 -0.369169     474.388223   
+
+               Ruido  
+2021-01-01  0.002808  
+2021-01-02  0.010423  
+2021-01-03 -0.118688  
+2021-01-04 -0.029841  
+2021-01-05 -0.033868  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">f_classif</span>
+
+<span class="c1"># Cargar datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datos_financieros.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Precio_Cierre&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Precio_Cierre&#39;</span><span class="p">]</span>
+
+<span class="c1"># Seleccionar las 5 mejores características</span>
+<span class="n">selector</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Ver las características seleccionadas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">selector</span><span class="o">.</span><span class="n">get_support</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Volumen&#39;, &#39;Promedio_Movil_10&#39;, &#39;RSI&#39;, &#39;MACD&#39;, &#39;Precio_Cierre&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/codespace/.local/lib/python3.10/site-packages/sklearn/feature_selection/_univariate_selection.py:109: RuntimeWarning: invalid value encountered in divide
+  msw = sswn / float(dfwn)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_new</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000, 5)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DipFin%20Sesion%201.3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Diplomado en ciencia de datos para toma de decisiones financieras</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DipFin%20Sesion%201.5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">24. </span>Diplomado en ciencia de datos para toma de decisiones financieras</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18. Diplomado en ciencia de datos para toma de decisiones financieras</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ltalero-unab-edu-co">18.1. ltalero@unab.edu.co</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">18.2. <strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-del-curso">19. Índice del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-adquisicion-de-datos">20. 1. Introducción a la Adquisición de Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-teoricos">20.1. Fundamentos Teóricos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-financieros">20.2. Tipos de Datos Financieros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos">20.3. Fuentes de Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-python">20.4. Ejemplo en Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-datos-de-apis">21. 2. Importación de Datos de APIs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">21.1. Importación de Datos de APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-de-apis">21.1.1. Teoría de APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#funcionamiento-de-las-apis-en-finanzas">21.1.1.1. Funcionamiento de las APIs en Finanzas:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-para-utilizar-alpha-vantage-en-python">21.1.2. Pasos para Utilizar Alpha Vantage en Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">21.1.3. Consideraciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-practico">21.1.4. Ejercicio Práctico</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-datos-de-archivos-csv">22. 3. Importación de Datos de Archivos CSV</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-archivos-csv-en-python">22.1. Manejo de Archivos CSV en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leer-un-archivo-csv">22.1.1. Leer un archivo CSV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico">22.2. Ejemplo Práctico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-importar-y-manipular-estos-datos">22.2.1. Cómo importar y manipular estos datos:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">22.3. Ejercicio Práctico</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables-relevantes">23. 4. Selección de Variables Relevantes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-sobre-la-seleccion-de-caracteristicas">23.1. Teoría sobre la Selección de Características</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-la-seleccion-de-caracteristicas">23.1.1. Importancia de la selección de características:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comunes-de-seleccion-de-caracteristicas">23.1.2. Métodos comunes de selección de características:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnicas-de-seleccion-de-variables-en-python">23.2. Técnicas de Selección de Variables en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-componentes-principales-pca">23.2.1. Análisis de Componentes Principales (PCA):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-caracteristicas-en-modelos-de-arboles">23.2.2. Importancia de características en modelos de árboles:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-y-ejercicio-practico">23.3. Ejemplo y Ejercicio Práctico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">23.3.1. Ejercicio práctico</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
