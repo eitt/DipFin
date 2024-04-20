@@ -1,0 +1,1479 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>24. Diplomado en ciencia de datos para toma de decisiones financieras &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DipFin Sesion 1.5';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="18. Diplomado en ciencia de datos para toma de decisiones financieras" href="DipFin%20Sesion%201.4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos de Python y Estadística Básica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.1.html">1. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">7. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">11. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">18. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">24. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDipFin Sesion 1.5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/DipFin Sesion 1.5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diplomado en ciencia de datos para toma de decisiones financieras</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">24. Diplomado en ciencia de datos para toma de decisiones financieras</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ltalero-unab-edu-co">24.1. ltalero@unab.edu.co</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">24.2. <strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-del-curso">25. Índice del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-limpieza-de-datos">26. 1. Introducción a la Limpieza de Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-la-limpieza-de-datos">26.1. 1. <strong>Importancia de la Limpieza de Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-comunes-en-los-datos">26.2. 2. <strong>Problemas Comunes en los Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-introductorio-en-python">26.3. 3. <strong>Ejemplo Introductorio en Python</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#haciendo-uso-de-datos-reales">26.4. 3. Haciendo uso de datos reales</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-valores-faltantes">27. 2. Manejo de Valores Faltantes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">27.1. Manejo de Valores Faltantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnicas-para-manejar-valores-faltantes">27.1.1. 1. <strong>Técnicas para Manejar Valores Faltantes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-en-python">27.1.2. 2. <strong>Ejemplo Práctico en Python</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-filas-con-valores-faltantes">27.1.2.1. Eliminación de Filas con Valores Faltantes:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-valores-faltantes">27.1.2.2. Imputación de Valores Faltantes:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-practico">27.1.3. 3. <strong>Ejercicio Práctico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-de-ejercicio-sugerido">27.1.3.1. Código de Ejercicio Sugerido:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-del-conjunto-de-datos">27.1.4. Modificación del Conjunto de Datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">27.1.5. Ejemplo Práctico en Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion-del-codigo">27.1.6. Explicación del Código</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-en-python-interpolacion-en-series-de-tiempo">27.1.7. Ejemplo Práctico en Python: Interpolación en Series de Tiempo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-del-conjunto-de-datos">27.1.7.1. Creación del Conjunto de Datos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicando-interpolacion">27.1.7.2. Aplicando Interpolación</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-completo">27.1.8. Código Completo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion-del-metodo-de-interpolacion">27.1.9. Explicación del Método de Interpolación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalar-y-normalizar-datos">27.2. 1. <strong>Escalar y Normalizar Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-variables-categoricas-y-reduccion-de-dimensionalidad">27.3. 2. <strong>Transformación de Variables Categóricas y Reducción de Dimensionalidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-y-ejercicio-practico-en-python">27.4. 3. <strong>Ejemplo y Ejercicio Práctico en Python</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-y-almacenamiento-de-datos-limpios">28. 4. Integración y Almacenamiento de Datos Limpios</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-y-almacenamiento-de-datos-limpio">28.1. Integración y Almacenamiento de Datos Limpio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-pipelines-de-datos">28.1.1. 1. <strong>Construcción de Pipelines de Datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos">28.1.2. 2. <strong>Almacenamiento de Datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">28.1.3. 3. <strong>Ejemplo Práctico en Python</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="diplomado-en-ciencia-de-datos-para-toma-de-decisiones-financieras">
+<h1><span class="section-number">24. </span>Diplomado en ciencia de datos para toma de decisiones financieras<a class="headerlink" href="#diplomado-en-ciencia-de-datos-para-toma-de-decisiones-financieras" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p><strong>Leonardo H. Talero-Sarmiento</strong></p>
+<section id="ltalero-unab-edu-co">
+<h2><span class="section-number">24.1. </span><a class="reference external" href="mailto:ltalero&#37;&#52;&#48;unab&#46;edu&#46;co">ltalero<span>&#64;</span>unab<span>&#46;</span>edu<span>&#46;</span>co</a><a class="headerlink" href="#ltalero-unab-edu-co" title="Link to this heading">#</a></h2>
+</section>
+<section id="modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">
+<h2><span class="section-number">24.2. </span><strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong><a class="headerlink" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Introducción a Python para Finanzas</strong>: Configuración del entorno, sintaxis básica, estructuras de datos. (4 horas)</p></li>
+<li><p><strong>Programación en Python</strong>: Funciones, bucles, manejo de errores. (4 horas)</p></li>
+<li><p><strong>Estadística Básica en Python</strong>: Medidas de tendencia central y dispersión, probabilidad. (4 horas)</p></li>
+<li><p><strong>Adquisición y Selección de Datos Financieros</strong>: Importación de datos (APIs, CSV), selección de variables relevantes. (4 horas)</p></li>
+<li><p><strong>Limpieza y Preparación de Datos</strong>: Manejo de valores faltantes, transformación de variables. (4 horas)</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="indice-del-curso">
+<h1><span class="section-number">25. </span>Índice del Curso<a class="headerlink" href="#indice-del-curso" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><strong>Introducción a la Limpieza de Datos</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Importancia de la Limpieza de Datos</strong>: Explicación de cómo los datos sucios o mal gestionados pueden llevar a conclusiones erróneas en el análisis financiero.</p></li>
+<li><p><strong>Tipos de “Suciedad” en los Datos</strong>: Identificación de problemas comunes como valores faltantes, datos atípicos, errores de entrada, y datos duplicados.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Manejo de Valores Faltantes</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Identificación de Valores Faltantes</strong>: Uso de Python para detectar la ausencia de datos en un conjunto de datos.</p></li>
+<li><p><strong>Técnicas de Manejo de Valores Faltantes</strong>:</p>
+<ul>
+<li><p><strong>Eliminación</strong>: Cuando y cómo eliminar filas o columnas con valores faltantes.</p></li>
+<li><p><strong>Imputación</strong>: Técnicas para imputar datos faltantes utilizando la media, mediana, moda, o métodos más sofisticados como la imputación multivariante.</p></li>
+<li><p><strong>Ejemplo práctico en Python</strong>: Uso de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> y <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> para imputar valores faltantes.</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Transformación de Variables</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Escalar y Normalizar Datos</strong>: Cómo y por qué normalizar y escalar datos en finanzas.</p></li>
+<li><p><strong>Transformación de Variables Categóricas</strong>: Convertir variables categóricas en formatos útiles para modelización.</p></li>
+<li><p><strong>Reducción de Dimensionalidad</strong>: Introducción a técnicas como PCA para reducir la cantidad de variables.</p></li>
+<li><p><strong>Ejercicio Práctico</strong>: Los estudiantes deberán aplicar estas técnicas a un conjunto de datos financieros proporcionado, transformando todas las variables necesarias.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><strong>Integración y Almacenamiento de Datos Limpios</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Construcción de Pipelines de Datos</strong>: Automatización del proceso de limpieza y transformación de datos usando <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> en <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p></li>
+<li><p><strong>Almacenamiento de Datos Transformados</strong>: Mejores prácticas para el almacenamiento de conjuntos de datos limpios y transformados.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-limpieza-de-datos">
+<h1><span class="section-number">26. </span>1. Introducción a la Limpieza de Datos<a class="headerlink" href="#introduccion-a-la-limpieza-de-datos" title="Link to this heading">#</a></h1>
+<p>En el mundo de las finanzas, la calidad de los datos puede ser tan crítica como las decisiones que de ellos derivan. Un análisis financiero preciso, ya sea para evaluación de inversiones, gestión de riesgos, o planificación estratégica, depende en gran medida de la calidad de los datos utilizados. Este documento explora la importancia de la limpieza de datos, los problemas comunes que se deben abordar, y proporciona un ejemplo introductorio de cómo identificar datos faltantes usando Python y pandas.</p>
+<section id="importancia-de-la-limpieza-de-datos">
+<h2><span class="section-number">26.1. </span>1. <strong>Importancia de la Limpieza de Datos</strong><a class="headerlink" href="#importancia-de-la-limpieza-de-datos" title="Link to this heading">#</a></h2>
+<p>La limpieza de datos es el proceso de detectar y corregir (o eliminar) registros corruptos o inexactos de un conjunto de datos. En el contexto de las finanzas:</p>
+<ul class="simple">
+<li><p><strong>Decisiones informadas</strong>: Los datos precisos y bien gestionados aseguran que las decisiones financieras se basen en la información más fiable y actualizada.</p></li>
+<li><p><strong>Eficiencia analítica</strong>: Datos limpios reducen significativamente el riesgo de errores en el análisis y ayudan a mejorar la eficiencia operativa al automatizar procesos.</p></li>
+<li><p><strong>Cumplimiento y transparencia</strong>: Mantener la integridad de los datos es crucial para cumplir con regulaciones financieras y mantener la transparencia ante los stakeholders.</p></li>
+</ul>
+</section>
+<section id="problemas-comunes-en-los-datos">
+<h2><span class="section-number">26.2. </span>2. <strong>Problemas Comunes en los Datos</strong><a class="headerlink" href="#problemas-comunes-en-los-datos" title="Link to this heading">#</a></h2>
+<p>Los conjuntos de datos, especialmente los grandes, a menudo presentan varios problemas que pueden distorsionar los resultados del análisis si no se manejan adecuadamente:</p>
+<ul class="simple">
+<li><p><strong>Valores faltantes</strong>: Los registros incompletos pueden surgir por diversos motivos, desde errores en la entrada de datos hasta fallos en la transmisión o almacenamiento de datos.</p></li>
+<li><p><strong>Errores de entrada</strong>: Equivocaciones o descuidos al ingresar datos, que pueden introducir errores significativos en los análisis financieros.</p></li>
+<li><p><strong>Datos duplicados</strong>: La presencia de registros repetidos puede llevar a una interpretación errónea del volumen de actividad o de la magnitud de un parámetro financiero.</p></li>
+<li><p><strong>Datos atípicos (Outliers)</strong>: Valores que se desvían significativamente del resto de datos y que pueden indicar un error o una condición de mercado anómala.</p></li>
+</ul>
+</section>
+<section id="ejemplo-introductorio-en-python">
+<h2><span class="section-number">26.3. </span>3. <strong>Ejemplo Introductorio en Python</strong><a class="headerlink" href="#ejemplo-introductorio-en-python" title="Link to this heading">#</a></h2>
+<p>Para empezar a abordar estos problemas, uno de los primeros pasos en la limpieza de datos es identificar valores faltantes. A continuación, se muestra cómo utilizar <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para este propósito:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Supongamos que tenemos un DataFrame llamado &#39;data&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">104</span><span class="p">],</span>
+    <span class="s1">&#39;volumen&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">130</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Mostrar datos faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">())</span>
+
+<span class="c1"># Resultado de los datos faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos Faltantes por Columna:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Este código inicialmente carga datos en un DataFrame y luego utiliza la función <code class="docutils literal notranslate"><span class="pre">isnull()</span></code> para identificar y sumar todos los valores faltantes por columna. Este es un primer paso esencial para entender el alcance de los problemas en el conjunto de datos y planificar los pasos siguientes para la limpieza.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># Supongamos que tenemos un DataFrame llamado &#39;data&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">104</span><span class="p">],</span>
+    <span class="s1">&#39;volumen&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">130</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="c1"># Mostrar datos faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">())</span>
+
+<span class="c1"># Resultado de los datos faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos Faltantes por Columna:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   precio  volumen
+0   False    False
+1   False     True
+2   False    False
+3    True    False
+4   False    False
+
+Datos Faltantes por Columna:
+precio     1
+volumen    1
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="haciendo-uso-de-datos-reales">
+<h2><span class="section-number">26.4. </span>3. Haciendo uso de datos reales<a class="headerlink" href="#haciendo-uso-de-datos-reales" title="Link to this heading">#</a></h2>
+<p>Por favor descargue los datos de ejemplo de <a class="reference external" href="https://www.kaggle.com/datasets/yaminh/applicant-details-for-loan-approve/code">kaggle</a></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable Name (English)</p></th>
+<th class="head"><p>Description (English)</p></th>
+<th class="head"><p>Description (Spanish)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Applicant_ID</p></td>
+<td><p>Unique identifier for each loan applicant.</p></td>
+<td><p>Identificador único para cada solicitante de préstamo.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Annual_Income</p></td>
+<td><p>Annual income of the loan applicant.</p></td>
+<td><p>Ingreso anual del solicitante del préstamo.</p></td>
+</tr>
+<tr class="row-even"><td><p>Applicant_Age</p></td>
+<td><p>Age of the loan applicant.</p></td>
+<td><p>Edad del solicitante del préstamo.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Work_Experience</p></td>
+<td><p>Number of years of work experience of the loan applicant.</p></td>
+<td><p>Número de años de experiencia laboral del solicitante del préstamo.</p></td>
+</tr>
+<tr class="row-even"><td><p>Marital_Status</p></td>
+<td><p>Marital status of the loan applicant.</p></td>
+<td><p>Estado civil del solicitante del préstamo.</p></td>
+</tr>
+<tr class="row-odd"><td><p>House_Ownership</p></td>
+<td><p>Ownership status of the applicant’s residence.</p></td>
+<td><p>Estado de propiedad de la residencia del solicitante.</p></td>
+</tr>
+<tr class="row-even"><td><p>Vehicle_Ownership (car)</p></td>
+<td><p>Ownership status of the applicant’s vehicle.</p></td>
+<td><p>Estado de propiedad del vehículo del solicitante (carro).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Occupation</p></td>
+<td><p>Profession or occupation of the loan applicant.</p></td>
+<td><p>Profesión u ocupación del solicitante del préstamo.</p></td>
+</tr>
+<tr class="row-even"><td><p>Residence_City</p></td>
+<td><p>City where the loan applicant resides.</p></td>
+<td><p>Ciudad donde reside el solicitante del préstamo.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Residence_State</p></td>
+<td><p>State where the loan applicant resides.</p></td>
+<td><p>Estado donde reside el solicitante del préstamo.</p></td>
+</tr>
+<tr class="row-even"><td><p>Years_in_Current_Employment</p></td>
+<td><p>Number of years the applicant has been in their current job.</p></td>
+<td><p>Número de años que el solicitante lleva en su trabajo actual.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Years_in_Current_Residence</p></td>
+<td><p>Number of years the applicant has been residing in their current residence.</p></td>
+<td><p>Número de años que el solicitante lleva residiendo en su domicilio actual.</p></td>
+</tr>
+<tr class="row-even"><td><p>Loan_Default_Risk</p></td>
+<td><p>Indicator of loan default risk, with values indicating whether the loan applicant is at risk of defaulting on the loan.</p></td>
+<td><p>Indicador de riesgo de impago del préstamo, con valores que indican si el solicitante del préstamo corre el riesgo de no pagar.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/Applicant-details.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Resultado de los datos faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos Faltantes por Columna:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Generar máscara aleatoria por columna</span>
+<span class="n">porcentaje_perdido</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># Ajustar el porcentaje de valores perdidos deseado</span>
+
+<span class="k">def</span> <span class="nf">generar_mascara_columna</span><span class="p">(</span><span class="n">columna</span><span class="p">):</span>
+    <span class="c1"># Generar máscara aleatoria con probabilidad especificada</span>
+    <span class="n">mascara_columna</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">columna</span><span class="p">),</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="n">porcentaje_perdido</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">porcentaje_perdido</span><span class="p">])</span>
+    <span class="c1"># Convertir valores a NaN según la máscara</span>
+    <span class="n">columna</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mascara_columna</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">columna</span>
+
+<span class="c1"># Aplicar la función a cada columna</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">generar_mascara_columna</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1"># Resultado de los datos faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos Faltantes por Columna:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/Applicant-details.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Resultado de los datos faltantes</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos Faltantes por Columna:&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/Applicant-details.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="manejo-de-valores-faltantes">
+<h1><span class="section-number">27. </span>2. Manejo de Valores Faltantes<a class="headerlink" href="#manejo-de-valores-faltantes" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2><span class="section-number">27.1. </span>Manejo de Valores Faltantes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>El manejo adecuado de valores faltantes en conjuntos de datos es crucial para el análisis de datos financiero confiable y preciso. Los datos incompletos pueden llevar a conclusiones erróneas y afectar el rendimiento de los modelos de predicción. A continuación, exploraremos diversas técnicas para tratar con valores faltantes, proporcionaremos ejemplos prácticos en Python y propondremos un ejercicio para aplicar estos conocimientos.</p>
+<section id="tecnicas-para-manejar-valores-faltantes">
+<h3><span class="section-number">27.1.1. </span>1. <strong>Técnicas para Manejar Valores Faltantes</strong><a class="headerlink" href="#tecnicas-para-manejar-valores-faltantes" title="Link to this heading">#</a></h3>
+<p>Los valores faltantes pueden ser abordados de varias maneras, dependiendo de la naturaleza del problema y la cantidad de datos faltantes. Algunas de las técnicas más comunes incluyen:</p>
+<ul class="simple">
+<li><p><strong>Eliminación</strong>: Consiste en eliminar filas o columnas que contienen valores faltantes. Esta técnica es simple pero puede resultar en la pérdida de información importante si los datos faltantes son extensos.</p></li>
+<li><p><strong>Imputación</strong>:</p>
+<ul>
+<li><p><strong>Media/Mediana/Moda</strong>: Sustituir los valores faltantes por la media, mediana o moda es efectivo para características numéricas o categóricas respectivamente.</p></li>
+<li><p><strong>Interpolación</strong>: Método útil especialmente en series temporales, donde los valores faltantes pueden ser estimados a partir de valores adyacentes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ejemplo-practico-en-python">
+<h3><span class="section-number">27.1.2. </span>2. <strong>Ejemplo Práctico en Python</strong><a class="headerlink" href="#ejemplo-practico-en-python" title="Link to this heading">#</a></h3>
+<p>Para ilustrar cómo manejar valores faltantes en un conjunto de datos financieros, utilizaremos Python con <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para la eliminación y <code class="docutils literal notranslate"><span class="pre">SimpleImputer</span></code> de <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> para la imputación.</p>
+<section id="eliminacion-de-filas-con-valores-faltantes">
+<h4><span class="section-number">27.1.2.1. </span>Eliminación de Filas con Valores Faltantes:<a class="headerlink" href="#eliminacion-de-filas-con-valores-faltantes" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar un ejemplo de datos financieros</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">],</span>
+    <span class="s1">&#39;volumen&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">130</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Eliminar filas con cualquier valor faltante</span>
+<span class="n">clean_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar un ejemplo de datos financieros</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">],</span>
+    <span class="s1">&#39;volumen&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">130</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Eliminar filas con cualquier valor faltante</span>
+<span class="n">clean_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   precio  volumen
+0   100.0    200.0
+3   103.0    140.0
+4   104.0    130.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="imputacion-de-valores-faltantes">
+<h4><span class="section-number">27.1.2.2. </span>Imputación de Valores Faltantes:<a class="headerlink" href="#imputacion-de-valores-faltantes" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Imputador para sustituir valores faltantes con la media de la columna</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+
+<span class="c1"># Aplicar imputación</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;precio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;precio&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Comprobar el resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Imputador para sustituir valores faltantes con la media de la columna</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+
+<span class="c1"># Aplicar imputación</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;precio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;precio&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Comprobar el resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   precio  volumen
+0   100.0    200.0
+1   101.0      NaN
+2   102.0    150.0
+3   103.0    140.0
+4   104.0    130.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejercicio-practico">
+<h3><span class="section-number">27.1.3. </span>3. <strong>Ejercicio Práctico</strong><a class="headerlink" href="#ejercicio-practico" title="Link to this heading">#</a></h3>
+<p><strong>Objetivo del ejercicio</strong>: Limpiar un conjunto de datos de mercado bursátil, enfocándose en el manejo de valores faltantes.</p>
+<p><strong>Datos proporcionados</strong>: Un archivo CSV que contiene precios diarios de acciones con algunas entradas faltantes en precios y volúmenes.</p>
+<p><strong>Tareas</strong>:</p>
+<ol class="arabic simple">
+<li><p>Cargar el conjunto de datos desde un archivo CSV.</p></li>
+<li><p>Identificar y contar los valores faltantes en cada columna.</p></li>
+<li><p>Aplicar imputación para rellenar los valores faltantes utilizando la mediana para los precios y la media para los volúmenes.</p></li>
+<li><p>Guardar el conjunto de datos limpio en un nuevo archivo CSV.</p></li>
+</ol>
+<section id="codigo-de-ejercicio-sugerido">
+<h4><span class="section-number">27.1.3.1. </span>Código de Ejercicio Sugerido:<a class="headerlink" href="#codigo-de-ejercicio-sugerido" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datos_mercado_bursatil.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Visualización de valores faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Configurar imputadores</span>
+<span class="n">precio_imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<span class="n">volumen_imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+
+<span class="c1"># Aplicar imputación</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;precio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">precio_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;precio&#39;</span><span class="p">]])</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;volumen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">volumen_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;volumen&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Guardar los datos limpios</span>
+<span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;datos_mercado_bursatil_limpio.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Mostrar los datos finales</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Para ampliar el ejemplo práctico de manejo de valores faltantes en un conjunto de datos financieros, podemos añadir una columna con variables de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (cadena de caracteres). Esto nos permitirá demostrar cómo abordar los valores faltantes en datos categóricos.</p>
+</section>
+</section>
+<section id="modificacion-del-conjunto-de-datos">
+<h3><span class="section-number">27.1.4. </span>Modificación del Conjunto de Datos<a class="headerlink" href="#modificacion-del-conjunto-de-datos" title="Link to this heading">#</a></h3>
+<p>Vamos a agregar una columna llamada <code class="docutils literal notranslate"><span class="pre">categoria</span></code>, que podría representar, por ejemplo, la clasificación de riesgo de las acciones o cualquier otro dato categórico relevante en el contexto financiero.</p>
+</section>
+<section id="id2">
+<h3><span class="section-number">27.1.5. </span>Ejemplo Práctico en Python<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>A continuación, modificaremos el código para incluir esta nueva columna y aplicaremos técnicas de imputación tanto a los datos numéricos como a los categóricos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+
+<span class="c1"># Crear un DataFrame con una nueva columna de tipo str</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">],</span>
+    <span class="s1">&#39;volumen&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">130</span><span class="p">],</span>
+    <span class="s1">&#39;categoria&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alto&#39;</span><span class="p">,</span> <span class="s1">&#39;Medio&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;Alto&#39;</span><span class="p">,</span> <span class="s1">&#39;Bajo&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Mostrar datos originales</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datos originales:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Imputación para datos numéricos</span>
+<span class="n">num_imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;precio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;precio&#39;</span><span class="p">]])</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;volumen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;volumen&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Imputación para datos categóricos</span>
+<span class="n">cat_imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Mostrar datos después de la imputación</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos después de la imputación:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="explicacion-del-codigo">
+<h3><span class="section-number">27.1.6. </span>Explicación del Código<a class="headerlink" href="#explicacion-del-codigo" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Creación del DataFrame</strong>: Se define un DataFrame de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> con una nueva columna llamada <code class="docutils literal notranslate"><span class="pre">categoria</span></code>, que incluye valores categóricos, algunos de los cuales son <code class="docutils literal notranslate"><span class="pre">None</span></code> (similares a los valores faltantes en pandas).</p></li>
+<li><p><strong>Imputación para Datos Numéricos</strong>:</p>
+<ul class="simple">
+<li><p>Se utiliza <code class="docutils literal notranslate"><span class="pre">SimpleImputer</span></code> con la estrategia <code class="docutils literal notranslate"><span class="pre">mean</span></code> para imputar los valores faltantes en las columnas numéricas (<code class="docutils literal notranslate"><span class="pre">precio</span></code> y <code class="docutils literal notranslate"><span class="pre">volumen</span></code>).</p></li>
+</ul>
+</li>
+<li><p><strong>Imputación para Datos Categóricos</strong>:</p>
+<ul class="simple">
+<li><p>Se emplea <code class="docutils literal notranslate"><span class="pre">SimpleImputer</span></code> con la estrategia <code class="docutils literal notranslate"><span class="pre">most_frequent</span></code> para rellenar los valores faltantes en la columna categórica (<code class="docutils literal notranslate"><span class="pre">categoria</span></code>). Esta estrategia reemplaza los valores faltantes por el valor más frecuente en la columna, lo cual es comúnmente utilizado para datos categóricos.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+
+<span class="c1"># Crear un DataFrame con una nueva columna de tipo str</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">],</span>
+    <span class="s1">&#39;volumen&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">130</span><span class="p">],</span>
+    <span class="s1">&#39;categoria&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alto&#39;</span><span class="p">,</span> <span class="s1">&#39;Medio&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;Alto&#39;</span><span class="p">,</span> <span class="s1">&#39;Bajo&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Mostrar datos originales</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datos originales:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Imputación para datos numéricos</span>
+<span class="n">num_imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;precio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;precio&#39;</span><span class="p">]])</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;volumen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;volumen&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Imputación para datos categóricos</span>
+<span class="n">mode_categoria</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Find the most frequent category</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mode_categoria</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="c1"># Mostrar datos después de la imputación</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos después de la imputación:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Datos originales:
+   precio  volumen categoria
+0   100.0    200.0      Alto
+1   101.0      NaN     Medio
+2     NaN    150.0      None
+3   103.0    140.0      Alto
+4   104.0    130.0      Bajo
+
+Datos después de la imputación:
+   precio  volumen categoria
+0   100.0    200.0      Alto
+1   101.0    155.0     Medio
+2   102.0    150.0      Alto
+3   103.0    140.0      Alto
+4   104.0    130.0      Bajo
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuando trabajamos con series de tiempo en finanzas, es común encontrar valores faltantes que pueden distorsionar los análisis si no se tratan adecuadamente. Una técnica útil para manejar valores faltantes en series de tiempo es la interpolación, que estima los valores faltantes basándose en otros valores conocidos de la serie temporal.</p>
+</section>
+<section id="ejemplo-practico-en-python-interpolacion-en-series-de-tiempo">
+<h3><span class="section-number">27.1.7. </span>Ejemplo Práctico en Python: Interpolación en Series de Tiempo<a class="headerlink" href="#ejemplo-practico-en-python-interpolacion-en-series-de-tiempo" title="Link to this heading">#</a></h3>
+<p>En este ejemplo, crearemos un conjunto de datos de serie temporal con algunos valores faltantes y utilizaremos interpolación para llenar esos huecos. Vamos a utilizar <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, que ofrece varias opciones para interpolación.</p>
+<section id="creacion-del-conjunto-de-datos">
+<h4><span class="section-number">27.1.7.1. </span>Creación del Conjunto de Datos<a class="headerlink" href="#creacion-del-conjunto-de-datos" title="Link to this heading">#</a></h4>
+<p>Supongamos que tenemos datos diarios de precios de acciones, pero algunos días faltan debido a errores en la captura de datos o días no comerciales.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Crear fechas de índice</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="c1"># Crear datos con valores faltantes</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">109</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
+
+<span class="c1"># Mostrar la serie con valores faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Serie original con valores faltantes:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="aplicando-interpolacion">
+<h4><span class="section-number">27.1.7.2. </span>Aplicando Interpolación<a class="headerlink" href="#aplicando-interpolacion" title="Link to this heading">#</a></h4>
+<p>Utilizaremos la función <code class="docutils literal notranslate"><span class="pre">interpolate()</span></code> de <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, que por defecto utiliza una interpolación lineal para estimar los valores faltantes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación</span>
+<span class="n">interpolated_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span>
+
+<span class="c1"># Mostrar la serie después de la interpolación</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Serie después de la interpolación:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">interpolated_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="codigo-completo">
+<h3><span class="section-number">27.1.8. </span>Código Completo<a class="headerlink" href="#codigo-completo" title="Link to this heading">#</a></h3>
+<p>Aquí está el código completo con la creación de datos y la interpolación aplicada:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Crear fechas de índice</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="c1"># Crear datos con valores faltantes</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">109</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
+
+<span class="c1"># Mostrar la serie con valores faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Serie original con valores faltantes:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Aplicar interpolación</span>
+<span class="n">interpolated_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span>
+
+<span class="c1"># Mostrar la serie después de la interpolación</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Serie después de la interpolación:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">interpolated_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="explicacion-del-metodo-de-interpolacion">
+<h3><span class="section-number">27.1.9. </span>Explicación del Método de Interpolación<a class="headerlink" href="#explicacion-del-metodo-de-interpolacion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Interpolación Lineal</strong>: Este método estima los valores faltantes realizando una interpolación lineal, lo que significa que asume una tasa de cambio constante entre los puntos conocidos antes y después de los valores faltantes. Es especialmente útil en datos que cambian gradualmente y es común en el análisis financiero donde los precios de las acciones no suelen saltar abruptamente bajo condiciones normales de mercado.</p></li>
+</ul>
+<p>Este enfoque no solo es eficaz para completar datos faltantes en series de tiempo sino que también mantiene la coherencia temporal de los datos, lo cual es crucial para cualquier análisis técnico o modelos predictivos en finanzas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Crear fechas de índice</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="c1"># Crear datos con valores faltantes</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">109</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
+
+<span class="c1"># Mostrar la serie con valores faltantes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Serie original con valores faltantes:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Aplicar interpolación</span>
+<span class="n">interpolated_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span>
+
+<span class="c1"># Mostrar la serie después de la interpolación</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Serie después de la interpolación:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">interpolated_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Serie original con valores faltantes:
+2021-01-01    100.0
+2021-01-02    101.0
+2021-01-03      NaN
+2021-01-04    103.0
+2021-01-05      NaN
+2021-01-06    105.0
+2021-01-07    106.0
+2021-01-08      NaN
+2021-01-09    108.0
+2021-01-10    109.0
+Freq: D, dtype: float64
+
+Serie después de la interpolación:
+2021-01-01    100.0
+2021-01-02    101.0
+2021-01-03    102.0
+2021-01-04    103.0
+2021-01-05    104.0
+2021-01-06    105.0
+2021-01-07    106.0
+2021-01-08    107.0
+2021-01-09    108.0
+2021-01-10    109.0
+Freq: D, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>#3. Transformación de Variables</p>
+<p>En el análisis financiero, preparar correctamente los datos es crucial para el desarrollo de modelos predictivos robustos y precisos. La transformación de variables es una etapa fundamental en la preparación de datos, que implica ajustar las características del conjunto de datos para mejorar la calidad y la eficacia del análisis.</p>
+</section>
+</section>
+<section id="escalar-y-normalizar-datos">
+<h2><span class="section-number">27.2. </span>1. <strong>Escalar y Normalizar Datos</strong><a class="headerlink" href="#escalar-y-normalizar-datos" title="Link to this heading">#</a></h2>
+<p>La normalización y el escalado de datos son técnicas esenciales para estandarizar el rango de las variables independientes o características de los datos. En finanzas:</p>
+<ul class="simple">
+<li><p><strong>Importancia del Escalado</strong>: Diferentes variables financieras pueden tener diferentes unidades de medida (como dólares, porcentajes, o puntos base). Escalar esos datos a un rango común es crucial para evitar que las variables con mayor magnitud dominen el modelo.</p></li>
+<li><p><strong>Impacto en Modelos Predictivos</strong>: Muchos algoritmos de aprendizaje automático, como los basados en distancias (k-NN, SVM) o gradientes (regresión logística, redes neuronales), asumen que todas las características están en la misma escala, lo que hace que el escalado sea esencial para un rendimiento óptimo del modelo.</p></li>
+</ul>
+</section>
+<section id="transformacion-de-variables-categoricas-y-reduccion-de-dimensionalidad">
+<h2><span class="section-number">27.3. </span>2. <strong>Transformación de Variables Categóricas y Reducción de Dimensionalidad</strong><a class="headerlink" href="#transformacion-de-variables-categoricas-y-reduccion-de-dimensionalidad" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Manejo de Variables Categóricas</strong>: Las variables categóricas deben ser transformadas en formatos que los modelos predictivos puedan entender. Una técnica común es el <em>one-hot encoding</em>, que convierte variables categóricas en una serie de variables binarias.</p></li>
+<li><p><strong>Reducción de Dimensionalidad</strong>: Técnicas como el Análisis de Componentes Principales (PCA) son usadas para reducir el número de variables, manteniendo la mayor cantidad de información posible. Esto es útil en conjuntos de datos financieros grandes para simplificar los modelos y reducir el riesgo de sobreajuste.</p></li>
+</ul>
+</section>
+<section id="ejemplo-y-ejercicio-practico-en-python">
+<h2><span class="section-number">27.4. </span>3. <strong>Ejemplo y Ejercicio Práctico en Python</strong><a class="headerlink" href="#ejemplo-y-ejercicio-practico-en-python" title="Link to this heading">#</a></h2>
+<p><strong>Ejemplo Práctico</strong>:
+Aquí mostramos cómo utilizar <code class="docutils literal notranslate"><span class="pre">MinMaxScaler</span></code>, <code class="docutils literal notranslate"><span class="pre">PCA</span></code>, y <code class="docutils literal notranslate"><span class="pre">pd.get_dummies()</span></code> en Python para preparar un conjunto de datos para análisis predictivo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+
+<span class="c1"># Ejemplo de datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
+    <span class="s1">&#39;categoria&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Normalización de la columna &#39;precio&#39;</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;precio_norm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;precio&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Transformación de variables categóricas</span>
+<span class="n">data_encoded</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">])</span>
+
+<span class="c1"># Aplicación de PCA</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_encoded</span><span class="p">[</span><span class="s1">&#39;PCA1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_encoded</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;precio&#39;</span><span class="p">,</span> <span class="s1">&#39;precio_norm&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Mostrar datos transformados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_encoded</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Ejercicio Práctico</strong>:</p>
+<ul class="simple">
+<li><p><strong>Objetivo</strong>: Aplicar técnicas de escalado, codificación y reducción de dimensionalidad a un conjunto de datos de bonos o acciones.</p></li>
+<li><p><strong>Datos</strong>: Un archivo CSV que contiene precios, volumen y clasificaciones sectoriales de acciones.</p></li>
+<li><p><strong>Tareas</strong>:</p>
+<ol class="arabic simple">
+<li><p>Cargar el conjunto de datos.</p></li>
+<li><p>Escalar los precios y volumen usando <code class="docutils literal notranslate"><span class="pre">MinMaxScaler</span></code>.</p></li>
+<li><p>Aplicar one-hot encoding a las clasificaciones sectoriales.</p></li>
+<li><p>Reducir la dimensionalidad con PCA.</p></li>
+<li><p>Guardar el conjunto de datos transformado para análisis futuros.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="integracion-y-almacenamiento-de-datos-limpios">
+<h1><span class="section-number">28. </span>4. Integración y Almacenamiento de Datos Limpios<a class="headerlink" href="#integracion-y-almacenamiento-de-datos-limpios" title="Link to this heading">#</a></h1>
+<section id="integracion-y-almacenamiento-de-datos-limpio">
+<h2><span class="section-number">28.1. </span>Integración y Almacenamiento de Datos Limpio<a class="headerlink" href="#integracion-y-almacenamiento-de-datos-limpio" title="Link to this heading">#</a></h2>
+<p>La gestión eficaz de los datos requiere no solo técnicas de limpieza y transformación adecuadas, sino también la capacidad de integrar estas tareas en un flujo de trabajo automatizado y almacenar los resultados de manera eficiente. Esto es crucial en el análisis financiero, donde la precisión y la accesibilidad de los datos son fundamentales.</p>
+<section id="construccion-de-pipelines-de-datos">
+<h3><span class="section-number">28.1.1. </span>1. <strong>Construcción de Pipelines de Datos</strong><a class="headerlink" href="#construccion-de-pipelines-de-datos" title="Link to this heading">#</a></h3>
+<p>Los pipelines de datos son herramientas esenciales en <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> que ayudan a automatizar y secuenciar procesos de transformación y limpieza de datos, asegurando que se apliquen de manera consistente y eficiente.</p>
+<ul class="simple">
+<li><p><strong>Automatización y Consistencia</strong>: Los pipelines garantizan que las mismas operaciones de procesamiento de datos se apliquen en el mismo orden, reduciendo errores humanos y aumentando la eficiencia.</p></li>
+<li><p><strong>Facilidad de Pruebas</strong>: Facilitan la experimentación con diferentes estrategias de procesamiento y parámetros.</p></li>
+<li><p><strong>Preparación para el Modelado</strong>: Preparan los datos de manera que se puedan alimentar directamente a modelos de machine learning para entrenamiento y validación.</p></li>
+</ul>
+</section>
+<section id="almacenamiento-de-datos">
+<h3><span class="section-number">28.1.2. </span>2. <strong>Almacenamiento de Datos</strong><a class="headerlink" href="#almacenamiento-de-datos" title="Link to this heading">#</a></h3>
+<p>Una vez que los datos están limpios y transformados, es crucial almacenarlos de manera que sean fácilmente accesibles y seguros.</p>
+<ul class="simple">
+<li><p><strong>Formatos de Archivo</strong>: Los datos pueden ser almacenados en formatos como CSV, JSON, o parquet. El formato CSV es ampliamente usado por su simplicidad, aunque parquet es preferido en entornos de big data por su eficiencia en espacio y velocidad de lectura.</p></li>
+<li><p><strong>Bases de Datos</strong>: Las bases de datos relacionales (como PostgreSQL, MySQL) o no relacionales (como MongoDB) son opciones robustas para el almacenamiento de datos, especialmente cuando se manejan grandes volúmenes o se requiere acceso concurrente.</p></li>
+<li><p><strong>Mejores Prácticas</strong>: Incluir prácticas como la copia de seguridad regular, la utilización de índices para acelerar las consultas y mantener la seguridad de los datos para proteger la información sensible.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3><span class="section-number">28.1.3. </span>3. <strong>Ejemplo Práctico en Python</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Vamos a crear un pipeline en <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> que incluya imputación, escalado y PCA, y luego almacenaremos el resultado en un formato CSV.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar ejemplo de datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+
+<span class="c1"># Crear el pipeline</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)),</span>  <span class="c1"># Paso de imputación</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>                <span class="c1"># Paso de escalado</span>
+    <span class="p">(</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>                 <span class="c1"># Reducción de dimensionalidad</span>
+<span class="p">])</span>
+
+<span class="c1"># Ejecutar el pipeline</span>
+<span class="n">transformed_data</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Convertir a DataFrame</span>
+<span class="n">transformed_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">transformed_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Component 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Component 2&#39;</span><span class="p">])</span>
+
+<span class="c1"># Almacenar en CSV</span>
+<span class="n">transformed_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;transformed_data.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datos transformados almacenados con éxito.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar ejemplo de datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="c1"># Crear el pipeline</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)),</span>  <span class="c1"># Paso de imputación</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>                <span class="c1"># Paso de escalado</span>
+    <span class="p">(</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>                 <span class="c1"># Reducción de dimensionalidad</span>
+<span class="p">])</span>
+
+<span class="c1"># Ejecutar el pipeline</span>
+<span class="n">transformed_data</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Convertir a DataFrame</span>
+<span class="n">transformed_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">transformed_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Component 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Component 2&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">)</span>
+<span class="c1"># Almacenar en CSV</span>
+<span class="n">transformed_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;transformed_data.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datos transformados almacenados con éxito.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)
+0                5.1               3.5                1.4               0.2
+1                4.9               3.0                1.4               0.2
+2                4.7               3.2                1.3               0.2
+3                4.6               3.1                1.5               0.2
+4                5.0               3.6                1.4               0.2
+     Component 1  Component 2
+0      -2.264703     0.480027
+1      -2.080961    -0.674134
+2      -2.364229    -0.341908
+3      -2.299384    -0.597395
+4      -2.389842     0.646835
+..           ...          ...
+145     1.870503     0.386966
+146     1.564580    -0.896687
+147     1.521170     0.269069
+148     1.372788     1.011254
+149     0.960656    -0.024332
+
+[150 rows x 2 columns]
+Datos transformados almacenados con éxito.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DipFin%20Sesion%201.4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Diplomado en ciencia de datos para toma de decisiones financieras</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">24. Diplomado en ciencia de datos para toma de decisiones financieras</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ltalero-unab-edu-co">24.1. ltalero@unab.edu.co</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">24.2. <strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-del-curso">25. Índice del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-limpieza-de-datos">26. 1. Introducción a la Limpieza de Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-la-limpieza-de-datos">26.1. 1. <strong>Importancia de la Limpieza de Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-comunes-en-los-datos">26.2. 2. <strong>Problemas Comunes en los Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-introductorio-en-python">26.3. 3. <strong>Ejemplo Introductorio en Python</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#haciendo-uso-de-datos-reales">26.4. 3. Haciendo uso de datos reales</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-valores-faltantes">27. 2. Manejo de Valores Faltantes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">27.1. Manejo de Valores Faltantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnicas-para-manejar-valores-faltantes">27.1.1. 1. <strong>Técnicas para Manejar Valores Faltantes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-en-python">27.1.2. 2. <strong>Ejemplo Práctico en Python</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-filas-con-valores-faltantes">27.1.2.1. Eliminación de Filas con Valores Faltantes:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-valores-faltantes">27.1.2.2. Imputación de Valores Faltantes:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-practico">27.1.3. 3. <strong>Ejercicio Práctico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-de-ejercicio-sugerido">27.1.3.1. Código de Ejercicio Sugerido:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-del-conjunto-de-datos">27.1.4. Modificación del Conjunto de Datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">27.1.5. Ejemplo Práctico en Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion-del-codigo">27.1.6. Explicación del Código</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-en-python-interpolacion-en-series-de-tiempo">27.1.7. Ejemplo Práctico en Python: Interpolación en Series de Tiempo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-del-conjunto-de-datos">27.1.7.1. Creación del Conjunto de Datos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicando-interpolacion">27.1.7.2. Aplicando Interpolación</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-completo">27.1.8. Código Completo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion-del-metodo-de-interpolacion">27.1.9. Explicación del Método de Interpolación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalar-y-normalizar-datos">27.2. 1. <strong>Escalar y Normalizar Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-variables-categoricas-y-reduccion-de-dimensionalidad">27.3. 2. <strong>Transformación de Variables Categóricas y Reducción de Dimensionalidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-y-ejercicio-practico-en-python">27.4. 3. <strong>Ejemplo y Ejercicio Práctico en Python</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-y-almacenamiento-de-datos-limpios">28. 4. Integración y Almacenamiento de Datos Limpios</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-y-almacenamiento-de-datos-limpio">28.1. Integración y Almacenamiento de Datos Limpio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-pipelines-de-datos">28.1.1. 1. <strong>Construcción de Pipelines de Datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos">28.1.2. 2. <strong>Almacenamiento de Datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">28.1.3. 3. <strong>Ejemplo Práctico en Python</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

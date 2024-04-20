@@ -1,0 +1,30 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+
+# pip install -U jupyter-book
+# jupyter-book build e-book/book
+# pip install ghp-import
+# ghp-import -n -p -f _build/html
+#/home/codespace/.local/lib/python3.10/site-packages/ghp-import -n -p -f _build/html
+# export PATH=$PATH:/home/codespace/.local/lib/python3.10/site-packages/ghp-import
+
+
+format: jb-book
+root: intro
+parts: 
+    - caption: Fundamentos de Python y Estadística Básica
+      numbered: true
+      chapters: 
+      - file: DipFin Sesion 1.1.ipynb
+        title: Introducción a Python para Finanzas
+      - file: DipFin Sesion 1.2.ipynb
+        title: Programación en Python
+      - file: DipFin Sesion 1.3.ipynb
+        title: Estadística Básica en Python
+      - file: DipFin Sesion 1.4.ipynb
+        title: Adquisición y Selección de Datos Financieros
+      - file: DipFin Sesion 1.5.ipynb
+        title: Limpieza y Preparación de Datos
+
+

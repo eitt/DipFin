@@ -1,0 +1,1866 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>11. Diplomado en ciencia de datos para toma de decisiones financieras &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DipFin Sesion 1.3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="18. Diplomado en ciencia de datos para toma de decisiones financieras" href="DipFin%20Sesion%201.4.html" />
+    <link rel="prev" title="7. Diplomado en ciencia de datos para toma de decisiones financieras" href="DipFin%20Sesion%201.2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos de Python y Estadística Básica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.1.html">1. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">7. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">18. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">24. Diplomado en ciencia de datos para toma de decisiones financieras</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDipFin Sesion 1.3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/DipFin Sesion 1.3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diplomado en ciencia de datos para toma de decisiones financieras</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Diplomado en ciencia de datos para toma de decisiones financieras</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ltalero-unab-edu-co">11.1. ltalero@unab.edu.co</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">11.2. <strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-del-curso">12. Índice del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-estadistica-en-python">13. 1. Introducción a la Estadística en Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentos-en-estadistica">13.1. Momentos en Estadística</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-generadoras-de-momentos">13.1.1. Funciones Generadoras de Momentos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relevancia-de-la-estadistica-en-el-analisis-financiero">13.2. Relevancia de la Estadística en el Análisis Financiero</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-y-bibliotecas-de-python-utilizadas-en-estadistica">13.3. Herramientas y Bibliotecas de Python Utilizadas en Estadística</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-metodos-y-atributos">13.3.1. Acceso a Métodos y Atributos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ventajas-de-la-notacion-de-punto">13.3.2. Ventajas de la Notación de Punto</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno-de-desarrollo">13.4. Configuración del Entorno de Desarrollo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-simples-para-familiarizarse">13.5. Ejercicios Simples para Familiarizarse</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-tendencia-central">14. 2. Medidas de Tendencia Central</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-teoricas">14.1. Definiciones Teóricas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-tendencia-central-calculables-en-python-para-finanzas">15. Medidas de Tendencia Central Calculables en Python para Finanzas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-ponderada">15.1. Media Ponderada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-python">15.2. Ejemplo en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-practicos">15.3. Ejemplos Prácticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-numpy-y-pandas">15.3.1. Uso de NumPy y Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-inicial">15.3.1.1. Setup Inicial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-media-mediana-y-moda">15.3.1.2. Cálculo de Media, Mediana y Moda</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">15.3.2. Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-practicos">15.4. Ejercicios Prácticos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-dispersion">16. 3. Medidas de Dispersión</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-utilizando-numpy-y-pandas">16.1. Cálculo Utilizando NumPy y Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.1.1. Setup Inicial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza-y-desviacion-estandar">16.1.2. Varianza y Desviación Estándar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rango-intercuartilico-iqr">16.1.3. Rango Intercuartílico (IQR)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.2. Ejercicios Prácticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">16.2.1. Solución</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-basicos-de-probabilidad">17. 4. Conceptos Básicos de Probabilidad</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-teoria-de-la-probabilidad">17.1. Introducción a la Teoría de la Probabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-probabilidad">17.1.1. Definición de Probabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eventos">17.1.2. Eventos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-esperado">17.1.3. Valor Esperado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza">17.1.4. Varianza</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.1.4.1. Ejemplos Prácticos</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-y-teoria-de-conjuntos">17.1.5. Probabilidad y Teoría de Conjuntos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-evaluacion-de-la-probabilidad-de-incumplimiento-de-credito">17.1.5.1. Ejemplo: Evaluación de la Probabilidad de Incumplimiento de Crédito</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-teoria-de-conjuntos-en-la-diversificacion-de-portafolios">17.1.5.2. Ejemplo: Teoría de Conjuntos en la Diversificación de Portafolios</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatoria">17.1.6. Combinatoria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-condicional">17.1.7. Probabilidad Condicional</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulaciones-de-probabilidad-en-python">17.2. Simulaciones de Probabilidad en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-simulacion-fluctuaciones-de-precios-de-acciones">17.2.1. Ejemplo de Simulación: Fluctuaciones de Precios de Acciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. Ejercicios Prácticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-calculo-de-probabilidad">17.3.1. Ejercicio de Cálculo de Probabilidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-aleatorias-y-teorema-del-limite-central">17.4. Variables Aleatorias y Teorema del Límite Central</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-aleatorias">17.4.1. Variables Aleatorias</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-fmp">17.4.1.1. Propiedades de la FMP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-en-python">17.4.1.2. Ejemplos en Python:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuciones-de-probabilidad">17.4.2. Distribuciones de Probabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.4.2.1. Ejemplos en Python:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-del-limite-central">17.4.3. Teorema del Límite Central</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia">17.4.3.1. Importancia:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-en-finanzas">17.4.3.2. Aplicaciones en Finanzas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulaciones-en-python">17.4.3.3. Simulaciones en Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="diplomado-en-ciencia-de-datos-para-toma-de-decisiones-financieras">
+<h1><span class="section-number">11. </span>Diplomado en ciencia de datos para toma de decisiones financieras<a class="headerlink" href="#diplomado-en-ciencia-de-datos-para-toma-de-decisiones-financieras" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p><strong>Leonardo H. Talero-Sarmiento</strong></p>
+<section id="ltalero-unab-edu-co">
+<h2><span class="section-number">11.1. </span><a class="reference external" href="mailto:ltalero&#37;&#52;&#48;unab&#46;edu&#46;co">ltalero<span>&#64;</span>unab<span>&#46;</span>edu<span>&#46;</span>co</a><a class="headerlink" href="#ltalero-unab-edu-co" title="Link to this heading">#</a></h2>
+</section>
+<section id="modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">
+<h2><span class="section-number">11.2. </span><strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong><a class="headerlink" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Introducción a Python para Finanzas</strong>: Configuración del entorno, sintaxis básica, estructuras de datos. (4 horas)</p></li>
+<li><p><strong>Programación en Python</strong>: Funciones, bucles, manejo de errores. (4 horas)</p></li>
+<li><p><strong>Estadística Básica en Python</strong>: Medidas de tendencia central y dispersión, probabilidad. (4 horas)</p></li>
+<li><p><strong>Adquisición y Selección de Datos Financieros</strong>: Importación de datos (APIs, CSV), selección de variables relevantes. (4 horas)</p></li>
+<li><p><strong>Limpieza y Preparación de Datos</strong>: Manejo de valores faltantes, transformación de variables. (4 horas)</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="indice-del-curso">
+<h1><span class="section-number">12. </span>Índice del Curso<a class="headerlink" href="#indice-del-curso" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><strong>Introducción a la Estadística en Python</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Conceptos básicos de estadística:</strong> Definición y aplicación en finanzas.</p></li>
+<li><p><strong>Herramientas en Python para estadística:</strong> Introducción a bibliotecas como NumPy, SciPy, y Pandas.</p></li>
+<li><p><strong>Configuración del entorno de desarrollo:</strong> Breve guía para instalar Python y las bibliotecas necesarias.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Medidas de Tendencia Central</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Definición y fórmulas:</strong> Media, mediana, y moda.</p></li>
+<li><p><strong>Implementación en Python:</strong></p>
+<ul>
+<li><p>Uso de NumPy y Pandas para calcular la media y la mediana.</p></li>
+<li><p>Cálculo de la moda con SciPy o Pandas.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejemplos prácticos:</strong> Aplicación de estas medidas en conjuntos de datos financieros, como precios de acciones y rendimientos de inversiones.</p></li>
+<li><p><strong>Ejercicios prácticos:</strong> Calcula las medidas de tendencia central para un dataset proporcionado.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Medidas de Dispersión</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Definición y fórmulas:</strong> Varianza, desviación estándar, rango intercuartílico.</p></li>
+<li><p><strong>Implementación en Python:</strong></p>
+<ul>
+<li><p>Uso de NumPy para calcular la varianza y desviación estándar.</p></li>
+<li><p>Uso de Pandas para explorar el rango intercuartílico y otros estadísticos.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejemplos prácticos:</strong> Analizar la volatilidad de los precios del mercado.</p></li>
+<li><p><strong>Ejercicios prácticos:</strong> Analizar la dispersión de los rendimientos de diferentes activos financieros.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><strong>Conceptos Básicos de Probabilidad</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Teoría de probabilidad:</strong> Definiciones de probabilidad y eventos, probabilidad condicional, y teoremas básicos.</p></li>
+<li><p><strong>Simulaciones de probabilidad en Python:</strong></p>
+<ul>
+<li><p>Uso de la biblioteca <code class="docutils literal notranslate"><span class="pre">random</span></code> para generar datos y simular eventos.</p></li>
+<li><p>Ejemplos de simulación de lanzamientos de moneda o movimientos de precios de acciones.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejemplos prácticos:</strong> Cálculo de probabilidades en decisiones de inversión y riesgo financiero.</p></li>
+<li><p><strong>Ejercicios prácticos:</strong> Crear simulaciones para calcular probabilidades de eventos financieros.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-estadistica-en-python">
+<h1><span class="section-number">13. </span>1. Introducción a la Estadística en Python<a class="headerlink" href="#introduccion-a-la-estadistica-en-python" title="Link to this heading">#</a></h1>
+<p>La estadística es una disciplina que implica la recopilación, análisis, interpretación y presentación de datos. En el contexto financiero, la estadística es crucial para tomar decisiones informadas, realizar pronósticos económicos, gestionar riesgos y analizar el rendimiento de los mercados y activos financieros.</p>
+<section id="momentos-en-estadistica">
+<h2><span class="section-number">13.1. </span>Momentos en Estadística<a class="headerlink" href="#momentos-en-estadistica" title="Link to this heading">#</a></h2>
+<p>En estadística, los <strong>momentos</strong> son medidas cuantitativas que capturan información sobre la forma de la distribución de una variable aleatoria. Los momentos más comunes incluyen:</p>
+<ol class="arabic simple">
+<li><p><strong>Primer Momento (Media)</strong>: El promedio de los valores.</p></li>
+<li><p><strong>Segundo Momento (Varianza)</strong>: La media de los cuadrados de las diferencias entre cada valor y la media.</p></li>
+<li><p><strong>Tercer Momento (Asimetría)</strong>: Mide la simetría de la distribución. Una distribución simétrica tiene una asimetría de cero.</p></li>
+<li><p><strong>Cuarto Momento (Curtosis)</strong>: Mide la “pesadez de las colas” de la distribución. Una distribución normal tiene una curtosis de tres, y cualquier valor superior indica colas más pesadas y un pico más agudo.</p></li>
+</ol>
+<section id="funciones-generadoras-de-momentos">
+<h3><span class="section-number">13.1.1. </span>Funciones Generadoras de Momentos<a class="headerlink" href="#funciones-generadoras-de-momentos" title="Link to this heading">#</a></h3>
+<p>La <strong>función generadora de momentos (FGM)</strong> de una variable aleatoria es una forma de encapsular todos los momentos teóricos de una distribución en una sola función. La FGM de una variable aleatoria <span class="math notranslate nohighlight">\( X \)</span> se define como:</p>
+<div class="math notranslate nohighlight">
+\[
+M_X(t) = E[e^{tX}]
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( E \)</span> denota la esperanza matemática. Los coeficientes de la serie de Taylor de la función generadora de momentos alrededor de <span class="math notranslate nohighlight">\( t = 0 \)</span> corresponden a los momentos de la distribución:</p>
+<div class="math notranslate nohighlight">
+\[
+M_X^{(n)}(0) = E[X^n]
+\]</div>
+</section>
+</section>
+<section id="relevancia-de-la-estadistica-en-el-analisis-financiero">
+<h2><span class="section-number">13.2. </span>Relevancia de la Estadística en el Análisis Financiero<a class="headerlink" href="#relevancia-de-la-estadistica-en-el-analisis-financiero" title="Link to this heading">#</a></h2>
+<p>La estadística permite a los analistas financieros entender las tendencias, calcular probabilidades de eventos futuros, y tomar decisiones basadas en datos históricos y actuales. Las herramientas estadísticas ayudan a modelar la volatilidad de los mercados, valorar activos, y optimizar portafolios, entre otras aplicaciones.</p>
+</section>
+<section id="herramientas-y-bibliotecas-de-python-utilizadas-en-estadistica">
+<h2><span class="section-number">13.3. </span>Herramientas y Bibliotecas de Python Utilizadas en Estadística<a class="headerlink" href="#herramientas-y-bibliotecas-de-python-utilizadas-en-estadistica" title="Link to this heading">#</a></h2>
+<p>Python es uno de los lenguajes de programación más populares en el ámbito financiero debido a su simplicidad y poderosa suite de bibliotecas estadísticas y analíticas:</p>
+<ul class="simple">
+<li><p><strong>NumPy</strong>: Proporciona estructuras de datos y operaciones para manejar arrays y matrices numéricas. Es fundamental para realizar cálculos numéricos de alta velocidad.</p></li>
+<li><p><strong>SciPy</strong>: Basada en NumPy, esta biblioteca incluye módulos para optimización, álgebra lineal, integración y estadística.</p></li>
+<li><p><strong>Pandas</strong>: Esencial para la manipulación y el análisis de datos, ofrece estructuras de datos fáciles de usar y funciones de manipulación de series temporales ideales para datos financieros.</p></li>
+</ul>
+<p>Para poder usar las diferentes herramientas es neesario tener presente que en Python, el uso del punto (.) para realizar ciertas operaciones, como <code class="docutils literal notranslate"><span class="pre">np.array([])</span></code>, <code class="docutils literal notranslate"><span class="pre">np.mean</span></code>, y <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>, se debe a la forma en que se organiza el lenguaje y su modelo de objetos. Este punto se utiliza para acceder a atributos y métodos de un objeto, lo que incluye funciones y propiedades de módulos y clases. Aquí te explico detalladamente por qué y cómo se utiliza este operador en estos contextos:</p>
+<section id="acceso-a-metodos-y-atributos">
+<h3><span class="section-number">13.3.1. </span>Acceso a Métodos y Atributos<a class="headerlink" href="#acceso-a-metodos-y-atributos" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Módulos y paquetes</strong>: Python organiza código en módulos y paquetes, que son simplemente archivos y directorios de Python. Cuando importas un módulo o paquete, como NumPy o Pandas, puedes acceder a sus funciones, clases y atributos usando el operador punto. Por ejemplo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> y luego <code class="docutils literal notranslate"><span class="pre">np.array([])</span></code> utiliza <code class="docutils literal notranslate"><span class="pre">np</span></code> como alias del módulo numpy, y <code class="docutils literal notranslate"><span class="pre">array</span></code> es una función dentro de ese módulo. El punto indica que <code class="docutils literal notranslate"><span class="pre">array</span></code> es un atributo del módulo <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
+<li><p>Similarmente, <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> accede al método <code class="docutils literal notranslate"><span class="pre">mean</span></code> que pertenece al módulo <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Clases y objetos</strong>: En la programación orientada a objetos, las clases definen objetos que encapsulan tanto datos (atributos) como funciones (métodos) que operan en esos datos. Cuando creas un objeto de una clase, utilizas el operador punto para invocar sus métodos o acceder a sus atributos.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> es un ejemplo donde <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> es una clase dentro del módulo <code class="docutils literal notranslate"><span class="pre">pandas</span></code> (alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>). Al usar <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>, estás creando una instancia nueva de la clase <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ventajas-de-la-notacion-de-punto">
+<h3><span class="section-number">13.3.2. </span>Ventajas de la Notación de Punto<a class="headerlink" href="#ventajas-de-la-notacion-de-punto" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Claridad y legibilidad</strong>: La notación de punto ayuda a mantener el código organizado y claro. Sabes inmediatamente que <code class="docutils literal notranslate"><span class="pre">array</span></code> es una función asociada con <code class="docutils literal notranslate"><span class="pre">numpy</span></code> porque se accede a través de <code class="docutils literal notranslate"><span class="pre">np.array</span></code>.</p></li>
+<li><p><strong>Organización del espacio de nombres</strong>: Permite que múltiples módulos tengan funciones o atributos con el mismo nombre sin conflictos. Por ejemplo, dos módulos diferentes podrían tener una función <code class="docutils literal notranslate"><span class="pre">mean</span></code>, pero se diferencian por el nombre del módulo, como <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> para NumPy y <code class="docutils literal notranslate"><span class="pre">pd.mean</span></code> para Pandas.</p></li>
+<li><p><strong>Facilita la modularidad y el mantenimiento</strong>: Agrupar funcionalidades relacionadas dentro de módulos y clases hace que el código sea más fácil de entender y mantener. Los desarrolladores pueden trabajar con componentes específicos sin afectar otros.</p></li>
+</ul>
+</section>
+</section>
+<section id="configuracion-del-entorno-de-desarrollo">
+<h2><span class="section-number">13.4. </span>Configuración del Entorno de Desarrollo<a class="headerlink" href="#configuracion-del-entorno-de-desarrollo" title="Link to this heading">#</a></h2>
+<p>Para comenzar con la estadística en Python, es necesario configurar el entorno de desarrollo:</p>
+<ol class="arabic simple">
+<li><p><strong>Instalación de Python</strong>: Visite <a class="reference external" href="https://python.org">python.org</a> para descargar e instalar Python. Asegúrese de marcar la opción “Add Python to PATH” durante la instalación.</p></li>
+<li><p><strong>Instalación de bibliotecas</strong>: Utilice <code class="docutils literal notranslate"><span class="pre">pip</span></code>, el gestor de paquetes de Python, para instalar NumPy, SciPy y Pandas. Abra una terminal o consola de comandos y ejecute:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+</section>
+<section id="ejercicios-simples-para-familiarizarse">
+<h2><span class="section-number">13.5. </span>Ejercicios Simples para Familiarizarse<a class="headerlink" href="#ejercicios-simples-para-familiarizarse" title="Link to this heading">#</a></h2>
+<p>Para poner en práctica lo aprendido y verificar la instalación, realice los siguientes ejercicios:</p>
+<ol class="arabic">
+<li><p><strong>Cálculo de una media simple con NumPy</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">datos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La media es:&quot;</span><span class="p">,</span> <span class="n">media</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">datos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La media es:&quot;</span><span class="p">,</span> <span class="n">media</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La media es: 30.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p><strong>Creación de un DataFrame con Pandas</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">datos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">112</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">datos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Precio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">112</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Precio
+0      95
+1     125
+2     109
+3     102
+4     112
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic" start="3">
+<li><p><strong>Cálculo de estadísticas descriptivas con Pandas</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          Precio
+count    5.00000
+mean   108.60000
+std     11.28273
+min     95.00000
+25%    102.00000
+50%    109.00000
+75%    112.00000
+max    125.00000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="medidas-de-tendencia-central">
+<h1><span class="section-number">14. </span>2. Medidas de Tendencia Central<a class="headerlink" href="#medidas-de-tendencia-central" title="Link to this heading">#</a></h1>
+<p>Las medidas de tendencia central son estadísticas descriptivas que resumen con un solo número el centro de un conjunto de datos. Las tres medidas más comunes son la media, la mediana y la moda. Estas medidas son fundamentales en el análisis financiero para entender las tendencias y comportamientos típicos en series de datos económicos y financieros.</p>
+<section id="definiciones-teoricas">
+<h2><span class="section-number">14.1. </span>Definiciones Teóricas<a class="headerlink" href="#definiciones-teoricas" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Media (Promedio)</strong>: Es el valor promedio en un conjunto de datos, calculado sumando todos los números y dividiendo entre la cantidad de números.
+$<span class="math notranslate nohighlight">\(
+\text{Media} = \frac{\sum_{i=1}^{n} x_i}{n}
+\)</span><span class="math notranslate nohighlight">\(
+donde \)</span> x_i <span class="math notranslate nohighlight">\( son los valores observados y \)</span> n $ es el número total de observaciones.</p></li>
+<li><p><strong>Mediana</strong>: Es el valor que separa la mitad superior de la mitad inferior de un conjunto de datos. Si el número de observaciones es impar, la mediana es el valor medio. Si es par, es el promedio de los dos valores medios.
+Para un conjunto ordenado de datos <span class="math notranslate nohighlight">\( x_1, x_2, ..., x_n \)</span>:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\( n \)</span> es impar:
+$<span class="math notranslate nohighlight">\(
+\text{Mediana} = x_{\left(\frac{n+1}{2}\right)}
+\)</span>$</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\( n \)</span> es par:
+$<span class="math notranslate nohighlight">\(
+\text{Mediana} = \frac{x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}}{2}
+\)</span>$</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Moda</strong>: Es el valor que aparece con mayor frecuencia en un conjunto de datos. Puede haber más de una moda si dos o más valores tienen la misma frecuencia máxima y esa es la mayor frecuencia del conjunto.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="medidas-de-tendencia-central-calculables-en-python-para-finanzas">
+<h1><span class="section-number">15. </span>Medidas de Tendencia Central Calculables en Python para Finanzas<a class="headerlink" href="#medidas-de-tendencia-central-calculables-en-python-para-finanzas" title="Link to this heading">#</a></h1>
+<p>Además de la media aritmética, existen otras medidas de tendencia central que pueden ser útiles en el análisis financiero, como la  la media ponderada y la media armónica. Cada una tiene su propio uso y relevancia dependiendo de la naturaleza de los datos y el contexto del análisis.</p>
+<section id="media-ponderada">
+<h2><span class="section-number">15.1. </span>Media Ponderada<a class="headerlink" href="#media-ponderada" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="4">
+<li><p><strong>Media ponderada</strong>: Es útil cuando algunos datos contribuyen más al conjunto total que otros. La media ponderada es especialmente útil en finanzas para calcular retornos ajustados al riesgo o para promediar precios de activos cuando diferentes cantidades de dinero se invierten en cada activo.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Media Ponderada} = \frac{\sum_{i=1}^{n} (w_i \times x_i)}{\sum_{i=1}^{n} w_i}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( w_i \)</span> son los pesos asignados a cada valor <span class="math notranslate nohighlight">\( x_i \)</span>.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Media Armónica</strong>: Es apropiada cuando se comparan tasas o ratios, siendo la inversa del promedio de los inversos. Por ejemplo, es útil para calcular el promedio de ratios financieros, como el precio-ganancia (P/E), especialmente cuando se quiere enfatizar los valores más bajos.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Media Armónica} = \frac{n}{\sum_{i=1}^{n} \left(\frac{1}{x_i}\right)}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( n \)</span> es el número total de observaciones y <span class="math notranslate nohighlight">\( x_i \)</span> son los valores observados.</p>
+</section>
+<section id="ejemplo-en-python">
+<h2><span class="section-number">15.2. </span>Ejemplo en Python<a class="headerlink" href="#ejemplo-en-python" title="Link to this heading">#</a></h2>
+<p>Vamos a calcular todas estas medias para un conjunto de datos de precios de acciones.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">precios</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">148</span><span class="p">]</span>
+
+<span class="c1"># Media Aritmética</span>
+<span class="n">media_aritmetica</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="c1"># Mediana</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="c1"># Moda</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">precios</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Media Ponderada</span>
+<span class="n">pesos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>  <span class="c1"># Supongamos un peso adicional en la última observación</span>
+<span class="n">media_ponderada</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">precios</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">pesos</span><span class="p">)</span>
+
+<span class="c1"># Media Armónica</span>
+<span class="n">media_armonica</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">hmean</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Aritmética:&quot;</span><span class="p">,</span> <span class="n">media_aritmetica</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mediana:&quot;</span><span class="p">,</span> <span class="n">mediana</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moda:&quot;</span><span class="p">,</span> <span class="n">moda</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Ponderada:&quot;</span><span class="p">,</span> <span class="n">media_ponderada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Armónica:&quot;</span><span class="p">,</span> <span class="n">media_armonica</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">precios</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">148</span><span class="p">]</span>
+
+<span class="c1"># Media Aritmética</span>
+<span class="n">media_aritmetica</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="c1"># Mediana</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="c1"># Moda</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">precios</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Media Ponderada</span>
+<span class="n">pesos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>  <span class="c1"># Supongamos un peso adicional en la última observación</span>
+<span class="n">media_ponderada</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">precios</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">pesos</span><span class="p">)</span>
+
+<span class="c1"># Media Armónica</span>
+<span class="n">media_armonica</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">hmean</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Aritmética:&quot;</span><span class="p">,</span> <span class="n">media_aritmetica</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mediana:&quot;</span><span class="p">,</span> <span class="n">mediana</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moda:&quot;</span><span class="p">,</span> <span class="n">moda</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Ponderada:&quot;</span><span class="p">,</span> <span class="n">media_ponderada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Armónica:&quot;</span><span class="p">,</span> <span class="n">media_armonica</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Media Aritmética: 152.45454545454547
+Mediana: 152.0
+Moda: 150
+Media Ponderada: 152.66666666666666
+Media Armónica: 152.40649488695274
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplos-practicos">
+<h2><span class="section-number">15.3. </span>Ejemplos Prácticos<a class="headerlink" href="#ejemplos-practicos" title="Link to this heading">#</a></h2>
+<section id="uso-de-numpy-y-pandas">
+<h3><span class="section-number">15.3.1. </span>Uso de NumPy y Pandas<a class="headerlink" href="#uso-de-numpy-y-pandas" title="Link to this heading">#</a></h3>
+<p>Supongamos que tenemos una serie de precios de cierre diarios de una acción particular. Podemos utilizar NumPy y Pandas para calcular las medidas de tendencia central de estos datos.</p>
+<section id="setup-inicial">
+<h4><span class="section-number">15.3.1.1. </span>Setup Inicial<a class="headerlink" href="#setup-inicial" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Simulando precios de cierre diarios de una acción</span>
+<span class="n">precios</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="calculo-de-media-mediana-y-moda">
+<h4><span class="section-number">15.3.1.2. </span>Cálculo de Media, Mediana y Moda<a class="headerlink" href="#calculo-de-media-mediana-y-moda" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convierte la lista en un array de NumPy para facilitar los cálculos</span>
+<span class="n">precios_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="c1"># Calculando la media</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precios_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media:&quot;</span><span class="p">,</span> <span class="n">media</span><span class="p">)</span>
+
+<span class="c1"># Calculando la mediana</span>
+<span class="n">mediana</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">precios_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mediana:&quot;</span><span class="p">,</span> <span class="n">mediana</span><span class="p">)</span>
+
+<span class="c1"># Usando Pandas para facilitar el cálculo de la moda</span>
+<span class="n">precios_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+<span class="n">moda</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moda:&quot;</span><span class="p">,</span> <span class="n">moda</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="interpretacion">
+<h3><span class="section-number">15.3.2. </span>Interpretación<a class="headerlink" href="#interpretacion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Media</strong>: Indica el valor promedio de los precios de la acción, útil para entender la tendencia central.</p></li>
+<li><p><strong>Mediana</strong>: Al ser menos sensible a valores atípicos extremos, puede dar una mejor idea del valor típico cuando la distribución es sesgada.</p></li>
+<li><p><strong>Moda</strong>: Útil para identificar el precio que más frecuentemente ha alcanzado la acción.</p></li>
+</ul>
+</section>
+</section>
+<section id="ejercicios-practicos">
+<h2><span class="section-number">15.4. </span>Ejercicios Prácticos<a class="headerlink" href="#ejercicios-practicos" title="Link to this heading">#</a></h2>
+<p><strong>Conjunto de Datos Proporcionado</strong>:
+Supongamos que tienes el siguiente conjunto de precios de cierre semanal para otra acción: [148, 147, 150, 153, 149, 152, 150, 157, 150].</p>
+<ol class="arabic simple">
+<li><p><strong>Calcula la media, mediana y moda de estos precios.</strong></p></li>
+<li><p><strong>Analiza los resultados</strong>:</p>
+<ul class="simple">
+<li><p>¿Qué medida de tendencia central parece ser más representativa del comportamiento típico del precio de la acción?</p></li>
+<li><p>Considerando la volatilidad y el rendimiento de la acción, ¿cómo interpretarías estas medidas?</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Respuestas a los ejercicios</span>
+<span class="n">precios_semanales</span> <span class="o">=</span> <span class="p">[</span><span class="mi">148</span><span class="p">,</span> <span class="mi">147</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+
+<span class="c1"># Usando NumPy y Pandas para cálculos</span>
+<span class="n">precios_semanales_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precios_semanales</span><span class="p">)</span>
+<span class="n">media_semanal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precios_semanales_array</span><span class="p">)</span>
+<span class="n">mediana_semanal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">precios_semanales_array</span><span class="p">)</span>
+<span class="n">moda_semanal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">precios_semanales</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Semanal:&quot;</span><span class="p">,</span> <span class="n">media_semanal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mediana Semanal:&quot;</span><span class="p">,</span> <span class="n">mediana_semanal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moda Semanal:&quot;</span><span class="p">,</span> <span class="n">moda_semanal</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precios_semanales</span> <span class="o">=</span> <span class="p">[</span><span class="mi">148</span><span class="p">,</span> <span class="mi">147</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+
+<span class="c1"># Usando NumPy y Pandas para cálculos</span>
+<span class="n">precios_semanales_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">precios_semanales</span><span class="p">)</span>
+<span class="n">media_semanal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precios_semanales_array</span><span class="p">)</span>
+<span class="n">mediana_semanal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">precios_semanales_array</span><span class="p">)</span>
+<span class="n">moda_semanal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">precios_semanales</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media Semanal:&quot;</span><span class="p">,</span> <span class="n">media_semanal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mediana Semanal:&quot;</span><span class="p">,</span> <span class="n">mediana_semanal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moda Semanal:&quot;</span><span class="p">,</span> <span class="n">moda_semanal</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Media Semanal: 150.66666666666666
+Mediana Semanal: 150.0
+Moda Semanal: [150]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En conjunto, estas estadísticas sugieren que el precio de cierre de la acción se mantuvo relativamente estable alrededor de $150.00 durante las nueve semanas.</p>
+<ul class="simple">
+<li><p>La <strong>media</strong> y la <strong>mediana</strong> son cercanas, lo que indica que la distribución de los precios de cierre no está sesgada significativamente hacia arriba o hacia abajo.</p></li>
+<li><p>La <strong>moda</strong> coincide con la <strong>mediana</strong>, lo que refuerza la idea de que el precio de $150.00 fue el más común.</p></li>
+</ul>
+<p>Es importante tener en cuenta que la falta de información sobre la dispersión de la serie limita la interpretación de estas estadísticas. Sin conocer la desviación estándar o el rango, no podemos:</p>
+<ul class="simple">
+<li><p>Evaluar la variabilidad del precio de cierre de la acción a lo largo de las nueve semanas.</p></li>
+<li><p>Identificar posibles valores atípicos (outliers) que podrían afectar la representatividad de la media y la mediana.</p></li>
+<li><p>Hacer inferencias más precisas sobre la distribución de los precios de cierre.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="medidas-de-dispersion">
+<h1><span class="section-number">16. </span>3. Medidas de Dispersión<a class="headerlink" href="#medidas-de-dispersion" title="Link to this heading">#</a></h1>
+<p>Las medidas de dispersión son estadísticas que describen cuánto se dispersan los datos alrededor de una medida central (como la media). En finanzas, estas medidas son cruciales para evaluar la volatilidad y el riesgo asociados con diferentes activos financieros.</p>
+<ol class="arabic simple">
+<li><p><strong>Varianza</strong>: La varianza mide la dispersión de los datos alrededor de su media. Cuanto mayor es la varianza, más dispersos están los datos.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Varianza} = \sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \mu)^2}{n}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( x_i \)</span> son los valores de los datos, <span class="math notranslate nohighlight">\( \mu \)</span> es la media de los datos, y <span class="math notranslate nohighlight">\( n \)</span> es el número total de observaciones.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Desviación Estándar</strong>: La desviación estándar es la raíz cuadrada de la varianza y proporciona una medida de dispersión en las mismas unidades que los datos.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Desviación Estándar} = \sigma = \sqrt{\sigma^2}
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Rango Intercuartílico (IQR)</strong>: El rango intercuartílico es la diferencia entre el tercer cuartil (Q3) y el primer cuartil (Q1) y mide la dispersión de la mitad central de los datos.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{IQR} = Q3 - Q1
+\]</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Suma de Cuadrados</strong>: La suma total de los cuadrados de las diferencias entre cada valor y la media. Es fundamental en el cálculo de la varianza y en métodos de regresión.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+SS = \sum_{i=1}^{n} (x_i - \mu)^2
+\]</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Rango</strong>: La diferencia entre el máximo y el mínimo valor en un conjunto de datos. Proporciona una medida rápida de la dispersión sin considerar la forma de la distribución.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+Rango = x_{\text{máx}} - x_{\text{mín}}
+\]</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Desviación Media Absoluta (MAD)</strong>: El promedio de las distancias absolutas entre cada valor y la media. Es menos sensible a valores extremos en comparación con la desviación estándar.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+MAD = \frac{1}{n} \sum_{i=1}^{n} |x_i - \mu|
+\]</div>
+<ol class="arabic simple" start="7">
+<li><p><strong>Semi-Desviación (o Desviación a la baja)</strong>: Similar a la desviación estándar, pero solo considera los valores que caen bajo la media del conjunto de datos. Útil para evaluar el riesgo en finanzas porque se enfoca en las “pérdidas” potenciales.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+Semi\text{-}Desviación = \sqrt{\frac{1}{n} \sum_{x_i &lt; \mu} (x_i - \mu)^2}
+\]</div>
+<section id="calculo-utilizando-numpy-y-pandas">
+<h2><span class="section-number">16.1. </span>Cálculo Utilizando NumPy y Pandas<a class="headerlink" href="#calculo-utilizando-numpy-y-pandas" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><span class="section-number">16.1.1. </span>Setup Inicial<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Datos de ejemplo: precios de cierre de acciones</span>
+<span class="n">precios</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">153</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">154</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">148</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="varianza-y-desviacion-estandar">
+<h3><span class="section-number">16.1.2. </span>Varianza y Desviación Estándar<a class="headerlink" href="#varianza-y-desviacion-estandar" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando NumPy</span>
+<span class="n">varianza</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+<span class="n">desviacion_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza:&quot;</span><span class="p">,</span> <span class="n">varianza</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviación Estándar:&quot;</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span>
+
+<span class="c1"># Usando Pandas</span>
+<span class="n">precios_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+<span class="n">varianza_pd</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># ddof=0 para poblacional</span>
+<span class="n">desviacion_std_pd</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza (Pandas):&quot;</span><span class="p">,</span> <span class="n">varianza_pd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviación Estándar (Pandas):&quot;</span><span class="p">,</span> <span class="n">desviacion_std_pd</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">varianza</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+<span class="n">desviacion_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza:&quot;</span><span class="p">,</span> <span class="n">varianza</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviación Estándar:&quot;</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Varianza: 7.338842975206612
+Desviación Estándar: 2.709029895591153
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precios_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">precios</span><span class="p">)</span>
+<span class="n">varianza_pd</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># ddof=0 para poblacional</span>
+<span class="n">desviacion_std_pd</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza (Pandas):&quot;</span><span class="p">,</span> <span class="n">varianza_pd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviación Estándar (Pandas):&quot;</span><span class="p">,</span> <span class="n">desviacion_std_pd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Varianza (Pandas): 7.338842975206612
+Desviación Estándar (Pandas): 2.709029895591153
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rango-intercuartilico-iqr">
+<h3><span class="section-number">16.1.3. </span>Rango Intercuartílico (IQR)<a class="headerlink" href="#rango-intercuartilico-iqr" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando Pandas</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rango Intercuartílico:&quot;</span><span class="p">,</span> <span class="n">IQR</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando Pandas</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">precios_series</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rango Intercuartílico:&quot;</span><span class="p">,</span> <span class="n">IQR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rango Intercuartílico: 4.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2><span class="section-number">16.2. </span>Ejercicios Prácticos<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><strong>Conjunto de Datos Proporcionado</strong>: Supongamos que tienes los retornos diarios de tres activos financieros diferentes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">retornos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Asset A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">],</span>
+    <span class="s2">&quot;Asset B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>
+    <span class="s2">&quot;Asset C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">retornos_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">retornos</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Taller</strong>: Consulta en internet cómo calcular <strong>Suma de Cuadrados</strong>, <strong>Rango</strong>, <strong>MAD</strong> y <strong>Semi-desviación</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Calcula la varianza y la desviación estándar para cada activo</strong>.</p></li>
+<li><p><strong>Interpreta los resultados</strong>:</p>
+<ul class="simple">
+<li><p>¿Qué activo es más volátil?</p></li>
+<li><p>¿Cómo podrían estos cálculos influir en la decisión de un inversor respecto a estos activos?</p></li>
+</ul>
+</li>
+</ol>
+<section id="solucion">
+<h3><span class="section-number">16.2.1. </span>Solución<a class="headerlink" href="#solucion" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">varianza_assets</span> <span class="o">=</span> <span class="n">retornos_df</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">desviacion_std_assets</span> <span class="o">=</span> <span class="n">retornos_df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza de cada activo:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">varianza_assets</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviación estándar de cada activo:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">desviacion_std_assets</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Este ejercicio permite a los estudiantes aplicar medidas de dispersión para evaluar el riesgo y la volatilidad, elementos cruciales en la toma de decisiones financieras.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">retornos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Asset A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">],</span>
+    <span class="s2">&quot;Asset B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>
+    <span class="s2">&quot;Asset C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">retornos_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">retornos</span><span class="p">)</span>
+<span class="n">varianza_assets</span> <span class="o">=</span> <span class="n">retornos_df</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">desviacion_std_assets</span> <span class="o">=</span> <span class="n">retornos_df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varianza de cada activo:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">varianza_assets</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviación estándar de cada activo:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">desviacion_std_assets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Varianza de cada activo:
+ Asset A    0.00097
+Asset B    0.00013
+Asset C    0.00013
+dtype: float64
+Desviación estándar de cada activo:
+ Asset A    0.031145
+Asset B    0.011402
+Asset C    0.011402
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Activo A</strong>:</p></li>
+</ul>
+<p>Tiene la mayor varianza (0.00097) y desviación estándar (0.031145).
+Esto indica que el precio de este activo ha experimentado las mayores fluctuaciones durante el período analizado. En otras palabras, ha sido el más volátil de los tres activos.</p>
+<ul class="simple">
+<li><p><strong>Activo B y Activo C</strong>:</p></li>
+</ul>
+<p>Comparten la misma varianza (0.00013) y desviación estándar (0.011402).
+Esto indica que sus precios han tenido fluctuaciones similares durante el período analizado. Son los menos volátiles de los tres activos.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conceptos-basicos-de-probabilidad">
+<h1><span class="section-number">17. </span>4. Conceptos Básicos de Probabilidad<a class="headerlink" href="#conceptos-basicos-de-probabilidad" title="Link to this heading">#</a></h1>
+<p>La probabilidad es una rama de las matemáticas que estudia la frecuencia con la que ocurren ciertos eventos en experimentos aleatorios. Es fundamental en muchas aplicaciones financieras, desde la evaluación de riesgos hasta la modelación de mercados y el análisis de inversiones.</p>
+<section id="introduccion-a-la-teoria-de-la-probabilidad">
+<h2><span class="section-number">17.1. </span>Introducción a la Teoría de la Probabilidad<a class="headerlink" href="#introduccion-a-la-teoria-de-la-probabilidad" title="Link to this heading">#</a></h2>
+<section id="definicion-de-probabilidad">
+<h3><span class="section-number">17.1.1. </span>Definición de Probabilidad<a class="headerlink" href="#definicion-de-probabilidad" title="Link to this heading">#</a></h3>
+<p>La <strong>probabilidad</strong> de un evento se define como una medida que asigna un número entre 0 y 1 a cuán probable es que ocurra dicho evento, donde 1 indica certeza absoluta y 0 la imposibilidad de que ocurra.</p>
+</section>
+<section id="eventos">
+<h3><span class="section-number">17.1.2. </span>Eventos<a class="headerlink" href="#eventos" title="Link to this heading">#</a></h3>
+<p>Un <strong>evento</strong> es cualquier conjunto de resultados posibles de un experimento. Por ejemplo, en el lanzamiento de una moneda, los eventos podrían ser obtener “cara” o “cruz”.</p>
+</section>
+<section id="valor-esperado">
+<h3><span class="section-number">17.1.3. </span>Valor Esperado<a class="headerlink" href="#valor-esperado" title="Link to this heading">#</a></h3>
+<p>El <strong>valor esperado</strong> (esperanza matemática) de una variable aleatoria es una medida fundamental en estadística que describe el promedio ponderado de todos los valores posibles que puede tomar esta variable, donde cada valor se pondera según su probabilidad de ocurrencia. Matemáticamente, se define como:</p>
+<div class="math notranslate nohighlight">
+\[
+E[X] = \sum_{i} x_i p_i \quad \text{(para variables discretas)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E[X] = \int x f(x) dx \quad \text{(para variables continuas)}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( x_i \)</span> son los posibles valores que <span class="math notranslate nohighlight">\( X \)</span> puede asumir, <span class="math notranslate nohighlight">\( p_i \)</span> es la probabilidad de que <span class="math notranslate nohighlight">\( X \)</span> sea igual a <span class="math notranslate nohighlight">\( x_i \)</span>, y <span class="math notranslate nohighlight">\( f(x) \)</span> es la función de densidad de probabilidad de <span class="math notranslate nohighlight">\( X \)</span>.</p>
+</section>
+<section id="varianza">
+<h3><span class="section-number">17.1.4. </span>Varianza<a class="headerlink" href="#varianza" title="Link to this heading">#</a></h3>
+<p>La <strong>varianza</strong> de una variable aleatoria mide la dispersión de sus valores alrededor del valor esperado. Está definida como el valor esperado del cuadrado de la desviación de la variable respecto a su media:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Var}(X) = E[(X - E[X])^2]
+\]</div>
+<p>La varianza es crucial en finanzas porque cuantifica el riesgo asociado a una inversión o una decisión económica. Una varianza alta implica un mayor riesgo y una mayor incertidumbre sobre el retorno esperado.</p>
+<section id="id3">
+<h4><span class="section-number">17.1.4.1. </span>Ejemplos Prácticos<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Consideremos el análisis del retorno esperado de una cartera de inversiones. Supongamos que una cartera tiene tres activos, cada uno con diferentes probabilidades de alcanzar ciertos retornos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Retornos esperados (en %) y sus probabilidades</span>
+<span class="n">retornos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>  <span class="c1"># Posibles retornos en %</span>
+<span class="n">probabilidades</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>  <span class="c1"># Probabilidades correspondientes</span>
+
+<span class="c1"># Cálculo del valor esperado del retorno</span>
+<span class="n">valor_esperado_retorno</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">retornos</span><span class="p">,</span> <span class="n">probabilidades</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El retorno esperado de la cartera es: </span><span class="si">{</span><span class="n">valor_esperado_retorno</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Retornos esperados (en %) y sus probabilidades</span>
+<span class="n">retornos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>  <span class="c1"># Posibles retornos en %</span>
+<span class="n">probabilidades</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>  <span class="c1"># Probabilidades correspondientes</span>
+
+<span class="c1"># Cálculo del valor esperado del retorno</span>
+<span class="n">valor_esperado_retorno</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">retornos</span><span class="p">,</span> <span class="n">probabilidades</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El retorno esperado de la cartera es: </span><span class="si">{</span><span class="n">valor_esperado_retorno</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El retorno esperado de la cartera es: 10.0%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="probabilidad-y-teoria-de-conjuntos">
+<h3><span class="section-number">17.1.5. </span>Probabilidad y Teoría de Conjuntos<a class="headerlink" href="#probabilidad-y-teoria-de-conjuntos" title="Link to this heading">#</a></h3>
+<p>El valor esperado emplea principios de la teoría de conjuntos y probabilidad, como la inclusión de eventos mutuamente excluyentes e independientes. Por ejemplo, la probabilidad de eventos mutuamente excluyentes se suma para encontrar la probabilidad total, lo que afecta directamente al cálculo del valor esperado cuando se consideran escenarios distintos con sus respectivas probabilidades.</p>
+<section id="ejemplo-evaluacion-de-la-probabilidad-de-incumplimiento-de-credito">
+<h4><span class="section-number">17.1.5.1. </span>Ejemplo: Evaluación de la Probabilidad de Incumplimiento de Crédito<a class="headerlink" href="#ejemplo-evaluacion-de-la-probabilidad-de-incumplimiento-de-credito" title="Link to this heading">#</a></h4>
+<p>Las empresas utilizan modelos de probabilidad para estimar el riesgo de incumplimiento de crédito de los prestatarios. Por ejemplo, se puede aplicar un modelo de scoring basado en la historia crediticia, la capacidad de pago, y otros factores financieros para calcular la probabilidad de que un cliente no cumpla con sus obligaciones de pago. Esto ayuda a las instituciones financieras a decidir si otorgan un préstamo, bajo qué condiciones y cómo ajustar la tasa de interés en función del riesgo percibido.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo simplificado de cálculo de probabilidad de incumplimiento</span>
+<span class="n">pago_oportuno</span> <span class="o">=</span> <span class="mf">0.95</span>  <span class="c1"># Probabilidad de que un cliente pague a tiempo</span>
+<span class="n">incumplimiento</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">pago_oportuno</span>  <span class="c1"># Probabilidad de incumplimiento</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probabilidad de incumplimiento: </span><span class="si">{</span><span class="n">incumplimiento</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo simplificado de cálculo de probabilidad de incumplimiento</span>
+<span class="n">pago_oportuno</span> <span class="o">=</span> <span class="mf">0.95</span>  <span class="c1"># Probabilidad de que un cliente pague a tiempo</span>
+<span class="n">incumplimiento</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">pago_oportuno</span>  <span class="c1"># Probabilidad de incumplimiento</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probabilidad de incumplimiento: </span><span class="si">{</span><span class="n">incumplimiento</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probabilidad de incumplimiento: 5.00%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-teoria-de-conjuntos-en-la-diversificacion-de-portafolios">
+<h4><span class="section-number">17.1.5.2. </span>Ejemplo: Teoría de Conjuntos en la Diversificación de Portafolios<a class="headerlink" href="#ejemplo-teoria-de-conjuntos-en-la-diversificacion-de-portafolios" title="Link to this heading">#</a></h4>
+<p>La teoría de conjuntos se aplica en la diversificación de portafolios para analizar y gestionar la exposición al riesgo. Por ejemplo, un gestor de fondos puede considerar un conjunto de activos y evaluar las intersecciones de sus rendimientos para determinar la correlación entre ellos. Esto permite al gestor configurar un portafolio que maximice la rentabilidad esperada mientras minimiza el riesgo a través de la diversificación.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulación simplificada de la diversificación de portafolios</span>
+<span class="n">activos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Acciones&#39;</span><span class="p">,</span> <span class="s1">&#39;Bonos&#39;</span><span class="p">,</span> <span class="s1">&#39;Commodities&#39;</span><span class="p">}</span>
+<span class="n">correlaciones</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Acciones y Bonos&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="s1">&#39;Acciones y Commodities&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+<span class="c1"># Interpretación: Las acciones y bonos tienen correlación negativa, lo que es bueno para la diversificación.</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulación simplificada de la diversificación de portafolios</span>
+<span class="n">activos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Acciones&#39;</span><span class="p">,</span> <span class="s1">&#39;Bonos&#39;</span><span class="p">,</span> <span class="s1">&#39;Commodities&#39;</span><span class="p">}</span>
+<span class="n">correlaciones</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Acciones y Bonos&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="s1">&#39;Acciones y Commodities&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+<span class="c1"># Interpretación: Las acciones y bonos tienen correlación negativa, lo que es bueno para la diversificación.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="combinatoria">
+<h3><span class="section-number">17.1.6. </span>Combinatoria<a class="headerlink" href="#combinatoria" title="Link to this heading">#</a></h3>
+<p>En contextos financieros donde los resultados posibles son numerosos y su cálculo es complejo, la combinatoria juega un papel fundamental. Permite calcular el número de formas en que pueden ocurrir diferentes eventos, lo que es esencial para determinar todas las posibles configuraciones que pueden afectar el valor esperado en situaciones de incertidumbre financiera.</p>
+</section>
+<section id="probabilidad-condicional">
+<h3><span class="section-number">17.1.7. </span>Probabilidad Condicional<a class="headerlink" href="#probabilidad-condicional" title="Link to this heading">#</a></h3>
+<p>La <strong>probabilidad condicional</strong> es la probabilidad de que ocurra un evento dado que otro evento ya ha ocurrido. Se denota como <span class="math notranslate nohighlight">\( P(A \mid B) \)</span>, que se lee “la probabilidad de A dado B”.</p>
+<div class="math notranslate nohighlight">
+\[
+P(A \mid B) = \frac{P(A \cap B)}{P(B)}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( P(B) \neq 0 \)</span>.</p>
+</section>
+</section>
+<section id="simulaciones-de-probabilidad-en-python">
+<h2><span class="section-number">17.2. </span>Simulaciones de Probabilidad en Python<a class="headerlink" href="#simulaciones-de-probabilidad-en-python" title="Link to this heading">#</a></h2>
+<p>Python, a través de su biblioteca <code class="docutils literal notranslate"><span class="pre">random</span></code>, proporciona herramientas útiles para simular eventos aleatorios, lo que es clave en las aplicaciones financieras para modelar incertidumbres y evaluar riesgos.</p>
+<section id="ejemplo-de-simulacion-fluctuaciones-de-precios-de-acciones">
+<h3><span class="section-number">17.2.1. </span>Ejemplo de Simulación: Fluctuaciones de Precios de Acciones<a class="headerlink" href="#ejemplo-de-simulacion-fluctuaciones-de-precios-de-acciones" title="Link to this heading">#</a></h3>
+<p>Supongamos que queremos simular el cambio diario del precio de una acción que sigue una distribución normal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Parámetros de la simulación</span>
+<span class="n">media</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Media de cambio diario esperado</span>
+<span class="n">desviacion_std</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># Desviación estándar de los cambios diarios</span>
+
+<span class="c1"># Generar cambio aleatorio para un día</span>
+<span class="n">cambio_diario</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">media</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cambio diario simulado: </span><span class="si">{</span><span class="n">cambio_diario</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Parámetros de la simulación</span>
+<span class="n">media</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Media de cambio diario esperado</span>
+<span class="n">desviacion_std</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># Desviación estándar de los cambios diarios</span>
+
+<span class="c1"># Generar cambio aleatorio para un día</span>
+<span class="n">cambio_diario</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">media</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cambio diario simulado: </span><span class="si">{</span><span class="n">cambio_diario</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cambio diario simulado: 0.005989151235476586
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2><span class="section-number">17.3. </span>Ejercicios Prácticos<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="ejercicio-de-calculo-de-probabilidad">
+<h3><span class="section-number">17.3.1. </span>Ejercicio de Cálculo de Probabilidad<a class="headerlink" href="#ejercicio-de-calculo-de-probabilidad" title="Link to this heading">#</a></h3>
+<p>Supongamos que quieres calcular la probabilidad de que el precio de una acción, que sigue una distribución normal, caiga por debajo de un umbral específico en un día determinado.</p>
+<ol class="arabic simple">
+<li><p><strong>Definir parámetros</strong>: Supongamos que el precio de la acción normalmente cambia con una media de 0.001 y una desviación estándar de 0.02.</p></li>
+<li><p><strong>Calcular la probabilidad</strong>: Determine la probabilidad de que el precio caiga más de 0.02 (2%) en un solo día.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="c1"># Parámetros de la distribución</span>
+<span class="n">media</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Media de cambio diario esperado</span>
+<span class="n">desviacion_std</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># Desviación estándar de los cambios diarios</span>
+
+<span class="c1"># Umbral para calcular la probabilidad de caída mayor a 2%</span>
+<span class="n">umbral</span> <span class="o">=</span> <span class="n">media</span> <span class="o">-</span> <span class="mf">0.02</span>
+
+<span class="c1"># Usando scipy.stats para calcular la CDF</span>
+<span class="n">probabilidad_caída</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">media</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">umbral</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probabilidad de que el precio caiga más de 2%: </span><span class="si">{</span><span class="n">probabilidad_caída</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="c1"># Parámetros de la distribución</span>
+<span class="n">media</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Media de cambio diario esperado</span>
+<span class="n">desviacion_std</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># Desviación estándar de los cambios diarios</span>
+
+<span class="c1"># Umbral para calcular la probabilidad de caída mayor a 2%</span>
+<span class="n">umbral</span> <span class="o">=</span> <span class="n">media</span> <span class="o">-</span> <span class="mf">0.02</span>
+
+<span class="c1"># Usando scipy.stats para calcular la CDF</span>
+<span class="n">probabilidad_caída</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">media</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">umbral</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probabilidad de que el precio caiga más de 2%: </span><span class="si">{</span><span class="n">probabilidad_caída</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probabilidad de que el precio caiga más de 2%: 15.87%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Parámetros de la distribución</span>
+<span class="n">media</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Media de cambio diario esperado</span>
+<span class="n">desviacion_std</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># Desviación estándar de los cambios diarios</span>
+
+<span class="c1"># Umbral para calcular la probabilidad de caída mayor a 2%</span>
+<span class="n">umbral</span> <span class="o">=</span> <span class="n">media</span> <span class="o">-</span> <span class="mf">0.02</span>
+
+<span class="c1"># Número de puntos para la curva</span>
+<span class="n">num_puntos</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Generación de valores de x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">media</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">desviacion_std</span><span class="p">,</span> <span class="n">media</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">desviacion_std</span><span class="p">,</span> <span class="n">num_puntos</span><span class="p">)</span>
+
+<span class="c1"># Cálculo de la densidad de probabilidad (PDF)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">media</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span>
+
+<span class="c1"># Cálculo de la probabilidad de caída</span>
+<span class="n">probabilidad_caída</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">media</span><span class="p">,</span> <span class="n">desviacion_std</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">umbral</span><span class="p">)</span>
+
+<span class="c1"># Gráfico de la PDF</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Adición de línea vertical en el umbral</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">umbral</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Caída &gt; 2% (</span><span class="si">{</span><span class="n">probabilidad_caída</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adición de etiquetas y título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Cambio diario&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Densidad de probabilidad&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribución normal del cambio diario del precio&quot;</span><span class="p">)</span>
+
+<span class="c1"># Leyenda</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/89eda72ad44f5e0ca8125d7d1b5a16cbc43598b24ab00bb8f12dd964c4744c38.png" src="_images/89eda72ad44f5e0ca8125d7d1b5a16cbc43598b24ab00bb8f12dd964c4744c38.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="variables-aleatorias-y-teorema-del-limite-central">
+<h2><span class="section-number">17.4. </span>Variables Aleatorias y Teorema del Límite Central<a class="headerlink" href="#variables-aleatorias-y-teorema-del-limite-central" title="Link to this heading">#</a></h2>
+<p>Este documento explora los conceptos fundamentales de las variables aleatorias y el Teorema del Límite Central, ilustrando su aplicación práctica en el ámbito de las finanzas mediante ejemplos en Python.</p>
+<section id="variables-aleatorias">
+<h3><span class="section-number">17.4.1. </span>Variables Aleatorias<a class="headerlink" href="#variables-aleatorias" title="Link to this heading">#</a></h3>
+<p>Una <strong>variable aleatoria</strong> es una función que asigna un número real a cada resultado de un experimento aleatorio. Las variables aleatorias se clasifican en dos categorías principales: discretas y continuas.</p>
+<ul class="simple">
+<li><p><strong>Variables Discretas</strong>: Toman valores específicos y contables. Un ejemplo clásico es el lanzamiento de un dado, donde los posibles resultados son los números enteros del 1 al 6.</p></li>
+</ul>
+<p>La función de densidad de probabilidad, en el contexto de variables discretas, se denomina más adecuadamente función de masa de probabilidad (FMP). La FMP, a diferencia de la función de densidad de probabilidad para variables continuas, asigna probabilidades a puntos específicos en el espacio de muestreo de una variable aleatoria discreta. Para una variable aleatoria discreta <span class="math notranslate nohighlight">\( X \)</span>, la función de masa de probabilidad <span class="math notranslate nohighlight">\( p(x) \)</span> se define como la probabilidad de que <span class="math notranslate nohighlight">\( X \)</span> tome exactamente el valor <span class="math notranslate nohighlight">\( x \)</span>. Esto se expresa matemáticamente como:</p>
+<div class="math notranslate nohighlight">
+\[
+p(x) = P(X = x)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( x \)</span> son los valores que <span class="math notranslate nohighlight">\( X \)</span> puede tomar.</p>
+<section id="propiedades-de-la-fmp">
+<h4><span class="section-number">17.4.1.1. </span>Propiedades de la FMP<a class="headerlink" href="#propiedades-de-la-fmp" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>No negatividad</strong>: <span class="math notranslate nohighlight">\( p(x) \geq 0 \)</span> para todo <span class="math notranslate nohighlight">\( x \)</span>.</p></li>
+<li><p><strong>Suma a uno</strong>: La suma de todas las probabilidades <span class="math notranslate nohighlight">\( p(x) \)</span> para todos los valores posibles de <span class="math notranslate nohighlight">\( x \)</span> es 1, es decir:
+$<span class="math notranslate nohighlight">\(
+\sum_{x} p(x) = 1
+\)</span>$</p></li>
+<li><p><strong>Probabilidad de eventos</strong>: La probabilidad de cualquier evento <span class="math notranslate nohighlight">\( A \)</span> puede ser calculada sumando las probabilidades de los valores de <span class="math notranslate nohighlight">\( x \)</span> que satisfacen el evento <span class="math notranslate nohighlight">\( A \)</span>, es decir:
+$<span class="math notranslate nohighlight">\(
+P(X \in A) = \sum_{x \in A} p(x)
+\)</span>$</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Variables Continuas</strong>: Pueden tomar cualquier valor dentro de un intervalo o rango. Un ejemplo es el tiempo necesario para que un banco apruebe un préstamo, que podría ser cualquier número real entre ciertos límites. La función de densidad es:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  f(x) = P(X \in [a, b]) = \int_a^b f(x) \, dx
+  \]</div>
+</section>
+<section id="ejemplos-en-python">
+<h4><span class="section-number">17.4.1.2. </span>Ejemplos en Python:<a class="headerlink" href="#ejemplos-en-python" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Variable aleatoria discreta: Lanzamiento de un dado</span>
+<span class="n">dado</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diez lanzamientos del dado:&quot;</span><span class="p">,</span> <span class="n">dado</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># Variable aleatoria continua: Tiempos de espera</span>
+<span class="n">tiempos_espera</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># Escala = tiempo medio de espera de 10 minutos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diez tiempos de espera:&quot;</span><span class="p">,</span> <span class="n">tiempos_espera</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="distribuciones-de-probabilidad">
+<h3><span class="section-number">17.4.2. </span>Distribuciones de Probabilidad<a class="headerlink" href="#distribuciones-de-probabilidad" title="Link to this heading">#</a></h3>
+<p>Las <strong>distribuciones de probabilidad</strong> describen cómo se distribuyen los valores de una variable aleatoria. Cada tipo de variable aleatoria tiene asociadas distintas distribuciones de probabilidad.</p>
+<p>De manera general una distribución de probabilidad se indica de la siguiente manera:
+$<span class="math notranslate nohighlight">\(
+  P(X = x_i) = p_i
+  \)</span>$</p>
+<ul>
+<li><p><strong>Distribuciones para Variables Discretas</strong>:</p>
+<ul class="simple">
+<li><p><em>Distribución Binomial</em>: Describe el número de éxitos en una serie de ensayos independientes.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+  \]</div>
+</li>
+<li><p><strong>Distribuciones para Variables Continuas</strong>:</p>
+<ul class="simple">
+<li><p><em>Distribución Normal</em>: Usada extensamente en estadística debido a sus propiedades y la centralidad que proporciona el Teorema del Límite Central.
+$<span class="math notranslate nohighlight">\(
+f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+<section id="id5">
+<h4><span class="section-number">17.4.2.1. </span>Ejemplos en Python:<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribución binomial: Probabilidad de 2 éxitos en 10 intentos con p=0.5</span>
+<span class="n">binomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diez resultados de la distribución binomial:&quot;</span><span class="p">,</span> <span class="n">binomial</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># Distribución normal: Media = 0, desviación estándar = 1</span>
+<span class="n">normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diez resultados de la distribución normal:&quot;</span><span class="p">,</span> <span class="n">normal</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribución binomial: Probabilidad de 2 éxitos en 10 intentos con p=0.5</span>
+<span class="n">binomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diez resultados de la distribución binomial:&quot;</span><span class="p">,</span> <span class="n">binomial</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1"># Distribución normal: Media = 0, desviación estándar = 1</span>
+<span class="n">normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diez resultados de la distribución normal:&quot;</span><span class="p">,</span> <span class="n">normal</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diez resultados de la distribución binomial: [5 6 4 7 6 3 6 4 7 6]
+Diez resultados de la distribución normal: [-1.36242236  0.22765356  0.83100765 -1.41211989 -0.01122068 -2.08618178
+  0.39136705 -0.26247274 -2.00610371  0.72188881]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="teorema-del-limite-central">
+<h3><span class="section-number">17.4.3. </span>Teorema del Límite Central<a class="headerlink" href="#teorema-del-limite-central" title="Link to this heading">#</a></h3>
+<p>El <strong>Teorema del Límite Central</strong> es uno de los resultados más poderosos en estadística, estableciendo que, bajo ciertas condiciones, la suma de una gran cantidad de variables aleatorias independientes tiende a distribuirse normalmente, independientemente de la forma de la distribución original de las variables. Su expresión matemática es:</p>
+<div class="math notranslate nohighlight">
+\[
+  \frac{1}{n}\sum_{i=1}^{n}X_i \xrightarrow{d} N(\mu, \frac{\sigma^2}{n})
+  \]</div>
+<section id="importancia">
+<h4><span class="section-number">17.4.3.1. </span>Importancia:<a class="headerlink" href="#importancia" title="Link to this heading">#</a></h4>
+<p>Este teorema justifica el uso generalizado de la distribución normal en muchos campos, incluidas las finanzas, porque permite modelar fenómenos complejos como si fueran normales, facilitando su análisis y comprensión.</p>
+</section>
+<section id="aplicaciones-en-finanzas">
+<h4><span class="section-number">17.4.3.2. </span>Aplicaciones en Finanzas<a class="headerlink" href="#aplicaciones-en-finanzas" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Modelado de Precios de Acciones</strong>: La distribución normal se utiliza para modelar los retornos diarios de las acciones, lo cual es fundamental en la teoría de portafolios moderna.</p></li>
+<li><p><strong>Evaluación de Riesgos</strong>: El teorema ayuda a calcular probabilidades de eventos extremos, como grandes pérdidas financieras.</p></li>
+</ul>
+</section>
+<section id="simulaciones-en-python">
+<h4><span class="section-number">17.4.3.3. </span>Simulaciones en Python<a class="headerlink" href="#simulaciones-en-python" title="Link to this heading">#</a></h4>
+<p>El siguiente código simula el Teorema del Límite Central utilizando sumas de variables aleatorias uniformes para demostrar su convergencia hacia una distribución normal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Suma de variables aleatorias uniformes</span>
+<span class="n">sumas</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+
+<span class="c1"># Visualización</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sumas</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la suma de 50 variables aleatorias uniformes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Suma de variables aleatorias uniformes</span>
+<span class="n">sumas</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+
+<span class="c1"># Visualización</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sumas</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la suma de 50 variables aleatorias uniformes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9d80d9e3a3ae16f1b898a7aa864687fa8c7071cb8b92d0a601a39aacbd6a86ee.png" src="_images/9d80d9e3a3ae16f1b898a7aa864687fa8c7071cb8b92d0a601a39aacbd6a86ee.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DipFin%20Sesion%201.2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Diplomado en ciencia de datos para toma de decisiones financieras</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DipFin%20Sesion%201.4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Diplomado en ciencia de datos para toma de decisiones financieras</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Diplomado en ciencia de datos para toma de decisiones financieras</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ltalero-unab-edu-co">11.1. ltalero@unab.edu.co</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-1-fundamentos-de-python-y-estadistica-basica-total-horas-20-horas-5-sesiones-abril-5-a-abril-19">11.2. <strong>Módulo 1: Fundamentos de Python y Estadística Básica Total Horas: 20 horas (5 sesiones) (Abril 5 a abril 19)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-del-curso">12. Índice del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-estadistica-en-python">13. 1. Introducción a la Estadística en Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentos-en-estadistica">13.1. Momentos en Estadística</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-generadoras-de-momentos">13.1.1. Funciones Generadoras de Momentos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relevancia-de-la-estadistica-en-el-analisis-financiero">13.2. Relevancia de la Estadística en el Análisis Financiero</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-y-bibliotecas-de-python-utilizadas-en-estadistica">13.3. Herramientas y Bibliotecas de Python Utilizadas en Estadística</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-metodos-y-atributos">13.3.1. Acceso a Métodos y Atributos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ventajas-de-la-notacion-de-punto">13.3.2. Ventajas de la Notación de Punto</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno-de-desarrollo">13.4. Configuración del Entorno de Desarrollo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-simples-para-familiarizarse">13.5. Ejercicios Simples para Familiarizarse</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-tendencia-central">14. 2. Medidas de Tendencia Central</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-teoricas">14.1. Definiciones Teóricas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-tendencia-central-calculables-en-python-para-finanzas">15. Medidas de Tendencia Central Calculables en Python para Finanzas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-ponderada">15.1. Media Ponderada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-python">15.2. Ejemplo en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-practicos">15.3. Ejemplos Prácticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-numpy-y-pandas">15.3.1. Uso de NumPy y Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-inicial">15.3.1.1. Setup Inicial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-media-mediana-y-moda">15.3.1.2. Cálculo de Media, Mediana y Moda</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion">15.3.2. Interpretación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-practicos">15.4. Ejercicios Prácticos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-dispersion">16. 3. Medidas de Dispersión</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-utilizando-numpy-y-pandas">16.1. Cálculo Utilizando NumPy y Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.1.1. Setup Inicial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza-y-desviacion-estandar">16.1.2. Varianza y Desviación Estándar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rango-intercuartilico-iqr">16.1.3. Rango Intercuartílico (IQR)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.2. Ejercicios Prácticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">16.2.1. Solución</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-basicos-de-probabilidad">17. 4. Conceptos Básicos de Probabilidad</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-teoria-de-la-probabilidad">17.1. Introducción a la Teoría de la Probabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-probabilidad">17.1.1. Definición de Probabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eventos">17.1.2. Eventos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-esperado">17.1.3. Valor Esperado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza">17.1.4. Varianza</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">17.1.4.1. Ejemplos Prácticos</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-y-teoria-de-conjuntos">17.1.5. Probabilidad y Teoría de Conjuntos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-evaluacion-de-la-probabilidad-de-incumplimiento-de-credito">17.1.5.1. Ejemplo: Evaluación de la Probabilidad de Incumplimiento de Crédito</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-teoria-de-conjuntos-en-la-diversificacion-de-portafolios">17.1.5.2. Ejemplo: Teoría de Conjuntos en la Diversificación de Portafolios</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatoria">17.1.6. Combinatoria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-condicional">17.1.7. Probabilidad Condicional</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulaciones-de-probabilidad-en-python">17.2. Simulaciones de Probabilidad en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-simulacion-fluctuaciones-de-precios-de-acciones">17.2.1. Ejemplo de Simulación: Fluctuaciones de Precios de Acciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">17.3. Ejercicios Prácticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-calculo-de-probabilidad">17.3.1. Ejercicio de Cálculo de Probabilidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-aleatorias-y-teorema-del-limite-central">17.4. Variables Aleatorias y Teorema del Límite Central</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-aleatorias">17.4.1. Variables Aleatorias</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-fmp">17.4.1.1. Propiedades de la FMP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-en-python">17.4.1.2. Ejemplos en Python:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuciones-de-probabilidad">17.4.2. Distribuciones de Probabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">17.4.2.1. Ejemplos en Python:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-del-limite-central">17.4.3. Teorema del Límite Central</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia">17.4.3.1. Importancia:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-en-finanzas">17.4.3.2. Aplicaciones en Finanzas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulaciones-en-python">17.4.3.3. Simulaciones en Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
