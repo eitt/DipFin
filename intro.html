@@ -14,19 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,12 +34,12 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -72,27 +72,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -114,8 +110,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -186,23 +187,60 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">6. Índice del Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">6. Funciones en Python</a></li>
 
 
-
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">10. Índice del Curso</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">16. Índice del Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">9. Introducción a la Estadística en Python</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">21. Índice del Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">14. Introducción a la Adquisición de Datos</a></li>
 
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">18. Introducción a la Limpieza de Datos</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html">22. Introducción a la Regresión Lineal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html">37. 1. Introducción a las Redes Neuronales</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html">48. Introducción a Modelos de Series Temporales</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.4.html">59. Introducción al Análisis de Clustering</a></li>
 
 
 
@@ -221,7 +259,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -230,7 +268,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -414,7 +452,6 @@ document.write(`
 <ul class="simple">
 <li><p>Leonardo H. Talero-Sarmiento, <a class="reference external" href="mailto:ltalero&#37;&#52;&#48;unab&#46;edu&#46;co">ltalero<span>&#64;</span>unab<span>&#46;</span>edu<span>&#46;</span>co</a></p></li>
 <li><p>Fabio Leonardo Gomez Avila, <a class="reference external" href="mailto:fgomez45&#37;&#52;&#48;unab&#46;edu&#46;co">fgomez45<span>&#64;</span>unab<span>&#46;</span>edu<span>&#46;</span>co</a></p></li>
-<li><p>Jose Luis Florez Rueda, <a class="reference external" href="mailto:jflorezr&#37;&#52;&#48;unab&#46;edu&#46;co">jflorezr<span>&#64;</span>unab<span>&#46;</span>edu<span>&#46;</span>co</a></p></li>
 <li><p>Sergio Andres Parra Hormiga, <a class="reference external" href="mailto:sparra10&#37;&#52;&#48;unab&#46;edu&#46;co">sparra10<span>&#64;</span>unab<span>&#46;</span>edu<span>&#46;</span>co</a></p></li>
 </ul>
 <p><strong>Contenido</strong></p>
@@ -426,26 +463,63 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.1.html#sintaxis-basica-de-python-en-finanzas">3. 2. Sintaxis Básica de Python en Finanzas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.1.html#estructuras-de-datos-en-python">4. 3. Estructuras de datos en Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.1.html#comandos-basicos-para-el-curso">5. Comandos básicos para el curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">6. Índice del Curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html#funciones-en-python">7. Funciones en Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html#bucles-en-python">8. Bucles en Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html#manejo-de-errores-y-excepciones">9. Manejo de Errores y Excepciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">10. Índice del Curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#introduccion-a-la-estadistica-en-python">11. Introducción a la Estadística en Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#medidas-de-tendencia-central">12. Medidas de Tendencia Central</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#medidas-de-tendencia-central-calculables-en-python-para-finanzas">13. Medidas de Tendencia Central Calculables en Python para Finanzas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#medidas-de-dispersion">14. Medidas de Dispersión</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#conceptos-basicos-de-probabilidad">15. Conceptos Básicos de Probabilidad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">16. Índice del Curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html#introduccion-a-la-adquisicion-de-datos">17. Introducción a la Adquisición de Datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html#importacion-de-datos-de-apis">18. Importación de Datos de APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html#importacion-de-datos-de-archivos-csv">19. Importación de Datos de Archivos CSV</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html#seleccion-de-variables-relevantes">20. Selección de Variables Relevantes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">21. Índice del Curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html#introduccion-a-la-limpieza-de-datos">22. Introducción a la Limpieza de Datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html#manejo-de-valores-faltantes">23. Manejo de Valores Faltantes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html#transformacion-de-variables">24. Transformación de Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html#integracion-y-almacenamiento-de-datos-limpios">25. Integración y Almacenamiento de Datos Limpios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">6. Funciones en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html#bucles-en-python">7. Bucles en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html#manejo-de-errores-y-excepciones">8. Manejo de Errores y Excepciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">9. Introducción a la Estadística en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#medidas-de-tendencia-central">10. Medidas de Tendencia Central</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#medidas-de-tendencia-central-calculables-en-python-para-finanzas">11. Medidas de Tendencia Central Calculables en Python para Finanzas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#medidas-de-dispersion">12. Medidas de Dispersión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html#conceptos-basicos-de-probabilidad">13. Conceptos Básicos de Probabilidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">14. Introducción a la Adquisición de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html#importacion-de-datos-de-apis">15. Importación de Datos de APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html#importacion-de-datos-de-archivos-csv">16. Importación de Datos de Archivos CSV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html#seleccion-de-variables-relevantes">17. Selección de Variables Relevantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">18. Introducción a la Limpieza de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html#manejo-de-valores-faltantes">19. Manejo de Valores Faltantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html#transformacion-de-variables">20. Transformación de Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html#integracion-y-almacenamiento-de-datos-limpios">21. Integración y Almacenamiento de Datos Limpios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html">22. Introducción a la Regresión Lineal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#regresion-lineal-con-predictores-discretos">23. Regresión Lineal con Predictores Discretos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#caso-de-estudio-analisis-de-precios-de-mercedes-benz-en-ee-uu">24. Caso de Estudio: Análisis de Precios de Mercedes-Benz en EE.UU.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#introduccion-a-la-regresion-logistica">25. Introducción a la Regresión Logística</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#calculo-de-parametros">26. Cálculo de Parámetros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#preprocesamiento-de-datos-para-regresion-logistica">27. Preprocesamiento de Datos para Regresión Logística</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#modelo-logit">28. Modelo Logit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#modelo-probit">29. Modelo Probit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#diferencias-clave">30. Diferencias Clave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#ejemplo-de-clasificacion-binaria-usando-regresion-caso-de-pronostico-de-riesgo">31. Ejemplo de clasificación binaria usando regresión: caso de pronóstico de riesgo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#analisis-del-rendimiento-del-modelo-de-regresion-logistica">32. Análisis del rendimiento del modelo de regresión logística</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#preprocesamiento">33. Preprocesamiento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#introduccion-a-los-arboles-de-decision">34. Introducción a los Árboles de Decisión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#id4">35. Criterios de División</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html#ejemplo-de-clasificacion-binaria-usando-arboles-de-decision-caso-de-pronostico-de-riesgo">36. Ejemplo de clasificación binaria usando árboles de decisión: caso de pronóstico de riesgo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html">37. 1. Introducción a las Redes Neuronales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#mostrando-los-componentes-de-una-red">38. Mostrando los Componentes de una Red</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#fundamentos-matematicos-para-el-entrenamiento-de-redes-neuronales">39. Fundamentos Matemáticos para el Entrenamiento de Redes Neuronales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#algoritmos-de-optimizacion">40. Algoritmos de optimización</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#funciones-de-error-en-aprendizaje-automatico">41. Funciones de Error en Aprendizaje Automático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#fundamentos-de-la-clasificacion-binaria">42. 2. Fundamentos de la Clasificación Binaria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#contexto-del-ejercicio">43. Contexto del Ejercicio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#generacion-de-datos">44. Generación de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#implementacion-de-redes-neuronales-de-regresion-en-python">45. 3. Implementación de Redes Neuronales de regresión en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#contexto-del-ejercicio-de-regresion">46. Contexto del Ejercicio de Regresión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html#generacion-de-datos-para-regresion">47. Generación de Datos para Regresión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html">48. Introducción a Modelos de Series Temporales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#modelado-arima-para-pronostico-de-mercados">49. Modelado ARIMA para Pronóstico de Mercados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#modelado-autoregresivo-ar">50. Modelado Autoregresivo (AR)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#modelo-de-media-movil-ma">51. Modelo de Media Móvil (MA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#historia-de-los-modelos-garch">52. Historia de los Modelos GARCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#fundamentacion-matematica-de-garch">53. Fundamentación Matemática de GARCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#comparativo-entre-modelos-arima-y-garch">54. Comparativo entre Modelos ARIMA y GARCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#ejemplos-de-aplicacion-en-finanzas">55. Ejemplos de Aplicación en Finanzas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#ejemplo-practico-uso-de-datos-reales-con-yahoo-finance">56. Ejemplo Práctico: Uso de Datos Reales con Yahoo Finance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#tipos-de-volatilidad-en-series-financieras">57. Tipos de Volatilidad en Series Financieras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html#analisis-de-valor-en-riesgo-var-utilizando-diferentes-metodos">58. Análisis de Valor en Riesgo (VaR) Utilizando Diferentes Métodos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.4.html">59. Introducción al Análisis de Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.4.html#clustering-k-means">60. Clustering K-means</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.4.html#descripcion-de-las-columnas-del-dataset">61. Descripción de las Columnas del Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.4.html#clustering-jerarquico">62. Clustering Jerárquico</a></li>
 </ul>
 </div>
 </section>
@@ -477,7 +551,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="right-next"
@@ -495,8 +569,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -541,8 +613,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

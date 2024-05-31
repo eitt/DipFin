@@ -1,0 +1,2505 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>37. 1. Introducción a las Redes Neuronales &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DipFin Sesion 3.2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="48. Introducción a Modelos de Series Temporales" href="DipFin%20Sesion%203.3.html" />
+    <link rel="prev" title="22. Introducción a la Regresión Lineal" href="DipFin%20Sesion%203.1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos de Python y Estadística Básica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.1.html">1. Introducción a Python para Finanzas</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.2.html">6. Funciones en Python</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">9. Introducción a la Estadística en Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">14. Introducción a la Adquisición de Datos</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">18. Introducción a la Limpieza de Datos</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html">22. Introducción a la Regresión Lineal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">37. 1. Introducción a las Redes Neuronales</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html">48. Introducción a Modelos de Series Temporales</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.4.html">59. Introducción al Análisis de Clustering</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDipFin Sesion 3.2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/DipFin Sesion 3.2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Introducción a las Redes Neuronales</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">37. 1. Introducción a las Redes Neuronales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-basicos-de-redes-neuronales">37.1. Conceptos Básicos de Redes Neuronales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-redes-neuronales">37.2. Tipos de Redes Neuronales</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrando-los-componentes-de-una-red">38. Mostrando los Componentes de una Red</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-activacion-comunes">38.1. Funciones de Activación Comunes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-en-finanzas">38.2. Aplicaciones en Finanzas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-para-el-entrenamiento-de-redes-neuronales">39. Fundamentos Matemáticos para el Entrenamiento de Redes Neuronales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacion-de-la-funcion-de-error">39.1. Optimización de la Función de Error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descenso-del-gradiente">39.2. Descenso del Gradiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regla-de-la-cadena-en-redes-neuronales">39.3. Regla de la Cadena en Redes Neuronales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-para-construir-una-red-neuronal-para-pronostico-de-series-temporales">39.4. Pasos para Construir una Red Neuronal para Pronóstico de Series Temporales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-para-definir-la-arquitectura-de-la-red">39.5. Estrategias para Definir la Arquitectura de la Red</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-de-optimizacion">40. Algoritmos de optimización</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-error-en-aprendizaje-automatico">41. Funciones de Error en Aprendizaje Automático</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-cuadratico-medio-mse-mean-squared-error">41.1. 1. Error Cuadrático Medio (MSE - Mean Squared Error)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-absoluto-medio-mae-mean-absolute-error">41.2. 2. Error Absoluto Medio (MAE - Mean Absolute Error)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raiz-del-error-cuadratico-medio-rmse-root-mean-squared-error">41.3. 3. Raíz del Error Cuadrático Medio (RMSE - Root Mean Squared Error)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logaritmo-del-error-cuadratico-medio-log-cosh">41.4. 4. Logaritmo del Error Cuadrático Medio (Log-Cosh)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entropia-cruzada-cross-entropy">41.5. 5. Entropía Cruzada (Cross-Entropy)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-la-clasificacion-binaria">42. 2. Fundamentos de la Clasificación Binaria</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-ejercicio">43. Contexto del Ejercicio</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-problema">43.1. Descripción del Problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo">43.2. Objetivo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-datos">44. Generación de Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-para-generar-el-dataset">44.1. Función para Generar el Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-dataset">44.2. Descripción del Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-preparacion-de-datos">44.3. Paso 1: Preparación de Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-definicion-del-modelo">44.4. Paso 2: Definición del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-compilacion-del-modelo">44.5. Paso 3: Compilación del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-entrenamiento-del-modelo">44.6. Paso 4: Entrenamiento del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-evaluacion-y-ajuste">44.7. Paso 5: Evaluación y Ajuste</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-redes-neuronales-de-regresion-en-python">45. 3. Implementación de Redes Neuronales de regresión en Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-ejercicio-de-regresion">46. Contexto del Ejercicio de Regresión</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">46.1. Descripción del Problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">46.2. Objetivo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-datos-para-regresion">47. Generación de Datos para Regresión</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">47.1. Función para Generar el Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptacion-del-modelo-de-red-neuronal">47.2. Adaptación del Modelo de Red Neuronal</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduccion-a-las-redes-neuronales">
+<h1><span class="section-number">37. </span>1. Introducción a las Redes Neuronales<a class="headerlink" href="#introduccion-a-las-redes-neuronales" title="Link to this heading">#</a></h1>
+<section id="conceptos-basicos-de-redes-neuronales">
+<h2><span class="section-number">37.1. </span>Conceptos Básicos de Redes Neuronales<a class="headerlink" href="#conceptos-basicos-de-redes-neuronales" title="Link to this heading">#</a></h2>
+<p>Una <strong>red neuronal</strong> es un modelo computacional inspirado en el funcionamiento del cerebro humano, diseñado para reconocer patrones y procesar datos de manera similar a como lo hacen los humanos. Estas redes están compuestas por unidades de procesamiento llamadas neuronas, que están organizadas en capas y conectadas entre sí por enlaces ponderados. Estas conexiones representan los pesos sinápticos y pueden ajustarse durante el proceso de aprendizaje de la red.</p>
+<p><img alt="Colored Neural Network" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Colored_neural_network.svg" /></p>
+<p>El principio básico detrás del funcionamiento de una red neuronal es su capacidad para aprender de los datos. Esto se logra mediante un proceso llamado <strong>aprendizaje automático</strong>, donde la red ajusta sus pesos para minimizar la diferencia entre la salida prevista y la salida real, proceso conocido como entrenamiento. Las redes neuronales son especialmente poderosas para modelar relaciones complejas y no lineales en los datos, lo que las hace útiles en una variedad de campos, incluyendo el financiero.</p>
+</section>
+<section id="tipos-de-redes-neuronales">
+<h2><span class="section-number">37.2. </span>Tipos de Redes Neuronales<a class="headerlink" href="#tipos-de-redes-neuronales" title="Link to this heading">#</a></h2>
+<p>Hay varios tipos de arquitecturas de redes neuronales, cada una con sus características y aplicaciones específicas:</p>
+<ul class="simple">
+<li><p><strong>Perceptrones</strong>: Son la forma más simple de red neuronal y consisten en una sola neurona con múltiples entradas. Son útiles para tareas de clasificación simple pero no pueden modelar relaciones complejas.</p></li>
+<li><p><strong>Redes Neuronales Multicapa (MLP)</strong>: Estas redes consisten en múltiples capas de neuronas, típicamente una capa de entrada, una o más capas ocultas, y una capa de salida. Las MLP son capaces de aprender relaciones no lineales gracias a su estructura más profunda y son ampliamente utilizadas en problemas de regresión y clasificación.</p></li>
+<li><p><strong>Redes Convolucionales (CNNs)</strong>: Especializadas en procesar datos con una topología de rejilla, como imágenes. En finanzas, las CNN pueden ser utilizadas para análisis de series temporales, donde pueden capturar patrones temporales en datos de precios de acciones o índices.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo de Red Neuronal</p></th>
+<th class="head"><p>Estructura</p></th>
+<th class="head"><p>Aplicaciones Típicas</p></th>
+<th class="head"><p>Complejidad</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Perceptrones</p></td>
+<td><p>Una sola capa sin capas ocultas</p></td>
+<td><p>Clasificación binaria simple</p></td>
+<td><p>Baja</p></td>
+</tr>
+<tr class="row-odd"><td><p>MLP (Multicapa)</p></td>
+<td><p>Capas de entrada, ocultas y salida</p></td>
+<td><p>Clasificación y regresión, reconocimiento de patrones</p></td>
+<td><p>Media</p></td>
+</tr>
+<tr class="row-even"><td><p>CNN (Convolucional)</p></td>
+<td><p>Capas convolucionales, de agrupamiento y completamente conectadas</p></td>
+<td><p>Análisis de imágenes, series temporales en finanzas</p></td>
+<td><p>Alta</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="mostrando-los-componentes-de-una-red">
+<h1><span class="section-number">38. </span>Mostrando los Componentes de una Red<a class="headerlink" href="#mostrando-los-componentes-de-una-red" title="Link to this heading">#</a></h1>
+<p>Uno de los componentes cruciales en el diseño de redes neuronales son las <strong>funciones de activación</strong>. Estas funciones ayudan a determinar la salida de una red a partir de sus entradas y juegan un papel vital en la capacidad de la red para captar y representar complejidades en los datos.</p>
+<section id="funciones-de-activacion-comunes">
+<h2><span class="section-number">38.1. </span>Funciones de Activación Comunes<a class="headerlink" href="#funciones-de-activacion-comunes" title="Link to this heading">#</a></h2>
+<p>A continuación, se describen algunas de las funciones de activación más utilizadas en redes neuronales:</p>
+<ul class="simple">
+<li><p><strong>Sigmoide</strong>: Limita la salida entre 0 y 1, lo que la hace útil para problemas de clasificación binaria.</p></li>
+<li><p><strong>Tanh (Tangente Hiperbólica)</strong>: Similar a la sigmoide, pero su salida varía de -1 a 1. Es útil para modelar datos centrados en cero.</p></li>
+<li><p><strong>ReLU (Rectified Linear Unit)</strong>: Proporciona una salida lineal para todas las entradas positivas y cero para todas las entradas negativas. Es la más utilizada debido a su eficiencia computacional y menos problemas de gradientes desvanecidos.</p></li>
+<li><p><strong>Leaky ReLU</strong>: Una variante de ReLU que permite pequeñas salidas negativas cuando la entrada es negativa, lo que ayuda a mantener activas las neuronas durante el entrenamiento.</p></li>
+<li><p><strong>Softmax</strong>: Utilizada principalmente en la capa de salida de las redes neuronales para clasificación multiclase, convierte puntuaciones en probabilidades.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Función de Activación</p></th>
+<th class="head"><p>Ventajas</p></th>
+<th class="head"><p>Desventajas</p></th>
+<th class="head"><p>Recomendada Para</p></th>
+<th class="head"><p>No Recomendada Para</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sigmoide</p></td>
+<td><p>Útil para probabilidades; salida entre 0 y 1</p></td>
+<td><p>Gradiente desaparece; no centrada en cero</p></td>
+<td><p>Clasificación binaria al final de la red</p></td>
+<td><p>Capas ocultas; grandes redes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tanh</p></td>
+<td><p>Salida centrada en cero</p></td>
+<td><p>Gradiente desaparece</p></td>
+<td><p>Redes donde se necesitan salidas negativas</p></td>
+<td><p>Capas de salida en clasificación binaria</p></td>
+</tr>
+<tr class="row-even"><td><p>ReLU</p></td>
+<td><p>Rápida convergencia; cálculo simple</p></td>
+<td><p>Neuronas pueden “morir”</p></td>
+<td><p>Modelos de redes profundas</p></td>
+<td><p>Problemas donde los gradientes son críticos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Leaky ReLU</p></td>
+<td><p>Previene neuronas muertas</p></td>
+<td><p>Más compleja que ReLU</p></td>
+<td><p>Cuando hay problemas con neuronas muertas en ReLU</p></td>
+<td><p>Problemas simples donde ReLU es suficiente</p></td>
+</tr>
+<tr class="row-even"><td><p>Softmax</p></td>
+<td><p>Convierte salidas a probabilidades</p></td>
+<td><p>Computacionalmente más intensa</p></td>
+<td><p>Clasificación multiclase al final de la red</p></td>
+<td><p>Capas ocultas; regresión</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Definir las funciones de activación</span>
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">leaky_relu</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">e_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">e_x</span> <span class="o">/</span> <span class="n">e_x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Valores de entrada para las funciones</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_sigmoid</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_tanh</span> <span class="o">=</span> <span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_relu</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_leaky_relu</span> <span class="o">=</span> <span class="n">leaky_relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x_softmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>  <span class="c1"># Para softmax, usamos un conjunto de puntos</span>
+<span class="n">y_softmax</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">x_softmax</span><span class="p">)</span>
+
+<span class="c1"># Crear gráficos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_sigmoid</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Sigmoid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sigmoid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_tanh</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tanh&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Tanh&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_relu</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;ReLU&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;ReLU&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_leaky_relu</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Leaky ReLU&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Leaky ReLU&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_softmax</span><span class="p">,</span> <span class="n">y_softmax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Softmax&quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Softmax&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">54</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">54</span> <span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_softmax</span><span class="p">,</span> <span class="n">y_softmax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Softmax&quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Softmax&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: stem() got an unexpected keyword argument &#39;use_line_collection&#39;
+</pre></div>
+</div>
+<img alt="_images/7381d3368c343ba418a079e3ff47e9f3b9c5528d3ea3c273a22653c95e377ab6.png" src="_images/7381d3368c343ba418a079e3ff47e9f3b9c5528d3ea3c273a22653c95e377ab6.png" />
+</div>
+</div>
+</section>
+<section id="aplicaciones-en-finanzas">
+<h2><span class="section-number">38.2. </span>Aplicaciones en Finanzas<a class="headerlink" href="#aplicaciones-en-finanzas" title="Link to this heading">#</a></h2>
+<p>Las redes neuronales tienen una amplia gama de aplicaciones en la industria financiera. Algunas de estas aplicaciones incluyen:</p>
+<ul class="simple">
+<li><p><strong>Predicción de precios de acciones</strong>: Las redes neuronales pueden analizar grandes cantidades de datos financieros y de mercado para prever tendencias y movimientos en los precios de las acciones, lo que ayuda en la toma de decisiones de inversión.</p></li>
+<li><p><strong>Evaluación de riesgo crediticio</strong>: Mediante el análisis de datos históricos y transaccionales, las redes neuronales pueden predecir la probabilidad de incumplimiento de pagos, mejorando la precisión de las evaluaciones de riesgo crediticio.</p></li>
+<li><p><strong>Análisis predictivo</strong>: Las redes neuronales se utilizan para una variedad de tareas predictivas en finanzas, como la previsión de quiebras empresariales, identificación de fraudes financieros, y optimización de carteras.</p></li>
+</ul>
+<p>Al construir y entrenar redes neuronales, uno de los aspectos más fundamentales es la optimización de la función de error (o pérdida). Este proceso involucra el ajuste de los pesos y sesgos de la red de manera que se minimice la diferencia entre las predicciones del modelo y los valores reales. Aquí te explico cómo se utiliza el cálculo, especialmente el método de descenso de gradiente y la regla de la cadena, para entrenar redes neuronales.</p>
+</section>
+</section>
+<section id="fundamentos-matematicos-para-el-entrenamiento-de-redes-neuronales">
+<h1><span class="section-number">39. </span>Fundamentos Matemáticos para el Entrenamiento de Redes Neuronales<a class="headerlink" href="#fundamentos-matematicos-para-el-entrenamiento-de-redes-neuronales" title="Link to this heading">#</a></h1>
+<section id="optimizacion-de-la-funcion-de-error">
+<h2><span class="section-number">39.1. </span>Optimización de la Función de Error<a class="headerlink" href="#optimizacion-de-la-funcion-de-error" title="Link to this heading">#</a></h2>
+<p>La función de error, también conocida como función de pérdida, mide qué tan bien el modelo de red neuronal está realizando predicciones. El objetivo del entrenamiento es minimizar esta función de pérdida. Una de las funciones de pérdida más comunes en problemas de regresión es el Error Cuadrático Medio (MSE), definido como:</p>
+<div class="math notranslate nohighlight">
+\[
+MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( y_i \)</span> son los valores reales y <span class="math notranslate nohighlight">\( \hat{y}_i \)</span> son los valores predichos por la red neuronal.</p>
+</section>
+<section id="descenso-del-gradiente">
+<h2><span class="section-number">39.2. </span>Descenso del Gradiente<a class="headerlink" href="#descenso-del-gradiente" title="Link to this heading">#</a></h2>
+<p>El método de descenso de gradiente es una estrategia de optimización que se utiliza para encontrar el mínimo local de una función diferenciable, como la función de error en el entrenamiento de redes neuronales. La idea es actualizar los parámetros del modelo de manera iterativa en la dirección opuesta al gradiente de la función de pérdida con respecto a los parámetros. La actualización de cada parámetro se puede expresar con la siguiente fórmula:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta = \theta - \eta \nabla_\theta J(\theta)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( \theta \)</span> representa los parámetros del modelo (pesos y sesgos), <span class="math notranslate nohighlight">\( \eta \)</span> es la tasa de aprendizaje, y <span class="math notranslate nohighlight">\( \nabla_\theta J(\theta) \)</span> es el gradiente de la función de pérdida <span class="math notranslate nohighlight">\( J \)</span> con respecto a <span class="math notranslate nohighlight">\( \theta \)</span>.</p>
+</section>
+<section id="regla-de-la-cadena-en-redes-neuronales">
+<h2><span class="section-number">39.3. </span>Regla de la Cadena en Redes Neuronales<a class="headerlink" href="#regla-de-la-cadena-en-redes-neuronales" title="Link to this heading">#</a></h2>
+<p>Durante el entrenamiento de una red neuronal, es necesario calcular los gradientes de la función de pérdida con respecto a cada peso en la red, lo cual se realiza utilizando el algoritmo de retropropagación (backpropagation). Este algoritmo aplica la regla de la cadena del cálculo diferencial para descomponer estas derivadas en partes manejables. La regla de la cadena se puede expresar como:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} \frac{\partial y}{\partial x}
+\]</div>
+<p>En el contexto de una red neuronal, si consideramos una red simple de dos capas, donde <span class="math notranslate nohighlight">\( y \)</span> es la salida de la primera capa y <span class="math notranslate nohighlight">\( z \)</span> es la salida de la red (función de pérdida), el gradiente de <span class="math notranslate nohighlight">\( z \)</span> con respecto a los pesos <span class="math notranslate nohighlight">\( w \)</span> en la primera capa se calcula multiplicando el gradiente de <span class="math notranslate nohighlight">\( z \)</span> con respecto a la salida de la capa (<span class="math notranslate nohighlight">\( y \)</span>) por el gradiente de <span class="math notranslate nohighlight">\( y \)</span> con respecto a <span class="math notranslate nohighlight">\( w \)</span>.</p>
+<p>Estos cálculos permiten ajustar los pesos de manera que la pérdida se minimiza, guiando el proceso de entrenamiento hacia el modelo óptimo.</p>
+</section>
+<section id="pasos-para-construir-una-red-neuronal-para-pronostico-de-series-temporales">
+<h2><span class="section-number">39.4. </span>Pasos para Construir una Red Neuronal para Pronóstico de Series Temporales<a class="headerlink" href="#pasos-para-construir-una-red-neuronal-para-pronostico-de-series-temporales" title="Link to this heading">#</a></h2>
+<p>Construir una red neuronal para pronóstico de series temporales implica varios pasos críticos, desde la preparación de datos hasta la evaluación del modelo. A continuación, están descritos los pasos generales mediante un ejemplo de código en Python utilizando Keras para pronosticar una serie de tiempo financiera, descargando datos de Yahoo Finance.</p>
+<ol class="arabic simple">
+<li><p><strong>Obtención de datos</strong>: El primer paso es recopilar los datos que se utilizarán para el entrenamiento y la prueba del modelo.</p></li>
+<li><p><strong>Preprocesamiento de datos</strong>: Involucra la limpieza y normalización de los datos, así como la transformación de la serie temporal en un problema de aprendizaje supervisado.</p></li>
+<li><p><strong>Diseño del modelo</strong>: Seleccionar la arquitectura de la red, incluyendo el número de capas, el número de neuronas por capa, y las funciones de activación.</p></li>
+<li><p><strong>Entrenamiento del modelo</strong>: Entrenar la red neuronal con un conjunto de datos de entrenamiento.</p></li>
+<li><p><strong>Evaluación del modelo</strong>: Probar la red neuronal con datos nuevos para evaluar su desempeño.</p></li>
+<li><p><strong>Ajuste y optimización</strong>: Ajustar hiperparámetros como la tasa de aprendizaje, el número de épocas, y la arquitectura de la red para mejorar el modelo.</p></li>
+</ol>
+</section>
+<section id="estrategias-para-definir-la-arquitectura-de-la-red">
+<h2><span class="section-number">39.5. </span>Estrategias para Definir la Arquitectura de la Red<a class="headerlink" href="#estrategias-para-definir-la-arquitectura-de-la-red" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Número de Neuronas y Capas</strong>: Comenzar con un modelo simple y aumentar la complejidad gradualmente. Monitorear el desempeño y ajustar según sea necesario.</p></li>
+<li><p><strong>Funciones de Activación</strong>: ReLU suele ser una buena opción para capas ocultas en redes profundas debido a su eficiencia. Softmax es útil en la capa de salida para problemas de clasificación.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># Importa NumPy para operaciones numéricas y manejo de arrays</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># Importa pandas para manipulación y análisis de datos</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># Importa pyplot para realizar visualizaciones gráficas</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>  <span class="c1"># Importa Sequential para crear el modelo de red neuronal secuencial</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">LSTM</span>  <span class="c1"># Importa Dense y LSTM para construir las capas de la red neuronal</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>  <span class="c1"># Importa MinMaxScaler para normalizar los datos</span>
+<span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="kn">import</span> <span class="n">data</span> <span class="k">as</span> <span class="n">pdr</span>  <span class="c1"># Importa datareader para cargar datos desde fuentes en línea como Yahoo Finance</span>
+<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>  <span class="c1"># Importa yfinance para manejar descargas de datos de Yahoo Finance</span>
+
+<span class="n">yf</span><span class="o">.</span><span class="n">pdr_override</span><span class="p">()</span>  <span class="c1"># Sobrescribe métodos de pandas datareader con los de yfinance para la descarga de datos</span>
+
+
+<span class="c1"># Función para convertir serie de tiempo en un formato supervisado</span>
+<span class="c1"># Función para convertir una serie de tiempo en un formato de aprendizaje supervisado</span>
+<span class="k">def</span> <span class="nf">series_to_supervised</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n_in</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_out</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dropnan</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>  <span class="c1"># Verifica si los datos son una serie y los convierte en DataFrame</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+    <span class="n">n_vars</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Determina el número de variables</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Crea un DataFrame de los datos</span>
+    <span class="n">cols</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">list</span><span class="p">()</span>
+
+    <span class="c1"># Genera columnas para la secuencia de entrada (t-n, ... t-1)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_in</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">names</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;var</span><span class="si">%d</span><span class="s1">(t-</span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_vars</span><span class="p">)]</span>
+
+    <span class="c1"># Genera columnas para la secuencia de pronóstico (t, t+1, ... t+n)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_out</span><span class="p">):</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">names</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;var</span><span class="si">%d</span><span class="s1">(t)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_vars</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">names</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;var</span><span class="si">%d</span><span class="s1">(t+</span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_vars</span><span class="p">)]</span>
+
+    <span class="c1"># Concatena todas las columnas generadas para crear un nuevo DataFrame</span>
+    <span class="n">agg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">agg</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">names</span>
+    <span class="c1"># Elimina filas con valores NaN si se especifica dropnan=True</span>
+    <span class="k">if</span> <span class="n">dropnan</span><span class="p">:</span>
+        <span class="n">agg</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">agg</span>
+
+
+<span class="c1"># 1. Obtención de datos</span>
+<span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;AAPL&#39;</span>  <span class="c1"># Simbolo del activo en Yahoo Finance</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="s1">&#39;2014-01-01&#39;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s1">&#39;2024-01-01&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">get_data_yahoo</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end_date</span><span class="p">)</span>
+
+<span class="c1"># 2. Preprocesamiento de datos</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Returns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>  <span class="c1"># Convertir precios de cierre en retornos porcentuales para obtener la variación relativa</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Eliminar valores faltantes que resultan de la operación de cambio porcentual</span>
+
+<span class="c1"># Normalización de los datos</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>  <span class="c1"># Crear una instancia de MinMaxScaler para normalizar los datos entre 0 y 1</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Returns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Returns&#39;</span><span class="p">]])</span>  <span class="c1"># Aplicar la normalización a la columna de retornos</span>
+
+<span class="c1"># Convertir serie en supervisado</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">series_to_supervised</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Returns&#39;</span><span class="p">],</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>  <span class="c1"># Transformar la serie de retornos en formato supervisado, utilizando 60 días para predecir los siguientes 15</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">15</span><span class="p">],</span> <span class="n">values</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">15</span><span class="p">:]</span>  <span class="c1"># Separar las variables independientes (X) y la variable dependiente (y)</span>
+
+<span class="c1"># Dividir en datos de entrenamiento y prueba</span>
+<span class="n">n_train</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>  <span class="c1"># Calcular el número de muestras para el conjunto de entrenamiento (80% de los datos)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="n">n_train</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">n_train</span><span class="p">:]</span>  <span class="c1"># Dividir los datos en entrenamiento y prueba para X</span>
+<span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="n">n_train</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">n_train</span><span class="p">:]</span>  <span class="c1"># Dividir los datos en entrenamiento y prueba para y</span>
+
+<span class="c1"># Reshape para LSTM [samples, timesteps, features]</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>  <span class="c1"># Redimensionar X_train para que sea compatible con la entrada de LSTM (batch, timesteps, features)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>  <span class="c1"># Redimensionar X_test de la misma manera</span>
+
+
+<span class="c1"># 3. Diseño del modelo</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>  <span class="c1"># Cambio aquí para predecir 15 días</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">)</span>
+
+<span class="c1"># 4. Entrenamiento del modelo</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># 5. Realizar predicciones</span>
+<span class="n">yhat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Comparación de valores reales y pronosticados</span>
+<span class="n">real_vs_predicted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Real&quot;</span><span class="p">:</span> <span class="n">y_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span>
+    <span class="s2">&quot;Predicted&quot;</span><span class="p">:</span> <span class="n">yhat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="c1"># Visualización de los valores reales y pronosticados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">real_vs_predicted</span><span class="p">[</span><span class="s1">&#39;Real&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Real&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">real_vs_predicted</span><span class="p">[</span><span class="s1">&#39;Predicted&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparación de Valores Reales y Pronosticados para los Últimos 15 Días&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Días&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor Normalizado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">real_vs_predicted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%%**********************]  1 of 1 completed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/50
+28/28 - 3s - loss: 0.1654 - val_loss: 0.0314 - 3s/epoch - 101ms/step
+Epoch 2/50
+28/28 - 0s - loss: 0.0143 - val_loss: 0.0070 - 142ms/epoch - 5ms/step
+Epoch 3/50
+28/28 - 0s - loss: 0.0060 - val_loss: 0.0061 - 197ms/epoch - 7ms/step
+Epoch 4/50
+28/28 - 0s - loss: 0.0056 - val_loss: 0.0060 - 179ms/epoch - 6ms/step
+Epoch 5/50
+28/28 - 0s - loss: 0.0056 - val_loss: 0.0060 - 188ms/epoch - 7ms/step
+Epoch 6/50
+28/28 - 0s - loss: 0.0056 - val_loss: 0.0060 - 184ms/epoch - 7ms/step
+Epoch 7/50
+28/28 - 0s - loss: 0.0056 - val_loss: 0.0060 - 190ms/epoch - 7ms/step
+Epoch 8/50
+28/28 - 0s - loss: 0.0056 - val_loss: 0.0060 - 219ms/epoch - 8ms/step
+Epoch 9/50
+28/28 - 0s - loss: 0.0056 - val_loss: 0.0060 - 187ms/epoch - 7ms/step
+Epoch 10/50
+28/28 - 0s - loss: 0.0056 - val_loss: 0.0060 - 186ms/epoch - 7ms/step
+Epoch 11/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0060 - 190ms/epoch - 7ms/step
+Epoch 12/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0060 - 222ms/epoch - 8ms/step
+Epoch 13/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 187ms/epoch - 7ms/step
+Epoch 14/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 182ms/epoch - 6ms/step
+Epoch 15/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 192ms/epoch - 7ms/step
+Epoch 16/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 193ms/epoch - 7ms/step
+Epoch 17/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 188ms/epoch - 7ms/step
+Epoch 18/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 177ms/epoch - 6ms/step
+Epoch 19/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 114ms/epoch - 4ms/step
+Epoch 20/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 129ms/epoch - 5ms/step
+Epoch 21/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 119ms/epoch - 4ms/step
+Epoch 22/50
+28/28 - 0s - loss: 0.0055 - val_loss: 0.0059 - 126ms/epoch - 4ms/step
+Epoch 23/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0059 - 118ms/epoch - 4ms/step
+Epoch 24/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0059 - 119ms/epoch - 4ms/step
+Epoch 25/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0059 - 114ms/epoch - 4ms/step
+Epoch 26/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0059 - 134ms/epoch - 5ms/step
+Epoch 27/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0059 - 112ms/epoch - 4ms/step
+Epoch 28/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0059 - 122ms/epoch - 4ms/step
+Epoch 29/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0059 - 128ms/epoch - 5ms/step
+Epoch 30/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0058 - 116ms/epoch - 4ms/step
+Epoch 31/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0058 - 121ms/epoch - 4ms/step
+Epoch 32/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0058 - 142ms/epoch - 5ms/step
+Epoch 33/50
+28/28 - 0s - loss: 0.0054 - val_loss: 0.0058 - 113ms/epoch - 4ms/step
+Epoch 34/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 137ms/epoch - 5ms/step
+Epoch 35/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 126ms/epoch - 5ms/step
+Epoch 36/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 117ms/epoch - 4ms/step
+Epoch 37/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 132ms/epoch - 5ms/step
+Epoch 38/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 124ms/epoch - 4ms/step
+Epoch 39/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 117ms/epoch - 4ms/step
+Epoch 40/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 123ms/epoch - 4ms/step
+Epoch 41/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 120ms/epoch - 4ms/step
+Epoch 42/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 135ms/epoch - 5ms/step
+Epoch 43/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 109ms/epoch - 4ms/step
+Epoch 44/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 127ms/epoch - 5ms/step
+Epoch 45/50
+28/28 - 0s - loss: 0.0053 - val_loss: 0.0058 - 111ms/epoch - 4ms/step
+Epoch 46/50
+28/28 - 0s - loss: 0.0052 - val_loss: 0.0058 - 122ms/epoch - 4ms/step
+Epoch 47/50
+28/28 - 0s - loss: 0.0052 - val_loss: 0.0058 - 128ms/epoch - 5ms/step
+Epoch 48/50
+28/28 - 0s - loss: 0.0052 - val_loss: 0.0058 - 121ms/epoch - 4ms/step
+Epoch 49/50
+28/28 - 0s - loss: 0.0052 - val_loss: 0.0058 - 122ms/epoch - 4ms/step
+Epoch 50/50
+28/28 - 0s - loss: 0.0052 - val_loss: 0.0058 - 150ms/epoch - 5ms/step
+16/16 [==============================] - 0s 2ms/step
+</pre></div>
+</div>
+<img alt="_images/13681948df95e650d8fe535a3e8276ee152d24bcd6f3198bfad50bdc558aefdd.png" src="_images/13681948df95e650d8fe535a3e8276ee152d24bcd6f3198bfad50bdc558aefdd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        Real  Predicted
+0   0.547621   0.526794
+1   0.465756   0.523530
+2   0.549665   0.537609
+3   0.584968   0.528571
+4   0.520837   0.529474
+5   0.506817   0.521478
+6   0.483562   0.545397
+7   0.539361   0.515881
+8   0.474665   0.509671
+9   0.514688   0.535530
+10  0.495459   0.538243
+11  0.506353   0.533753
+12  0.519872   0.521589
+13  0.526748   0.530014
+14  0.495956   0.523181
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener los valores reales y pronosticados de los datos de prueba</span>
+<span class="n">yhat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">yhat_rescaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>  <span class="c1"># Deshacer la normalización para las predicciones</span>
+<span class="n">y_test_rescaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>  <span class="c1"># Deshacer la normalización para los valores reales</span>
+
+<span class="c1"># Visualización de los valores reales y pronosticados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test_rescaled</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Real&#39;</span><span class="p">)</span>  <span class="c1"># Asumiendo que queremos graficar la última ventana de tiempo</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yhat_rescaled</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparación de Valores Reales y Pronosticados Después de Deshacer la Normalización&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Días&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Retorno de la Acción&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16/16 [==============================] - 0s 3ms/step
+</pre></div>
+</div>
+<img alt="_images/bc0c76ff283bd056968af23ba2374b7da535b5f8d8a7b8dac0f40bfc0c2aa713.png" src="_images/bc0c76ff283bd056968af23ba2374b7da535b5f8d8a7b8dac0f40bfc0c2aa713.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="algoritmos-de-optimizacion">
+<h1><span class="section-number">40. </span>Algoritmos de optimización<a class="headerlink" href="#algoritmos-de-optimizacion" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Función de Optimización</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Ventajas</p></th>
+<th class="head"><p>Desventajas</p></th>
+<th class="head"><p>Uso Recomendado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SGD (Descenso de Gradiente Estocástico)</p></td>
+<td><p>Utiliza un gradiente de la función de costo para actualizar los pesos.</p></td>
+<td><p>Simple y fácil de entender.</p></td>
+<td><p>Requiere ajustes de hiperparámetros; puede ser lento.</p></td>
+<td><p>Problemas grandes y simples donde la eficiencia es clave.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Momentum</p></td>
+<td><p>Versión modificada de SGD que acelera SGD en la dirección correcta.</p></td>
+<td><p>Reduce la oscilación en la actualización de parámetros.</p></td>
+<td><p>Puede sobrepasar los mínimos.</p></td>
+<td><p>Entrenamiento de redes profundas donde SGD oscila mucho.</p></td>
+</tr>
+<tr class="row-even"><td><p>Nesterov Accelerated Gradient (NAG)</p></td>
+<td><p>Variante de Momentum que intenta corregir el problema de sobrepasar.</p></td>
+<td><p>Mejor convergencia que Momentum.</p></td>
+<td><p>Requiere dos evaluaciones del gradiente por paso.</p></td>
+<td><p>Problemas donde Momentum tiende a sobrepasar mínimos.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adam (Adaptive Moment Estimation)</p></td>
+<td><p>Combina las ventajas de dos extensiones de SGD: AdaGrad y RMSprop.</p></td>
+<td><p>Ajusta la tasa de aprendizaje por parámetro.</p></td>
+<td><p>Requiere más memoria; puede ser inestable al final.</p></td>
+<td><p>Problemas complejos con datos o características muy variados.</p></td>
+</tr>
+<tr class="row-even"><td><p>AdaGrad (Adaptive Gradient Algorithm)</p></td>
+<td><p>Ajusta la tasa de aprendizaje para cada parámetro.</p></td>
+<td><p>Útil para problemas con datos dispersos.</p></td>
+<td><p>La tasa de aprendizaje puede reducirse drásticamente.</p></td>
+<td><p>Problemas con datos dispersos y aprendizaje de características.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RMSprop (Root Mean Square Propagation)</p></td>
+<td><p>Ajusta la tasa de aprendizaje basada en una media móvil del cuadrado de los gradientes.</p></td>
+<td><p>Converge más rápido que AdaGrad en algunos casos.</p></td>
+<td><p>Puede ser sensible a la configuración inicial.</p></td>
+<td><p>Problemas donde AdaGrad falla o reduce demasiado la tasa de aprendizaje.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="funciones-de-error-en-aprendizaje-automatico">
+<h1><span class="section-number">41. </span>Funciones de Error en Aprendizaje Automático<a class="headerlink" href="#funciones-de-error-en-aprendizaje-automatico" title="Link to this heading">#</a></h1>
+<p>Las funciones de error, también conocidas como funciones de pérdida, juegan un papel crucial en la optimización de modelos de aprendizaje automático. Estas métricas cuantifican la diferencia entre los valores predichos por el modelo y los valores reales. A continuación, se describen algunas de las funciones de error más comúnmente utilizadas:</p>
+<section id="error-cuadratico-medio-mse-mean-squared-error">
+<h2><span class="section-number">41.1. </span>1. Error Cuadrático Medio (MSE - Mean Squared Error)<a class="headerlink" href="#error-cuadratico-medio-mse-mean-squared-error" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: El MSE mide el promedio de los cuadrados de los errores, es decir, la diferencia cuadrática media entre los valores estimados y los valores reales.</p></li>
+<li><p><strong>Fórmula</strong>: $<span class="math notranslate nohighlight">\( MSE = \frac{1}{n} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2 \)</span>$</p></li>
+<li><p><strong>Ventajas</strong>: Penaliza más los errores grandes, lo que puede ser útil en muchos escenarios prácticos.</p></li>
+<li><p><strong>Desventajas</strong>: Puede ser demasiado severo con los outliers, ya que eleva las diferencias al cuadrado.</p></li>
+</ul>
+</section>
+<section id="error-absoluto-medio-mae-mean-absolute-error">
+<h2><span class="section-number">41.2. </span>2. Error Absoluto Medio (MAE - Mean Absolute Error)<a class="headerlink" href="#error-absoluto-medio-mae-mean-absolute-error" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: El MAE mide el promedio de las diferencias absolutas entre las predicciones y los valores reales, proporcionando una medida de la magnitud del error sin considerar su dirección.</p></li>
+<li><p><strong>Fórmula</strong>: $<span class="math notranslate nohighlight">\( MAE = \frac{1}{n} \sum_{i=1}^n |Y_i - \hat{Y}_i| \)</span>$</p></li>
+<li><p><strong>Ventajas</strong>: Menos sensible a los outliers en comparación con el MSE.</p></li>
+<li><p><strong>Desventajas</strong>: Puede no reflejar adecuadamente el rendimiento del modelo en aplicaciones donde los errores grandes son particularmente indeseables.</p></li>
+</ul>
+</section>
+<section id="raiz-del-error-cuadratico-medio-rmse-root-mean-squared-error">
+<h2><span class="section-number">41.3. </span>3. Raíz del Error Cuadrático Medio (RMSE - Root Mean Squared Error)<a class="headerlink" href="#raiz-del-error-cuadratico-medio-rmse-root-mean-squared-error" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: El RMSE es la raíz cuadrada del MSE y proporciona una medida de la magnitud del error en las mismas unidades que la variable de respuesta.</p></li>
+<li><p><strong>Fórmula</strong>: $<span class="math notranslate nohighlight">\( RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2} \)</span>$</p></li>
+<li><p><strong>Ventajas</strong>: Útil cuando los errores grandes son particularmente indeseables y se desean en las unidades originales.</p></li>
+<li><p><strong>Desventajas</strong>: Al igual que el MSE, es sensible a los outliers.</p></li>
+</ul>
+</section>
+<section id="logaritmo-del-error-cuadratico-medio-log-cosh">
+<h2><span class="section-number">41.4. </span>4. Logaritmo del Error Cuadrático Medio (Log-Cosh)<a class="headerlink" href="#logaritmo-del-error-cuadratico-medio-log-cosh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: El log-cosh es una función de error que es suave y menos sensible a los outliers que el MSE.</p></li>
+<li><p><strong>Fórmula</strong>: $<span class="math notranslate nohighlight">\( \text{Log-Cosh} = \sum_{i=1}^n \log(\cosh(\hat{Y}_i - Y_i)) \)</span>$</p></li>
+<li><p><strong>Ventajas</strong>: Combina las mejores características del MSE y el MAE. Es suave y menos susceptible a los outliers.</p></li>
+<li><p><strong>Desventajas</strong>: Más complejo y puede ser más difícil de interpretar en comparación con el MAE o el MSE.</p></li>
+</ul>
+</section>
+<section id="entropia-cruzada-cross-entropy">
+<h2><span class="section-number">41.5. </span>5. Entropía Cruzada (Cross-Entropy)<a class="headerlink" href="#entropia-cruzada-cross-entropy" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: Comúnmente utilizada en problemas de clasificación, mide la diferencia entre dos distribuciones de probabilidad: la predicha y la real.</p></li>
+<li><p><strong>Fórmula</strong>: Para clasificación binaria: $<span class="math notranslate nohighlight">\( H(p, q) = -\sum_{i=1}^n [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)] \)</span>$</p></li>
+<li><p><strong>Ventajas</strong>: Muy efectiva para problemas de clasificación.</p></li>
+<li><p><strong>Desventajas</strong>: No aplicable directamente a problemas de regresión sin modificaciones.</p></li>
+</ul>
+</section>
+</section>
+<section id="fundamentos-de-la-clasificacion-binaria">
+<h1><span class="section-number">42. </span>2. Fundamentos de la Clasificación Binaria<a class="headerlink" href="#fundamentos-de-la-clasificacion-binaria" title="Link to this heading">#</a></h1>
+<p>En este ejercicio, imaginaremos un escenario donde una institución financiera desea utilizar redes neuronales para pronosticar la solvencia financiera de las empresas basándose en sus características financieras y operativas actuales. El objetivo es utilizar estas predicciones para tomar decisiones informadas sobre inversiones, préstamos o la gestión de riesgos.</p>
+</section>
+<section id="contexto-del-ejercicio">
+<h1><span class="section-number">43. </span>Contexto del Ejercicio<a class="headerlink" href="#contexto-del-ejercicio" title="Link to this heading">#</a></h1>
+<section id="descripcion-del-problema">
+<h2><span class="section-number">43.1. </span>Descripción del Problema<a class="headerlink" href="#descripcion-del-problema" title="Link to this heading">#</a></h2>
+<p>La institución financiera tiene acceso a un conjunto de datos que contiene información financiera y operativa sobre varias empresas. Los datos incluyen métricas como ingresos, gastos, nivel de deuda, liquidez, rentabilidad y tamaño de la empresa. El objetivo es construir un modelo de red neuronal que pueda predecir si una empresa es solvente o no al final del próximo año fiscal.</p>
+</section>
+<section id="objetivo">
+<h2><span class="section-number">43.2. </span>Objetivo<a class="headerlink" href="#objetivo" title="Link to this heading">#</a></h2>
+<p>Utilizar una red neuronal para clasificar empresas en “solventes” o “no solventes” basándose en sus características actuales.</p>
+</section>
+</section>
+<section id="generacion-de-datos">
+<h1><span class="section-number">44. </span>Generación de Datos<a class="headerlink" href="#generacion-de-datos" title="Link to this heading">#</a></h1>
+<p>Para simular este escenario, necesitaremos generar un conjunto de datos sintético. El código siguiente crea un conjunto de datos que contiene varias características financieras para 1000 empresas, y una columna de objetivo (target) que indica si la empresa es solvente.</p>
+<section id="funcion-para-generar-el-dataset">
+<h2><span class="section-number">44.1. </span>Función para Generar el Dataset<a class="headerlink" href="#funcion-para-generar-el-dataset" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">generate_financial_data</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c1"># Simular datos financieros</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Ingresos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Gastos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90000</span><span class="p">,</span>
+        <span class="s1">&#39;Nivel_de_Deuda&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Liquidez&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">50000</span><span class="p">,</span>
+        <span class="s1">&#39;Rentabilidad&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">),</span>
+        <span class="s1">&#39;Tamaño&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Pequeña&#39;</span><span class="p">,</span> <span class="s1">&#39;Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Grande&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    
+    <span class="c1"># Convertir el tamaño de la empresa en características categóricas</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tamaño&#39;</span><span class="p">])</span>
+    
+    <span class="c1"># Crear la variable objetivo &#39;Solvente&#39;</span>
+    <span class="c1"># Una función simple que considera solventes a las empresas con buena liquidez y rentabilidad</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Solvente&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Liquidez&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rentabilidad&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Solvente&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Solvente&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># Generar el dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">generate_financial_data</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="descripcion-del-dataset">
+<h2><span class="section-number">44.2. </span>Descripción del Dataset<a class="headerlink" href="#descripcion-del-dataset" title="Link to this heading">#</a></h2>
+<p>El dataset generado incluye las siguientes columnas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ingresos</span></code>: Ingresos totales de la empresa en el último año.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gastos</span></code>: Gastos totales de la empresa en el último año.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nivel_de_Deuda</span></code>: Total de deudas de la empresa.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Liquidez</span></code>: Fondos líquidos disponibles.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rentabilidad</span></code>: Margen de beneficio neto como porcentaje de los ingresos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tamaño_Pequeña</span></code>, <code class="docutils literal notranslate"><span class="pre">Tamaño_Mediana</span></code>, <code class="docutils literal notranslate"><span class="pre">Tamaño_Grande</span></code>: Variables dummy que representan el tamaño de la empresa.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solvente</span></code>: Indicador binario (0 o 1) donde 1 significa que la empresa es solvente y 0 que no lo es.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">generate_financial_data</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c1"># Simular datos financieros</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Ingresos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Gastos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90000</span><span class="p">,</span>
+        <span class="s1">&#39;Nivel_de_Deuda&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Liquidez&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">50000</span><span class="p">,</span>
+        <span class="s1">&#39;Rentabilidad&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">),</span>
+        <span class="s1">&#39;Tamaño&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Pequeña&#39;</span><span class="p">,</span> <span class="s1">&#39;Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Grande&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Convertir el tamaño de la empresa en características categóricas</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tamaño&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Crear la variable objetivo &#39;Solvente&#39;</span>
+    <span class="c1"># Una función simple que considera solventes a las empresas con buena liquidez y rentabilidad</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Solvente&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Liquidez&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rentabilidad&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Solvente&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Solvente&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">generate_financial_data</span><span class="p">()</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-61d503d0-5531-4129-9465-cfc56b20678e" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ingresos</th>
+      <th>Gastos</th>
+      <th>Nivel_de_Deuda</th>
+      <th>Liquidez</th>
+      <th>Rentabilidad</th>
+      <th>Tamaño_Grande</th>
+      <th>Tamaño_Mediana</th>
+      <th>Tamaño_Pequeña</th>
+      <th>Solvente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>239367.938987</td>
+      <td>38751.217451</td>
+      <td>29775.168268</td>
+      <td>20889.530587</td>
+      <td>0.053303</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>149446.473022</td>
+      <td>140549.719135</td>
+      <td>14475.499960</td>
+      <td>19901.690654</td>
+      <td>0.048776</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>138228.358437</td>
+      <td>159783.969744</td>
+      <td>7577.979494</td>
+      <td>35087.177786</td>
+      <td>0.110920</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>138230.229433</td>
+      <td>36386.370270</td>
+      <td>65500.388159</td>
+      <td>22479.536444</td>
+      <td>0.086545</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>464971.441223</td>
+      <td>116865.126644</td>
+      <td>9572.593698</td>
+      <td>23699.101128</td>
+      <td>0.116535</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-61d503d0-5531-4129-9465-cfc56b20678e')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-61d503d0-5531-4129-9465-cfc56b20678e button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-61d503d0-5531-4129-9465-cfc56b20678e');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-89d82361-dfa3-4874-a293-27d9991c029c">
+  <button class="colab-df-quickchart" onclick="quickchart('df-89d82361-dfa3-4874-a293-27d9991c029c')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-89d82361-dfa3-4874-a293-27d9991c029c button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>En este ejercicio, describiré cómo crear paso a paso una red neuronal para pronosticar la solvencia de empresas utilizando el conjunto de datos sintético previamente generado. Usaremos la biblioteca Keras, una de las bibliotecas más populares para construir modelos de aprendizaje profundo en Python.</p>
+</section>
+<section id="paso-1-preparacion-de-datos">
+<h2><span class="section-number">44.3. </span>Paso 1: Preparación de Datos<a class="headerlink" href="#paso-1-preparacion-de-datos" title="Link to this heading">#</a></h2>
+<p>Antes de entrenar el modelo, es crucial preparar los datos adecuadamente:</p>
+<ul class="simple">
+<li><p><strong>División del Dataset</strong>: Divide el conjunto de datos en datos de entrenamiento y prueba. Esto ayudará a evaluar el modelo en datos no vistos.</p></li>
+<li><p><strong>Escalado de Características</strong>: Dado que las entradas varían en magnitudes, es importante escalar las características para mejorar el rendimiento y la convergencia del modelo.</p></li>
+<li><p><strong>Codificación de Categorías</strong>: Las variables categóricas deben ser codificadas adecuadamente antes de alimentarlas a la red neuronal.</p></li>
+</ul>
+</section>
+<section id="paso-2-definicion-del-modelo">
+<h2><span class="section-number">44.4. </span>Paso 2: Definición del Modelo<a class="headerlink" href="#paso-2-definicion-del-modelo" title="Link to this heading">#</a></h2>
+<p>Utiliza Keras para definir la estructura de la red neuronal:</p>
+<ul class="simple">
+<li><p><strong>Modelo Secuencial</strong>: Empieza con un modelo secuencial, que es apropiado para una pila plana de capas donde cada capa tiene exactamente un tensor de entrada y un tensor de salida.</p></li>
+<li><p><strong>Capas Densas</strong>: Añade capas densas (totalmente conectadas) con una cantidad adecuada de neuronas. La función de activación <code class="docutils literal notranslate"><span class="pre">ReLU</span></code> puede ser utilizada para las capas ocultas debido a su eficiencia y efectividad.</p></li>
+<li><p><strong>Capa de Salida</strong>: La capa de salida debe tener una neurona (ya que la salida es binaria) con una función de activación <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code> para obtener la probabilidad de que la empresa sea solvente.</p></li>
+</ul>
+</section>
+<section id="paso-3-compilacion-del-modelo">
+<h2><span class="section-number">44.5. </span>Paso 3: Compilación del Modelo<a class="headerlink" href="#paso-3-compilacion-del-modelo" title="Link to this heading">#</a></h2>
+<p>Configura el proceso de aprendizaje:</p>
+<ul class="simple">
+<li><p><strong>Optimizador</strong>: Elige un optimizador, como Adam, que es efectivo y comúnmente usado en problemas de clasificación.</p></li>
+<li><p><strong>Función de Pérdida</strong>: Utiliza <code class="docutils literal notranslate"><span class="pre">binary_crossentropy</span></code> como la función de pérdida, ya que es adecuada para problemas de clasificación binaria.</p></li>
+<li><p><strong>Métricas</strong>: Para evaluar el modelo durante el entrenamiento, usa métricas como la precisión (<code class="docutils literal notranslate"><span class="pre">accuracy</span></code>).</p></li>
+</ul>
+</section>
+<section id="paso-4-entrenamiento-del-modelo">
+<h2><span class="section-number">44.6. </span>Paso 4: Entrenamiento del Modelo<a class="headerlink" href="#paso-4-entrenamiento-del-modelo" title="Link to this heading">#</a></h2>
+<p>Entrena el modelo con los datos preparados:</p>
+<ul class="simple">
+<li><p><strong>Datos de Entrenamiento</strong>: Proporciona los datos de entrenamiento al modelo.</p></li>
+<li><p><strong>Número de Épocas</strong>: Define el número de épocas, que es el número de veces que el modelo verá el conjunto completo de datos.</p></li>
+<li><p><strong>Batch Size</strong>: El tamaño del lote define el número de muestras que se propagarán a través de la red antes de que se actualicen los pesos.</p></li>
+</ul>
+</section>
+<section id="paso-5-evaluacion-y-ajuste">
+<h2><span class="section-number">44.7. </span>Paso 5: Evaluación y Ajuste<a class="headerlink" href="#paso-5-evaluacion-y-ajuste" title="Link to this heading">#</a></h2>
+<p>Evalúa el modelo y ajusta según sea necesario:</p>
+<ul class="simple">
+<li><p><strong>Datos de Prueba</strong>: Evalúa el rendimiento del modelo utilizando el conjunto de datos de prueba para asegurarte de que el modelo generaliza bien a nuevos datos.</p></li>
+<li><p><strong>Ajuste de Hiperparámetros</strong>: Si es necesario, ajusta los hiperparámetros como el número de neuronas, capas, y la tasa de aprendizaje para mejorar el rendimiento del modelo.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+
+<span class="c1"># Carga y prepara los datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">generate_financial_data</span><span class="p">()</span>  <span class="c1"># Asume que esta función ya está definida y disponible</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Solvente&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Solvente&#39;</span><span class="p">]</span>
+
+<span class="c1"># Dividir en entrenamiento y prueba</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Escalar las características</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Construir el modelo</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># Compilar el modelo</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(),</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+
+<span class="c1"># Entrenar  el modelo</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Evaluar el modelo</span>
+<span class="n">loss</span><span class="p">,</span> <span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loss: </span><span class="si">{</span><span class="n">loss</span><span class="si">}</span><span class="s2">, Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/50
+20/20 [==============================] - 4s 44ms/step - loss: 0.6523 - accuracy: 0.5578 - val_loss: 0.5540 - val_accuracy: 0.6938
+Epoch 2/50
+20/20 [==============================] - 0s 17ms/step - loss: 0.5151 - accuracy: 0.7875 - val_loss: 0.4277 - val_accuracy: 0.8813
+Epoch 3/50
+20/20 [==============================] - 0s 14ms/step - loss: 0.4094 - accuracy: 0.8625 - val_loss: 0.3246 - val_accuracy: 0.8875
+Epoch 4/50
+20/20 [==============================] - 0s 6ms/step - loss: 0.3268 - accuracy: 0.8828 - val_loss: 0.2584 - val_accuracy: 0.9062
+Epoch 5/50
+20/20 [==============================] - 0s 12ms/step - loss: 0.2741 - accuracy: 0.8984 - val_loss: 0.2210 - val_accuracy: 0.9250
+Epoch 6/50
+20/20 [==============================] - 0s 13ms/step - loss: 0.2421 - accuracy: 0.9062 - val_loss: 0.2010 - val_accuracy: 0.9250
+Epoch 7/50
+20/20 [==============================] - 0s 5ms/step - loss: 0.2159 - accuracy: 0.9219 - val_loss: 0.1903 - val_accuracy: 0.9375
+Epoch 8/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.1931 - accuracy: 0.9266 - val_loss: 0.1749 - val_accuracy: 0.9438
+Epoch 9/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.1766 - accuracy: 0.9375 - val_loss: 0.1673 - val_accuracy: 0.9438
+Epoch 10/50
+20/20 [==============================] - 0s 9ms/step - loss: 0.1559 - accuracy: 0.9484 - val_loss: 0.1569 - val_accuracy: 0.9500
+Epoch 11/50
+20/20 [==============================] - 0s 11ms/step - loss: 0.1407 - accuracy: 0.9609 - val_loss: 0.1552 - val_accuracy: 0.9563
+Epoch 12/50
+20/20 [==============================] - 0s 8ms/step - loss: 0.1262 - accuracy: 0.9656 - val_loss: 0.1435 - val_accuracy: 0.9500
+Epoch 13/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.1150 - accuracy: 0.9672 - val_loss: 0.1406 - val_accuracy: 0.9500
+Epoch 14/50
+20/20 [==============================] - 0s 11ms/step - loss: 0.1036 - accuracy: 0.9750 - val_loss: 0.1363 - val_accuracy: 0.9438
+Epoch 15/50
+20/20 [==============================] - 0s 9ms/step - loss: 0.0935 - accuracy: 0.9750 - val_loss: 0.1317 - val_accuracy: 0.9500
+Epoch 16/50
+20/20 [==============================] - 0s 10ms/step - loss: 0.0876 - accuracy: 0.9734 - val_loss: 0.1275 - val_accuracy: 0.9438
+Epoch 17/50
+20/20 [==============================] - 0s 6ms/step - loss: 0.0819 - accuracy: 0.9766 - val_loss: 0.1270 - val_accuracy: 0.9500
+Epoch 18/50
+20/20 [==============================] - 0s 8ms/step - loss: 0.0727 - accuracy: 0.9828 - val_loss: 0.1194 - val_accuracy: 0.9563
+Epoch 19/50
+20/20 [==============================] - 0s 9ms/step - loss: 0.0683 - accuracy: 0.9812 - val_loss: 0.1197 - val_accuracy: 0.9563
+Epoch 20/50
+20/20 [==============================] - 0s 11ms/step - loss: 0.0632 - accuracy: 0.9844 - val_loss: 0.1131 - val_accuracy: 0.9563
+Epoch 21/50
+20/20 [==============================] - 0s 6ms/step - loss: 0.0606 - accuracy: 0.9812 - val_loss: 0.1195 - val_accuracy: 0.9500
+Epoch 22/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0557 - accuracy: 0.9875 - val_loss: 0.1139 - val_accuracy: 0.9500
+Epoch 23/50
+20/20 [==============================] - 0s 6ms/step - loss: 0.0516 - accuracy: 0.9891 - val_loss: 0.1095 - val_accuracy: 0.9563
+Epoch 24/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0477 - accuracy: 0.9922 - val_loss: 0.1085 - val_accuracy: 0.9563
+Epoch 25/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0458 - accuracy: 0.9891 - val_loss: 0.1037 - val_accuracy: 0.9625
+Epoch 26/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0418 - accuracy: 0.9922 - val_loss: 0.1039 - val_accuracy: 0.9563
+Epoch 27/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0388 - accuracy: 0.9937 - val_loss: 0.1028 - val_accuracy: 0.9625
+Epoch 28/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0369 - accuracy: 0.9937 - val_loss: 0.1033 - val_accuracy: 0.9625
+Epoch 29/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0345 - accuracy: 0.9937 - val_loss: 0.1014 - val_accuracy: 0.9688
+Epoch 30/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0326 - accuracy: 0.9937 - val_loss: 0.1034 - val_accuracy: 0.9625
+Epoch 31/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0306 - accuracy: 0.9922 - val_loss: 0.1000 - val_accuracy: 0.9625
+Epoch 32/50
+20/20 [==============================] - 0s 8ms/step - loss: 0.0289 - accuracy: 0.9953 - val_loss: 0.0988 - val_accuracy: 0.9625
+Epoch 33/50
+20/20 [==============================] - 0s 13ms/step - loss: 0.0281 - accuracy: 0.9953 - val_loss: 0.1051 - val_accuracy: 0.9625
+Epoch 34/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0266 - accuracy: 0.9937 - val_loss: 0.1023 - val_accuracy: 0.9750
+Epoch 35/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0255 - accuracy: 0.9953 - val_loss: 0.1061 - val_accuracy: 0.9625
+Epoch 36/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0237 - accuracy: 0.9969 - val_loss: 0.0986 - val_accuracy: 0.9688
+Epoch 37/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0226 - accuracy: 0.9969 - val_loss: 0.0999 - val_accuracy: 0.9625
+Epoch 38/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0216 - accuracy: 0.9984 - val_loss: 0.1006 - val_accuracy: 0.9625
+Epoch 39/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0217 - accuracy: 0.9984 - val_loss: 0.0955 - val_accuracy: 0.9750
+Epoch 40/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0197 - accuracy: 0.9953 - val_loss: 0.1038 - val_accuracy: 0.9625
+Epoch 41/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0197 - accuracy: 0.9969 - val_loss: 0.0979 - val_accuracy: 0.9750
+Epoch 42/50
+20/20 [==============================] - 0s 5ms/step - loss: 0.0178 - accuracy: 0.9984 - val_loss: 0.1025 - val_accuracy: 0.9688
+Epoch 43/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0172 - accuracy: 0.9984 - val_loss: 0.1009 - val_accuracy: 0.9688
+Epoch 44/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0168 - accuracy: 0.9984 - val_loss: 0.1017 - val_accuracy: 0.9688
+Epoch 45/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0169 - accuracy: 0.9969 - val_loss: 0.1003 - val_accuracy: 0.9688
+Epoch 46/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0157 - accuracy: 1.0000 - val_loss: 0.1051 - val_accuracy: 0.9688
+Epoch 47/50
+20/20 [==============================] - 0s 5ms/step - loss: 0.0153 - accuracy: 0.9984 - val_loss: 0.1019 - val_accuracy: 0.9688
+Epoch 48/50
+20/20 [==============================] - 0s 3ms/step - loss: 0.0148 - accuracy: 0.9984 - val_loss: 0.1057 - val_accuracy: 0.9688
+Epoch 49/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0148 - accuracy: 1.0000 - val_loss: 0.1001 - val_accuracy: 0.9688
+Epoch 50/50
+20/20 [==============================] - 0s 4ms/step - loss: 0.0129 - accuracy: 1.0000 - val_loss: 0.1072 - val_accuracy: 0.9688
+7/7 [==============================] - 0s 3ms/step - loss: 0.0836 - accuracy: 0.9700
+Loss: 0.08362826704978943, Accuracy: 0.9700000286102295
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="implementacion-de-redes-neuronales-de-regresion-en-python">
+<h1><span class="section-number">45. </span>3. Implementación de Redes Neuronales de regresión en Python<a class="headerlink" href="#implementacion-de-redes-neuronales-de-regresion-en-python" title="Link to this heading">#</a></h1>
+<p>Para transformar el problema de un ejercicio de clasificación a uno de regresión, modificaremos el conjunto de datos sintético y la variable dependiente para reflejar un resultado continuo en lugar de binario. En el contexto financiero, una variable dependiente continua podría representar algo como el “Margen de beneficio esperado” en porcentaje.</p>
+<p>Vamos a ajustar el contexto y el código para generar una variable dependiente continua:</p>
+</section>
+<section id="contexto-del-ejercicio-de-regresion">
+<h1><span class="section-number">46. </span>Contexto del Ejercicio de Regresión<a class="headerlink" href="#contexto-del-ejercicio-de-regresion" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2><span class="section-number">46.1. </span>Descripción del Problema<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Supongamos que la institución financiera ahora desea predecir el margen de beneficio esperado para el próximo año fiscal para las empresas basándose en sus características financieras actuales. Este margen se expresará como un porcentaje que representa la rentabilidad esperada en relación con los ingresos totales de la empresa.</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">46.2. </span>Objetivo<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Utilizar una red neuronal para predecir el margen de beneficio esperado de las empresas en porcentaje, basándose en características financieras como ingresos, gastos, nivel de deuda, liquidez y tamaño de la empresa.</p>
+</section>
+</section>
+<section id="generacion-de-datos-para-regresion">
+<h1><span class="section-number">47. </span>Generación de Datos para Regresión<a class="headerlink" href="#generacion-de-datos-para-regresion" title="Link to this heading">#</a></h1>
+<p>Modificaremos la función <code class="docutils literal notranslate"><span class="pre">generate_financial_data</span></code> para incluir una variable dependiente continua que represente el margen de beneficio esperado.</p>
+<section id="id3">
+<h2><span class="section-number">47.1. </span>Función para Generar el Dataset<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">generate_financial_data_regression</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c1"># Semilla para reproducibilidad</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="c1"># Generar datos sintéticos</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Ingresos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Gastos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90000</span><span class="p">,</span>
+        <span class="s1">&#39;Nivel_de_Deuda&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Liquidez&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">50000</span><span class="p">,</span>
+        <span class="s1">&#39;Rentabilidad&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># Añadir tamaño de la empresa como variable categórica</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tamaño&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Pequeña&#39;</span><span class="p">,</span> <span class="s1">&#39;Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Grande&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tamaño&#39;</span><span class="p">])</span>
+    
+    <span class="c1"># Variable dependiente: Margen de beneficio esperado, calculado como Rentabilidad menos un pequeño ruido</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Margen_Beneficio_Esperado&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rentabilidad&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># Generar el dataset para regresión</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">generate_financial_data_regression</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="adaptacion-del-modelo-de-red-neuronal">
+<h2><span class="section-number">47.2. </span>Adaptación del Modelo de Red Neuronal<a class="headerlink" href="#adaptacion-del-modelo-de-red-neuronal" title="Link to this heading">#</a></h2>
+<p>La red neuronal ahora debe configurarse para un problema de regresión:</p>
+<ul class="simple">
+<li><p>Cambiar la función de activación de la capa de salida a <code class="docutils literal notranslate"><span class="pre">linear</span></code> porque estamos prediciendo un valor continuo.</p></li>
+<li><p>Usar <code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> como la función de pérdida para regresión.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+
+<span class="c1"># Carga y preparación de los datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">generate_financial_data_regression</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Margen_Beneficio_Esperado&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Margen_Beneficio_Esperado&#39;</span><span class="p">]</span>
+
+<span class="c1"># División en entrenamiento y prueba</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Escalado de características</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Construcción del modelo</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>  <span class="c1"># Cambio aquí para regresión</span>
+<span class="p">])</span>
+
+<span class="c1"># Compilación del modelo</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(),</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mae&#39;</span><span class="p">])</span>
+
+<span class="c1"># Entrenamiento del modelo</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Evaluación del modelo</span>
+<span class="n">loss</span><span class="p">,</span> <span class="n">mae</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loss: </span><span class="si">{</span><span class="n">loss</span><span class="si">}</span><span class="s2">, MAE: </span><span class="si">{</span><span class="n">mae</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">generate_financial_data_regression</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c1"># Semilla para reproducibilidad</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="c1"># Generar datos sintéticos</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Ingresos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Gastos&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90000</span><span class="p">,</span>
+        <span class="s1">&#39;Nivel_de_Deuda&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">&#39;Liquidez&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">*</span> <span class="mi">50000</span><span class="p">,</span>
+        <span class="s1">&#39;Rentabilidad&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># Añadir tamaño de la empresa como variable categórica</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tamaño&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Pequeña&#39;</span><span class="p">,</span> <span class="s1">&#39;Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Grande&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tamaño&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Variable dependiente: Margen de beneficio esperado, calculado como Rentabilidad menos un pequeño ruido</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Margen_Beneficio_Esperado&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rentabilidad&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># Generar el dataset para regresión</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">generate_financial_data_regression</span><span class="p">()</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-3987cd0c-d2c4-4c9c-97d5-32e45283b409" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ingresos</th>
+      <th>Gastos</th>
+      <th>Nivel_de_Deuda</th>
+      <th>Liquidez</th>
+      <th>Rentabilidad</th>
+      <th>Tamaño_Grande</th>
+      <th>Tamaño_Mediana</th>
+      <th>Tamaño_Pequeña</th>
+      <th>Margen_Beneficio_Esperado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>239367.938987</td>
+      <td>38751.217451</td>
+      <td>29775.168268</td>
+      <td>20889.530587</td>
+      <td>0.053303</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0.055102</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>149446.473022</td>
+      <td>140549.719135</td>
+      <td>14475.499960</td>
+      <td>19901.690654</td>
+      <td>0.048776</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0.051428</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>138228.358437</td>
+      <td>159783.969744</td>
+      <td>7577.979494</td>
+      <td>35087.177786</td>
+      <td>0.110920</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0.104313</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>138230.229433</td>
+      <td>36386.370270</td>
+      <td>65500.388159</td>
+      <td>22479.536444</td>
+      <td>0.086545</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.084204</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>464971.441223</td>
+      <td>116865.126644</td>
+      <td>9572.593698</td>
+      <td>23699.101128</td>
+      <td>0.116535</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>0.119498</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-3987cd0c-d2c4-4c9c-97d5-32e45283b409')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-3987cd0c-d2c4-4c9c-97d5-32e45283b409 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-3987cd0c-d2c4-4c9c-97d5-32e45283b409');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-054d8ec2-6191-47db-871e-6f0d9bcb8c6e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-054d8ec2-6191-47db-871e-6f0d9bcb8c6e')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-054d8ec2-6191-47db-871e-6f0d9bcb8c6e button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+
+<span class="c1"># Carga y preparación de los datos</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">generate_financial_data_regression</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Margen_Beneficio_Esperado&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Margen_Beneficio_Esperado&#39;</span><span class="p">]</span>
+
+<span class="c1"># División en entrenamiento y prueba</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Escalado de características</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Construcción del modelo</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>  <span class="c1"># Cambio aquí para regresión</span>
+<span class="p">])</span>
+
+<span class="c1"># Compilación del modelo</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(),</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mae&#39;</span><span class="p">])</span>
+
+<span class="c1"># Entrenamiento del modelo</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Evaluación del modelo</span>
+<span class="n">loss</span><span class="p">,</span> <span class="n">mae</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loss: </span><span class="si">{</span><span class="n">loss</span><span class="si">}</span><span class="s2">, MAE: </span><span class="si">{</span><span class="n">mae</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/50
+20/20 [==============================] - 2s 18ms/step - loss: 0.0108 - mae: 0.0780 - val_loss: 0.0048 - val_mae: 0.0553
+Epoch 2/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0028 - mae: 0.0410 - val_loss: 0.0025 - val_mae: 0.0386
+Epoch 3/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0016 - mae: 0.0303 - val_loss: 0.0018 - val_mae: 0.0333
+Epoch 4/50
+20/20 [==============================] - 0s 7ms/step - loss: 0.0011 - mae: 0.0261 - val_loss: 0.0015 - val_mae: 0.0293
+Epoch 5/50
+20/20 [==============================] - 0s 4ms/step - loss: 8.5970e-04 - mae: 0.0235 - val_loss: 0.0013 - val_mae: 0.0275
+Epoch 6/50
+20/20 [==============================] - 0s 4ms/step - loss: 6.7920e-04 - mae: 0.0207 - val_loss: 0.0011 - val_mae: 0.0258
+Epoch 7/50
+20/20 [==============================] - 0s 3ms/step - loss: 5.8273e-04 - mae: 0.0193 - val_loss: 0.0013 - val_mae: 0.0284
+Epoch 8/50
+20/20 [==============================] - 0s 3ms/step - loss: 5.0412e-04 - mae: 0.0178 - val_loss: 0.0010 - val_mae: 0.0245
+Epoch 9/50
+20/20 [==============================] - 0s 3ms/step - loss: 4.3263e-04 - mae: 0.0165 - val_loss: 9.6679e-04 - val_mae: 0.0238
+Epoch 10/50
+20/20 [==============================] - 0s 4ms/step - loss: 4.0994e-04 - mae: 0.0160 - val_loss: 0.0010 - val_mae: 0.0238
+Epoch 11/50
+20/20 [==============================] - 0s 4ms/step - loss: 3.4554e-04 - mae: 0.0150 - val_loss: 9.4103e-04 - val_mae: 0.0235
+Epoch 12/50
+20/20 [==============================] - 0s 4ms/step - loss: 3.0546e-04 - mae: 0.0139 - val_loss: 9.2443e-04 - val_mae: 0.0232
+Epoch 13/50
+20/20 [==============================] - 0s 4ms/step - loss: 3.0351e-04 - mae: 0.0140 - val_loss: 8.5378e-04 - val_mae: 0.0223
+Epoch 14/50
+20/20 [==============================] - 0s 3ms/step - loss: 2.5495e-04 - mae: 0.0127 - val_loss: 9.3089e-04 - val_mae: 0.0232
+Epoch 15/50
+20/20 [==============================] - 0s 4ms/step - loss: 2.4468e-04 - mae: 0.0124 - val_loss: 8.6769e-04 - val_mae: 0.0219
+Epoch 16/50
+20/20 [==============================] - 0s 4ms/step - loss: 2.7016e-04 - mae: 0.0130 - val_loss: 8.4349e-04 - val_mae: 0.0216
+Epoch 17/50
+20/20 [==============================] - 0s 4ms/step - loss: 2.1473e-04 - mae: 0.0117 - val_loss: 8.2606e-04 - val_mae: 0.0214
+Epoch 18/50
+20/20 [==============================] - 0s 3ms/step - loss: 2.1730e-04 - mae: 0.0118 - val_loss: 8.1205e-04 - val_mae: 0.0209
+Epoch 19/50
+20/20 [==============================] - 0s 3ms/step - loss: 1.8022e-04 - mae: 0.0107 - val_loss: 8.4920e-04 - val_mae: 0.0225
+Epoch 20/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.7785e-04 - mae: 0.0106 - val_loss: 8.0796e-04 - val_mae: 0.0212
+Epoch 21/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.5429e-04 - mae: 0.0099 - val_loss: 8.0238e-04 - val_mae: 0.0216
+Epoch 22/50
+20/20 [==============================] - 0s 3ms/step - loss: 1.4754e-04 - mae: 0.0097 - val_loss: 8.3473e-04 - val_mae: 0.0213
+Epoch 23/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.9039e-04 - mae: 0.0111 - val_loss: 8.1648e-04 - val_mae: 0.0207
+Epoch 24/50
+20/20 [==============================] - 0s 3ms/step - loss: 1.8635e-04 - mae: 0.0110 - val_loss: 7.7036e-04 - val_mae: 0.0207
+Epoch 25/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.6446e-04 - mae: 0.0104 - val_loss: 8.0860e-04 - val_mae: 0.0221
+Epoch 26/50
+20/20 [==============================] - 0s 3ms/step - loss: 1.2992e-04 - mae: 0.0091 - val_loss: 7.7901e-04 - val_mae: 0.0216
+Epoch 27/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.1695e-04 - mae: 0.0086 - val_loss: 7.5827e-04 - val_mae: 0.0209
+Epoch 28/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.1208e-04 - mae: 0.0086 - val_loss: 7.8368e-04 - val_mae: 0.0217
+Epoch 29/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.1488e-04 - mae: 0.0084 - val_loss: 7.3524e-04 - val_mae: 0.0206
+Epoch 30/50
+20/20 [==============================] - 0s 4ms/step - loss: 1.0391e-04 - mae: 0.0081 - val_loss: 7.3700e-04 - val_mae: 0.0206
+Epoch 31/50
+20/20 [==============================] - 0s 4ms/step - loss: 9.6730e-05 - mae: 0.0078 - val_loss: 7.0812e-04 - val_mae: 0.0203
+Epoch 32/50
+20/20 [==============================] - 0s 3ms/step - loss: 1.0427e-04 - mae: 0.0082 - val_loss: 8.0632e-04 - val_mae: 0.0223
+Epoch 33/50
+20/20 [==============================] - 0s 3ms/step - loss: 1.0017e-04 - mae: 0.0078 - val_loss: 7.1997e-04 - val_mae: 0.0207
+Epoch 34/50
+20/20 [==============================] - 0s 4ms/step - loss: 9.5341e-05 - mae: 0.0076 - val_loss: 7.2273e-04 - val_mae: 0.0205
+Epoch 35/50
+20/20 [==============================] - 0s 3ms/step - loss: 1.0493e-04 - mae: 0.0082 - val_loss: 7.3441e-04 - val_mae: 0.0204
+Epoch 36/50
+20/20 [==============================] - 0s 3ms/step - loss: 9.3989e-05 - mae: 0.0077 - val_loss: 7.1726e-04 - val_mae: 0.0208
+Epoch 37/50
+20/20 [==============================] - 0s 4ms/step - loss: 8.8236e-05 - mae: 0.0074 - val_loss: 7.0975e-04 - val_mae: 0.0203
+Epoch 38/50
+20/20 [==============================] - 0s 4ms/step - loss: 8.2235e-05 - mae: 0.0071 - val_loss: 7.3865e-04 - val_mae: 0.0210
+Epoch 39/50
+20/20 [==============================] - 0s 3ms/step - loss: 8.8220e-05 - mae: 0.0075 - val_loss: 7.4794e-04 - val_mae: 0.0213
+Epoch 40/50
+20/20 [==============================] - 0s 4ms/step - loss: 8.2322e-05 - mae: 0.0073 - val_loss: 7.0860e-04 - val_mae: 0.0204
+Epoch 41/50
+20/20 [==============================] - 0s 4ms/step - loss: 8.6141e-05 - mae: 0.0074 - val_loss: 7.2297e-04 - val_mae: 0.0201
+Epoch 42/50
+20/20 [==============================] - 0s 5ms/step - loss: 9.3298e-05 - mae: 0.0076 - val_loss: 6.9261e-04 - val_mae: 0.0201
+Epoch 43/50
+20/20 [==============================] - 0s 4ms/step - loss: 9.5285e-05 - mae: 0.0080 - val_loss: 7.3106e-04 - val_mae: 0.0211
+Epoch 44/50
+20/20 [==============================] - 0s 3ms/step - loss: 7.4858e-05 - mae: 0.0069 - val_loss: 6.9899e-04 - val_mae: 0.0203
+Epoch 45/50
+20/20 [==============================] - 0s 4ms/step - loss: 7.6255e-05 - mae: 0.0069 - val_loss: 6.7886e-04 - val_mae: 0.0198
+Epoch 46/50
+20/20 [==============================] - 0s 4ms/step - loss: 7.9875e-05 - mae: 0.0071 - val_loss: 7.6177e-04 - val_mae: 0.0221
+Epoch 47/50
+20/20 [==============================] - 0s 4ms/step - loss: 8.8810e-05 - mae: 0.0075 - val_loss: 7.1346e-04 - val_mae: 0.0202
+Epoch 48/50
+20/20 [==============================] - 0s 4ms/step - loss: 7.8881e-05 - mae: 0.0070 - val_loss: 7.1160e-04 - val_mae: 0.0208
+Epoch 49/50
+20/20 [==============================] - 0s 4ms/step - loss: 6.1253e-05 - mae: 0.0062 - val_loss: 6.8310e-04 - val_mae: 0.0205
+Epoch 50/50
+20/20 [==============================] - 0s 4ms/step - loss: 6.8776e-05 - mae: 0.0066 - val_loss: 7.0649e-04 - val_mae: 0.0206
+7/7 [==============================] - 0s 2ms/step - loss: 6.9299e-04 - mae: 0.0192
+Loss: 0.0006929886876605451, MAE: 0.019189342856407166
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Suponemos que &#39;model&#39; es tu modelo entrenado y X_test son los datos de prueba</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Gráfico de línea de valores reales vs. pronosticados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reales&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pronosticados&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparación de Valores Reales y Pronosticados&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Muestras&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Margen de Beneficio Esperado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Scatterplot de valores reales vs. pronosticados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatterplot de Valores Reales vs. Pronosticados&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valores Reales&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores Pronosticados&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)],</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>  <span class="c1"># Línea de perfecta predicción</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7/7 [==============================] - 0s 3ms/step
+</pre></div>
+</div>
+<img alt="_images/1dafd8226c9ab5d858507190e59a1c957c28c8aae14bd2425dd7a7e4eebd34f9.png" src="_images/1dafd8226c9ab5d858507190e59a1c957c28c8aae14bd2425dd7a7e4eebd34f9.png" />
+<img alt="_images/66cf4bfcce52e14d138e8533129de55766702e426d30653f49a66e2a44bbdb26.png" src="_images/66cf4bfcce52e14d138e8533129de55766702e426d30653f49a66e2a44bbdb26.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DipFin%20Sesion%203.1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">22. </span>Introducción a la Regresión Lineal</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DipFin%20Sesion%203.3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">48. </span>Introducción a Modelos de Series Temporales</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">37. 1. Introducción a las Redes Neuronales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-basicos-de-redes-neuronales">37.1. Conceptos Básicos de Redes Neuronales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-redes-neuronales">37.2. Tipos de Redes Neuronales</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrando-los-componentes-de-una-red">38. Mostrando los Componentes de una Red</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-activacion-comunes">38.1. Funciones de Activación Comunes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-en-finanzas">38.2. Aplicaciones en Finanzas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-para-el-entrenamiento-de-redes-neuronales">39. Fundamentos Matemáticos para el Entrenamiento de Redes Neuronales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacion-de-la-funcion-de-error">39.1. Optimización de la Función de Error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descenso-del-gradiente">39.2. Descenso del Gradiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regla-de-la-cadena-en-redes-neuronales">39.3. Regla de la Cadena en Redes Neuronales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-para-construir-una-red-neuronal-para-pronostico-de-series-temporales">39.4. Pasos para Construir una Red Neuronal para Pronóstico de Series Temporales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-para-definir-la-arquitectura-de-la-red">39.5. Estrategias para Definir la Arquitectura de la Red</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-de-optimizacion">40. Algoritmos de optimización</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-error-en-aprendizaje-automatico">41. Funciones de Error en Aprendizaje Automático</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-cuadratico-medio-mse-mean-squared-error">41.1. 1. Error Cuadrático Medio (MSE - Mean Squared Error)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-absoluto-medio-mae-mean-absolute-error">41.2. 2. Error Absoluto Medio (MAE - Mean Absolute Error)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raiz-del-error-cuadratico-medio-rmse-root-mean-squared-error">41.3. 3. Raíz del Error Cuadrático Medio (RMSE - Root Mean Squared Error)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logaritmo-del-error-cuadratico-medio-log-cosh">41.4. 4. Logaritmo del Error Cuadrático Medio (Log-Cosh)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entropia-cruzada-cross-entropy">41.5. 5. Entropía Cruzada (Cross-Entropy)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-la-clasificacion-binaria">42. 2. Fundamentos de la Clasificación Binaria</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-ejercicio">43. Contexto del Ejercicio</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-problema">43.1. Descripción del Problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo">43.2. Objetivo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-datos">44. Generación de Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-para-generar-el-dataset">44.1. Función para Generar el Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-dataset">44.2. Descripción del Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-preparacion-de-datos">44.3. Paso 1: Preparación de Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-definicion-del-modelo">44.4. Paso 2: Definición del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-compilacion-del-modelo">44.5. Paso 3: Compilación del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-entrenamiento-del-modelo">44.6. Paso 4: Entrenamiento del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-evaluacion-y-ajuste">44.7. Paso 5: Evaluación y Ajuste</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-redes-neuronales-de-regresion-en-python">45. 3. Implementación de Redes Neuronales de regresión en Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-ejercicio-de-regresion">46. Contexto del Ejercicio de Regresión</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">46.1. Descripción del Problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">46.2. Objetivo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-datos-para-regresion">47. Generación de Datos para Regresión</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">47.1. Función para Generar el Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptacion-del-modelo-de-red-neuronal">47.2. Adaptación del Modelo de Red Neuronal</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
