@@ -14,7 +14,6 @@ El documento ha sido creado por Leonardo H. Talero-Sarmiento y Fabio Leonardo Go
 
 - Leonardo H. Talero-Sarmiento, ltalero@unab.edu.co
 - Fabio Leonardo Gomez Avila, fgomez45@unab.edu.co
-- Jose Luis Florez Rueda, jflorezr@unab.edu.co
 - Sergio Andres Parra Hormiga, sparra10@unab.edu.co
 
 **Contenido**

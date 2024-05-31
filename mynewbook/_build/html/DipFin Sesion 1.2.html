@@ -8,25 +8,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Índice del Curso &#8212; My sample book</title>
+    <title>6. Funciones en Python &#8212; My sample book</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,12 +34,12 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'DipFin Sesion 1.2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Índice del Curso" href="DipFin%20Sesion%201.3.html" />
+    <link rel="next" title="9. Introducción a la Estadística en Python" href="DipFin%20Sesion%201.3.html" />
     <link rel="prev" title="1. Introducción a Python para Finanzas" href="DipFin%20Sesion%201.1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -73,27 +73,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -115,8 +111,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -185,23 +186,60 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Índice del Curso</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Funciones en Python</a></li>
 
 
-
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">10. Índice del Curso</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">16. Índice del Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.3.html">9. Introducción a la Estadística en Python</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">21. Índice del Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.4.html">14. Introducción a la Adquisición de Datos</a></li>
 
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%201.5.html">18. Introducción a la Limpieza de Datos</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.1.html">22. Introducción a la Regresión Lineal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.2.html">37. 1. Introducción a las Redes Neuronales</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.3.html">48. Introducción a Modelos de Series Temporales</a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DipFin%20Sesion%203.4.html">59. Introducción al Análisis de Clustering</a></li>
 
 
 
@@ -220,7 +258,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -229,7 +267,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -390,7 +428,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Índice del Curso</h1>
+    <h1>Funciones en Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,48 +438,47 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Índice del Curso</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-en-python">7. Funciones en Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepto-de-funciones">7.1. Concepto de Funciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica">7.2. Sintaxis Básica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-y-llamar-funciones">7.3. Definir y Llamar Funciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-parametros">7.4. Tipos de Parámetros</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos">7.5. Ejemplos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-obligatorios">7.5.1. Parámetros obligatorios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionales-con-valores-por-defecto">7.5.2. Parámetros opcionales (con valores por defecto)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-de-longitud-variable">7.5.3. Parámetros de longitud variable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra">7.5.4. Extra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Funciones en Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepto-de-funciones">6.1. Concepto de Funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica">6.2. Sintaxis Básica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-y-llamar-funciones">6.3. Definir y Llamar Funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-parametros">6.4. Tipos de Parámetros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos">6.5. Ejemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-obligatorios">6.5.1. Parámetros obligatorios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionales-con-valores-por-defecto">6.5.2. Parámetros opcionales (con valores por defecto)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-de-longitud-variable">6.5.3. Parámetros de longitud variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra">6.5.4. Extra</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bucles-en-python">8. Bucles en Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">8.1. Bucle For</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis">8.1.1. Sintaxis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-calcular-medias-moviles">8.1.2. Ejemplo en Finanzas: Calcular Medias Móviles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad">8.1.3. Actividad</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bucles-en-python">7. Bucles en Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">7.1. Bucle For</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis">7.1.1. Sintaxis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-calcular-medias-moviles">7.1.2. Ejemplo en Finanzas: Calcular Medias Móviles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad">7.1.3. Actividad</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">8.2. Bucle While</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2.1. Sintaxis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-simulacion-de-inversion">8.2.2. Ejemplo en Finanzas: Simulación de Inversión</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2">8.2.3. Actividad 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2-2-para-la-casa">8.2.4. Actividad 2.2 (para la casa)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">7.2. Bucle While</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.1. Sintaxis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-simulacion-de-inversion">7.2.2. Ejemplo en Finanzas: Simulación de Inversión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2">7.2.3. Actividad 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2-2-para-la-casa">7.2.4. Actividad 2.2 (para la casa)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-y-excepciones">9. Manejo de Errores y Excepciones</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-de-sintaxis-vs-excepciones">9.1. Errores de Sintaxis vs. Excepciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-bloques-try-except">9.2. Uso de Bloques <code class="docutils literal notranslate"><span class="pre">try-except</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2.1. Sintaxis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-financiero-acceso-a-datos-de-mercado">9.2.2. Ejemplo Financiero: Acceso a Datos de Mercado</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-y-excepciones">8. Manejo de Errores y Excepciones</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-de-sintaxis-vs-excepciones">8.1. Errores de Sintaxis vs. Excepciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-bloques-try-except">8.2. Uso de Bloques <code class="docutils literal notranslate"><span class="pre">try-except</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2.1. Sintaxis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-financiero-acceso-a-datos-de-mercado">8.2.2. Ejemplo Financiero: Acceso a Datos de Mercado</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-finally-y-else">9.3. Importancia de <code class="docutils literal notranslate"><span class="pre">finally</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-amortizaciones">9.4. Ejemplo sobre Amortizaciones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-basica-para-calcular-amortizacion">9.4.1. Función Básica para Calcular Amortización</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-en-la-funcion-de-amortizacion">9.4.2. Manejo de Errores en la Función de Amortización</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-finally-y-else">8.3. Importancia de <code class="docutils literal notranslate"><span class="pre">finally</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-amortizaciones">8.4. Ejemplo sobre Amortizaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-basica-para-calcular-amortizacion">8.4.1. Función Básica para Calcular Amortización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-en-la-funcion-de-amortizacion">8.4.2. Manejo de Errores en la Función de Amortización</a></li>
 </ul>
 </li>
 </ul>
@@ -458,98 +495,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="indice-del-curso">
-<h1><span class="section-number">6. </span>Índice del Curso<a class="headerlink" href="#indice-del-curso" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p><strong>Funciones en Python</strong></p></li>
-</ol>
-<ul class="simple">
-<li><p><strong>Introducción a las funciones</strong></p>
-<ul>
-<li><p>Definición y propósito de las funciones.</p></li>
-<li><p>Beneficios de usar funciones en la programación.</p></li>
-</ul>
-</li>
-<li><p><strong>Sintaxis básica</strong></p>
-<ul>
-<li><p>Creación de funciones: <code class="docutils literal notranslate"><span class="pre">def</span></code>, nombre de la función, paréntesis, argumentos y cuerpo de la función.</p></li>
-<li><p>Ejemplos de funciones sencillas, como una función para calcular el retorno de una inversión.</p></li>
-</ul>
-</li>
-<li><p><strong>Parámetros y argumentos</strong></p>
-<ul>
-<li><p>Diferencia entre parámetros y argumentos.</p></li>
-<li><p>Tipos de parámetros: obligatorios, opcionales, nombrados y de longitud variable.</p></li>
-</ul>
-</li>
-<li><p><strong>Valores de retorno</strong></p>
-<ul>
-<li><p>Uso de <code class="docutils literal notranslate"><span class="pre">return</span></code> para devolver valores.</p></li>
-<li><p>Ejemplos prácticos en finanzas, como calcular el valor presente neto (VPN).</p></li>
-</ul>
-</li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p><strong>Bucles en Python</strong></p></li>
-</ol>
-<ul class="simple">
-<li><p><strong>Bucles for</strong></p>
-<ul>
-<li><p>Sintaxis y uso del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
-<li><p>Iterar sobre colecciones de datos (listas, tuplas, diccionarios).</p></li>
-<li><p>Ejemplos en finanzas: cálculo de medias de precios de acciones, análisis de series temporales.</p></li>
-</ul>
-</li>
-<li><p><strong>Bucles while</strong></p>
-<ul>
-<li><p>Sintaxis y uso del bucle <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
-<li><p>Ejemplos en finanzas: encontrar el punto de equilibrio, acumulación de interés.</p></li>
-</ul>
-</li>
-<li><p><strong>Control de bucles</strong></p>
-<ul>
-<li><p>Instrucciones <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code> en bucles.</p></li>
-<li><p>Ejemplos de uso en simulaciones financieras y control de flujos de ejecución.</p></li>
-</ul>
-</li>
-</ul>
-<ol class="arabic simple" start="3">
-<li><p><strong>Manejo de Errores y Excepciones</strong></p></li>
-</ol>
-<ul class="simple">
-<li><p><strong>Introducción al manejo de errores</strong></p>
-<ul>
-<li><p>Tipos de errores en Python: errores de sintaxis vs. excepciones.</p></li>
-</ul>
-</li>
-<li><p><strong>Bloques try-except</strong></p>
-<ul>
-<li><p>Uso de <code class="docutils literal notranslate"><span class="pre">try</span></code> y <code class="docutils literal notranslate"><span class="pre">except</span></code> para la captura y manejo de excepciones.</p></li>
-<li><p>Ejemplos en finanzas: manejo de errores en la carga de datos financieros.</p></li>
-</ul>
-</li>
-<li><p><strong>Bloques finally y else</strong></p>
-<ul>
-<li><p>Uso de <code class="docutils literal notranslate"><span class="pre">finally</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code> en el manejo de excepciones.</p></li>
-<li><p>Ejemplos de limpieza de recursos y acciones condicionales.</p></li>
-</ul>
-</li>
-<li><p><strong>Levantando excepciones</strong></p>
-<ul>
-<li><p>Uso de <code class="docutils literal notranslate"><span class="pre">raise</span></code> para generar excepciones personalizadas.</p></li>
-<li><p>Ejemplos en finanzas: validación de datos de entrada, alertas en desviaciones.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="funciones-en-python">
-<h1><span class="section-number">7. </span>Funciones en Python<a class="headerlink" href="#funciones-en-python" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="funciones-en-python">
+<h1><span class="section-number">6. </span>Funciones en Python<a class="headerlink" href="#funciones-en-python" title="Link to this heading">#</a></h1>
 <section id="concepto-de-funciones">
-<h2><span class="section-number">7.1. </span>Concepto de Funciones<a class="headerlink" href="#concepto-de-funciones" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Concepto de Funciones<a class="headerlink" href="#concepto-de-funciones" title="Link to this heading">#</a></h2>
 <p>En Python, una función es un bloque de código reutilizable que se ejecuta solo cuando se llama. Las funciones pueden recibir datos de entrada (parámetros), procesar esos datos y devolver un resultado (valor de retorno).</p>
 </section>
 <section id="sintaxis-basica">
-<h2><span class="section-number">7.2. </span>Sintaxis Básica<a class="headerlink" href="#sintaxis-basica" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Sintaxis Básica<a class="headerlink" href="#sintaxis-basica" title="Link to this heading">#</a></h2>
 <p>Para definir una función en Python, usamos la palabra clave <code class="docutils literal notranslate"><span class="pre">def</span></code>, seguida del nombre de la función, paréntesis (que pueden incluir parámetros) y dos puntos. El cuerpo de la función sigue en las siguientes líneas, indentado.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nombre_de_funcion</span><span class="p">(</span><span class="n">parametros</span><span class="p">):</span>
     <span class="c1"># Cuerpo de la función</span>
@@ -584,7 +537,7 @@ document.write(`
 </div>
 </section>
 <section id="definir-y-llamar-funciones">
-<h2><span class="section-number">7.3. </span>Definir y Llamar Funciones<a class="headerlink" href="#definir-y-llamar-funciones" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Definir y Llamar Funciones<a class="headerlink" href="#definir-y-llamar-funciones" title="Link to this heading">#</a></h2>
 <p>Las funciones se definen con <code class="docutils literal notranslate"><span class="pre">def</span></code> y se llaman usando el nombre de la función seguido de paréntesis, que pueden contener argumentos.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hola, </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">!&quot;</span>
@@ -612,7 +565,7 @@ document.write(`
 </div>
 </section>
 <section id="tipos-de-parametros">
-<h2><span class="section-number">7.4. </span>Tipos de Parámetros<a class="headerlink" href="#tipos-de-parametros" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Tipos de Parámetros<a class="headerlink" href="#tipos-de-parametros" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Parámetros obligatorios:</strong> Deben pasarse en el orden correcto al llamar a la función.</p></li>
 <li><p><strong>Parámetros opcionales (con valores por defecto):</strong> Toman un valor predeterminado si no se pasan al llamar a la función.</p></li>
@@ -620,9 +573,9 @@ document.write(`
 </ul>
 </section>
 <section id="ejemplos">
-<h2><span class="section-number">7.5. </span>Ejemplos<a class="headerlink" href="#ejemplos" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>Ejemplos<a class="headerlink" href="#ejemplos" title="Link to this heading">#</a></h2>
 <section id="parametros-obligatorios">
-<h3><span class="section-number">7.5.1. </span>Parámetros obligatorios<a class="headerlink" href="#parametros-obligatorios" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.1. </span>Parámetros obligatorios<a class="headerlink" href="#parametros-obligatorios" title="Link to this heading">#</a></h3>
 <p>Son aquellos parámetros que una función necesita para ejecutarse correctamente. No tienen un valor por defecto y deben ser proporcionados en el orden correcto al llamar a la función.</p>
 <p><strong>Ejemplo:</strong>
 Una función para calcular el pago de un préstamo basado en el capital principal, la tasa de interés y el número de períodos.
@@ -656,7 +609,7 @@ $<span class="math notranslate nohighlight">\(P = \frac{(r*PV)}{(1-(1+r)^{-n})}\
 </div>
 </section>
 <section id="parametros-opcionales-con-valores-por-defecto">
-<h3><span class="section-number">7.5.2. </span>Parámetros opcionales (con valores por defecto)<a class="headerlink" href="#parametros-opcionales-con-valores-por-defecto" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.2. </span>Parámetros opcionales (con valores por defecto)<a class="headerlink" href="#parametros-opcionales-con-valores-por-defecto" title="Link to this heading">#</a></h3>
 <p>Estos parámetros toman un valor predeterminado si no se pasan explícitamente al llamar a la función, lo que los hace opcionales.</p>
 <p><strong>Ejemplo:</strong>
 Una función que calcula el retorno esperado de una inversión, donde la tasa de retorno por defecto es del 5% si no se especifica otra.</p>
@@ -689,7 +642,7 @@ Una función que calcula el retorno esperado de una inversión, donde la tasa de
 </div>
 </section>
 <section id="parametros-de-longitud-variable">
-<h3><span class="section-number">7.5.3. </span>Parámetros de longitud variable<a class="headerlink" href="#parametros-de-longitud-variable" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.3. </span>Parámetros de longitud variable<a class="headerlink" href="#parametros-de-longitud-variable" title="Link to this heading">#</a></h3>
 <p>Permiten pasar un número variable de argumentos a la función, lo que es útil cuando no se sabe de antemano cuántos datos se necesitarán procesar.</p>
 <p><strong>Ejemplo:</strong>
 Una función para calcular el promedio de retornos de varias inversiones.</p>
@@ -722,7 +675,7 @@ Una función para calcular el promedio de retornos de varias inversiones.</p>
 </div>
 </section>
 <section id="extra">
-<h3><span class="section-number">7.5.4. </span>Extra<a class="headerlink" href="#extra" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.4. </span>Extra<a class="headerlink" href="#extra" title="Link to this heading">#</a></h3>
 <p>Es posible agregar información sobre los parámetros para mejorar la documentación de las funciones. Retomemos la función sobre calcular el pago de un prestamo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_pago_prestamo</span><span class="p">(</span><span class="n">principal</span><span class="p">,</span> <span class="n">tasa_interes</span><span class="p">,</span> <span class="n">periodos</span><span class="p">):</span>
 <span class="w">      </span><span class="sd">&quot;&quot;&quot;</span>
@@ -768,20 +721,20 @@ Una función para calcular el promedio de retornos de varias inversiones.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="bucles-en-python">
-<h1><span class="section-number">8. </span>Bucles en Python<a class="headerlink" href="#bucles-en-python" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Bucles en Python<a class="headerlink" href="#bucles-en-python" title="Link to this heading">#</a></h1>
 <p>Los bucles en Python, específicamente <code class="docutils literal notranslate"><span class="pre">for</span></code> y <code class="docutils literal notranslate"><span class="pre">while</span></code>, son estructuras de control que repiten un bloque de código múltiples veces. En el contexto financiero, son herramientas poderosas para analizar series de datos, realizar cálculos repetitivos y simular escenarios.</p>
 <section id="bucle-for">
-<h2><span class="section-number">8.1. </span>Bucle For<a class="headerlink" href="#bucle-for" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Bucle For<a class="headerlink" href="#bucle-for" title="Link to this heading">#</a></h2>
 <p>El bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en Python se utiliza para iterar sobre una secuencia (como una lista, tupla, diccionario, conjunto o cadena) y ejecutar un bloque de código para cada elemento de la secuencia.</p>
 <section id="sintaxis">
-<h3><span class="section-number">8.1.1. </span>Sintaxis<a class="headerlink" href="#sintaxis" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>Sintaxis<a class="headerlink" href="#sintaxis" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">secuencia</span><span class="p">:</span>
     <span class="c1"># Bloque de código</span>
 </pre></div>
 </div>
 </section>
 <section id="ejemplo-en-finanzas-calcular-medias-moviles">
-<h3><span class="section-number">8.1.2. </span>Ejemplo en Finanzas: Calcular Medias Móviles<a class="headerlink" href="#ejemplo-en-finanzas-calcular-medias-moviles" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.2. </span>Ejemplo en Finanzas: Calcular Medias Móviles<a class="headerlink" href="#ejemplo-en-finanzas-calcular-medias-moviles" title="Link to this heading">#</a></h3>
 <p>Las medias móviles son indicadores comunes en el análisis de series temporales de precios de acciones. Calculemos una simple media móvil de 5 días:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">precios</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">122</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">129</span><span class="p">]</span>
 <span class="n">suma_precios</span> <span class="o">=</span> <span class="mi">0</span>
@@ -821,22 +774,22 @@ Media móvil desde el día 6 al 10: 127.0
 </div>
 </section>
 <section id="actividad">
-<h3><span class="section-number">8.1.3. </span>Actividad<a class="headerlink" href="#actividad" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.3. </span>Actividad<a class="headerlink" href="#actividad" title="Link to this heading">#</a></h3>
 <p>Crea una función que devuelva la media movil para una cantidad determinada de dias inferior a la longitud de una lsita</p>
 </section>
 </section>
 <section id="bucle-while">
-<h2><span class="section-number">8.2. </span>Bucle While<a class="headerlink" href="#bucle-while" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Bucle While<a class="headerlink" href="#bucle-while" title="Link to this heading">#</a></h2>
 <p>El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> repite un bloque de código mientras una condición especificada sea verdadera.</p>
 <section id="id1">
-<h3><span class="section-number">8.2.1. </span>Sintaxis<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Sintaxis<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condicion</span><span class="p">:</span>
     <span class="c1"># Bloque de código</span>
 </pre></div>
 </div>
 </section>
 <section id="ejemplo-en-finanzas-simulacion-de-inversion">
-<h3><span class="section-number">8.2.2. </span>Ejemplo en Finanzas: Simulación de Inversión<a class="headerlink" href="#ejemplo-en-finanzas-simulacion-de-inversion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.2. </span>Ejemplo en Finanzas: Simulación de Inversión<a class="headerlink" href="#ejemplo-en-finanzas-simulacion-de-inversion" title="Link to this heading">#</a></h3>
 <p>Supongamos que queremos encontrar cuánto tiempo tomará duplicar una inversión con una tasa de interés compuesto anual:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">inversion_inicial</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">objetivo</span> <span class="o">=</span> <span class="n">inversion_inicial</span> <span class="o">*</span> <span class="mi">2</span>
@@ -885,20 +838,20 @@ Media móvil desde el día 6 al 10: 127.0
 </div>
 </section>
 <section id="actividad-2">
-<h3><span class="section-number">8.2.3. </span>Actividad 2<a class="headerlink" href="#actividad-2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.3. </span>Actividad 2<a class="headerlink" href="#actividad-2" title="Link to this heading">#</a></h3>
 <p>Construye una función que determine el número de años que se requieren para recuperar el dinero</p>
 </section>
 <section id="actividad-2-2-para-la-casa">
-<h3><span class="section-number">8.2.4. </span>Actividad 2.2 (para la casa)<a class="headerlink" href="#actividad-2-2-para-la-casa" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.4. </span>Actividad 2.2 (para la casa)<a class="headerlink" href="#actividad-2-2-para-la-casa" title="Link to this heading">#</a></h3>
 <p>Construye una nueva función en la cual la información de interes se de en un periodo nominal mensual pero el calculo se hace sobre periodos efectivos anuales</p>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="manejo-de-errores-y-excepciones">
-<h1><span class="section-number">9. </span>Manejo de Errores y Excepciones<a class="headerlink" href="#manejo-de-errores-y-excepciones" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Manejo de Errores y Excepciones<a class="headerlink" href="#manejo-de-errores-y-excepciones" title="Link to this heading">#</a></h1>
 <p>El manejo de errores y excepciones es un aspecto crucial de la programación en Python, especialmente en aplicaciones financieras, donde la precisión y la estabilidad son esenciales.</p>
 <section id="errores-de-sintaxis-vs-excepciones">
-<h2><span class="section-number">9.1. </span>Errores de Sintaxis vs. Excepciones<a class="headerlink" href="#errores-de-sintaxis-vs-excepciones" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Errores de Sintaxis vs. Excepciones<a class="headerlink" href="#errores-de-sintaxis-vs-excepciones" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>Errores de Sintaxis:</strong> Son errores en el código que impiden que el programa se ejecute. Ocurren cuando el código no sigue las reglas de sintaxis de Python.
 Ejemplo:</p>
@@ -949,10 +902,10 @@ Ejemplo:</p>
 </div>
 </section>
 <section id="uso-de-bloques-try-except">
-<h2><span class="section-number">9.2. </span>Uso de Bloques <code class="docutils literal notranslate"><span class="pre">try-except</span></code><a class="headerlink" href="#uso-de-bloques-try-except" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Uso de Bloques <code class="docutils literal notranslate"><span class="pre">try-except</span></code><a class="headerlink" href="#uso-de-bloques-try-except" title="Link to this heading">#</a></h2>
 <p>Los bloques <code class="docutils literal notranslate"><span class="pre">try-except</span></code> se utilizan para capturar y manejar excepciones. El código dentro del bloque <code class="docutils literal notranslate"><span class="pre">try</span></code> se ejecuta primero, y si ocurre una excepción, se ejecuta el código dentro del bloque <code class="docutils literal notranslate"><span class="pre">except</span></code>.</p>
 <section id="id2">
-<h3><span class="section-number">9.2.1. </span>Sintaxis<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.1. </span>Sintaxis<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># Código que puede causar una excepción</span>
 <span class="k">except</span> <span class="n">TipoExcepcion</span><span class="p">:</span>
@@ -961,7 +914,7 @@ Ejemplo:</p>
 </div>
 </section>
 <section id="ejemplo-financiero-acceso-a-datos-de-mercado">
-<h3><span class="section-number">9.2.2. </span>Ejemplo Financiero: Acceso a Datos de Mercado<a class="headerlink" href="#ejemplo-financiero-acceso-a-datos-de-mercado" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.2. </span>Ejemplo Financiero: Acceso a Datos de Mercado<a class="headerlink" href="#ejemplo-financiero-acceso-a-datos-de-mercado" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">precio</span> <span class="o">=</span> <span class="n">obtener_precio_accion</span><span class="p">(</span><span class="s2">&quot;AAPL&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
@@ -1034,7 +987,7 @@ Ejemplo:</p>
 </section>
 </section>
 <section id="importancia-de-finally-y-else">
-<h2><span class="section-number">9.3. </span>Importancia de <code class="docutils literal notranslate"><span class="pre">finally</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#importancia-de-finally-y-else" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Importancia de <code class="docutils literal notranslate"><span class="pre">finally</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#importancia-de-finally-y-else" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>Bloque <code class="docutils literal notranslate"><span class="pre">finally</span></code>:</strong> Se ejecuta después de los bloques <code class="docutils literal notranslate"><span class="pre">try</span></code> y <code class="docutils literal notranslate"><span class="pre">except</span></code>, independientemente de si ocurrió una excepción o no. Es útil para realizar tareas de limpieza, como cerrar archivos o conexiones a bases de datos.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -1114,12 +1067,12 @@ print(f”El precio de la acción AAPL es {precio}.”)</p>
 </div>
 </section>
 <section id="ejemplo-sobre-amortizaciones">
-<h2><span class="section-number">9.4. </span>Ejemplo sobre Amortizaciones<a class="headerlink" href="#ejemplo-sobre-amortizaciones" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>Ejemplo sobre Amortizaciones<a class="headerlink" href="#ejemplo-sobre-amortizaciones" title="Link to this heading">#</a></h2>
 <p>En finanzas, la amortización es el proceso de reducir el valor de un activo o saldo de deuda a través de pagos periódicos. Veamos cómo podemos manejar errores y excepciones en una función que calcula el valor de la amortización de un préstamo.</p>
 <p><strong>Ejemplo de Función para Calcular Amortización</strong></p>
 <p>Primero, definamos una función básica para calcular la amortización, y luego mostraremos cómo manejar posibles excepciones.</p>
 <section id="funcion-basica-para-calcular-amortizacion">
-<h3><span class="section-number">9.4.1. </span>Función Básica para Calcular Amortización<a class="headerlink" href="#funcion-basica-para-calcular-amortizacion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.1. </span>Función Básica para Calcular Amortización<a class="headerlink" href="#funcion-basica-para-calcular-amortizacion" title="Link to this heading">#</a></h3>
 <p>La fórmula para calcular el pago de amortización en un período específico es la siguiente:</p>
 <div class="math notranslate nohighlight">
 \[ PagoAmortizacion = PagoTotal - Intereses \]</div>
@@ -1142,7 +1095,7 @@ print(f”El precio de la acción AAPL es {precio}.”)</p>
 </div>
 </section>
 <section id="manejo-de-errores-en-la-funcion-de-amortizacion">
-<h3><span class="section-number">9.4.2. </span>Manejo de Errores en la Función de Amortización<a class="headerlink" href="#manejo-de-errores-en-la-funcion-de-amortizacion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.2. </span>Manejo de Errores en la Función de Amortización<a class="headerlink" href="#manejo-de-errores-en-la-funcion-de-amortizacion" title="Link to this heading">#</a></h3>
 <p>Supongamos que queremos asegurarnos de que los parámetros <code class="docutils literal notranslate"><span class="pre">pago_total</span></code> e <code class="docutils literal notranslate"><span class="pre">intereses</span></code> sean numéricos y que el pago total sea mayor que los intereses. Podemos agregar manejo de excepciones para validar esto:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_amortizacion</span><span class="p">(</span><span class="n">pago_total</span><span class="p">,</span> <span class="n">intereses</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
@@ -1242,7 +1195,7 @@ None
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1259,7 +1212,7 @@ None
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Índice del Curso</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Introducción a la Estadística en Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1279,48 +1232,47 @@ None
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Índice del Curso</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-en-python">7. Funciones en Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepto-de-funciones">7.1. Concepto de Funciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica">7.2. Sintaxis Básica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-y-llamar-funciones">7.3. Definir y Llamar Funciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-parametros">7.4. Tipos de Parámetros</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos">7.5. Ejemplos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-obligatorios">7.5.1. Parámetros obligatorios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionales-con-valores-por-defecto">7.5.2. Parámetros opcionales (con valores por defecto)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-de-longitud-variable">7.5.3. Parámetros de longitud variable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra">7.5.4. Extra</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Funciones en Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepto-de-funciones">6.1. Concepto de Funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica">6.2. Sintaxis Básica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-y-llamar-funciones">6.3. Definir y Llamar Funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-parametros">6.4. Tipos de Parámetros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos">6.5. Ejemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-obligatorios">6.5.1. Parámetros obligatorios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionales-con-valores-por-defecto">6.5.2. Parámetros opcionales (con valores por defecto)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-de-longitud-variable">6.5.3. Parámetros de longitud variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extra">6.5.4. Extra</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bucles-en-python">8. Bucles en Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">8.1. Bucle For</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis">8.1.1. Sintaxis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-calcular-medias-moviles">8.1.2. Ejemplo en Finanzas: Calcular Medias Móviles</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad">8.1.3. Actividad</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bucles-en-python">7. Bucles en Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">7.1. Bucle For</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis">7.1.1. Sintaxis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-calcular-medias-moviles">7.1.2. Ejemplo en Finanzas: Calcular Medias Móviles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad">7.1.3. Actividad</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">8.2. Bucle While</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2.1. Sintaxis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-simulacion-de-inversion">8.2.2. Ejemplo en Finanzas: Simulación de Inversión</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2">8.2.3. Actividad 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2-2-para-la-casa">8.2.4. Actividad 2.2 (para la casa)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">7.2. Bucle While</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.1. Sintaxis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-en-finanzas-simulacion-de-inversion">7.2.2. Ejemplo en Finanzas: Simulación de Inversión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2">7.2.3. Actividad 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-2-2-para-la-casa">7.2.4. Actividad 2.2 (para la casa)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-y-excepciones">9. Manejo de Errores y Excepciones</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-de-sintaxis-vs-excepciones">9.1. Errores de Sintaxis vs. Excepciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-bloques-try-except">9.2. Uso de Bloques <code class="docutils literal notranslate"><span class="pre">try-except</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.2.1. Sintaxis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-financiero-acceso-a-datos-de-mercado">9.2.2. Ejemplo Financiero: Acceso a Datos de Mercado</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-y-excepciones">8. Manejo de Errores y Excepciones</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-de-sintaxis-vs-excepciones">8.1. Errores de Sintaxis vs. Excepciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-bloques-try-except">8.2. Uso de Bloques <code class="docutils literal notranslate"><span class="pre">try-except</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2.1. Sintaxis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-financiero-acceso-a-datos-de-mercado">8.2.2. Ejemplo Financiero: Acceso a Datos de Mercado</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-finally-y-else">9.3. Importancia de <code class="docutils literal notranslate"><span class="pre">finally</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-amortizaciones">9.4. Ejemplo sobre Amortizaciones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-basica-para-calcular-amortizacion">9.4.1. Función Básica para Calcular Amortización</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-en-la-funcion-de-amortizacion">9.4.2. Manejo de Errores en la Función de Amortización</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importancia-de-finally-y-else">8.3. Importancia de <code class="docutils literal notranslate"><span class="pre">finally</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-amortizaciones">8.4. Ejemplo sobre Amortizaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-basica-para-calcular-amortizacion">8.4.1. Función Básica para Calcular Amortización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-en-la-funcion-de-amortizacion">8.4.2. Manejo de Errores en la Función de Amortización</a></li>
 </ul>
 </li>
 </ul>
@@ -1374,8 +1326,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

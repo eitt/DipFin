@@ -27,5 +27,13 @@ parts:
         title: Adquisición y Selección de Datos Financieros
       - file: DipFin Sesion 1.5.ipynb
         title: Limpieza y Preparación de Datos
+      - file: DipFin Sesion 3.1.ipynb
+        title: Introducción a los modelos de regrresión
+      - file: DipFin Sesion 3.2.ipynb
+        title: Redes Neuronales
+      - file: DipFin Sesion 3.3.ipynb
+        title: Series temporales y portafolio
+      - file: DipFin Sesion 3.4.ipynb
+        title: Análisis de Clustering
 
 
